@@ -65,15 +65,20 @@ def getDataFromRows(row1, row2):
     newRow = []
     for value in row2:
         newRow.append(value)
-    for value in row1:
-        newRow.append(value)
+	# Append columns ANO e MES.
+    newRow.append(row1[0])
+    newRow.append(row1[1])
+	# Start i in 5 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have it from Cadastro.csv). We might not have data from them.
+    for i in range(5, len(row1)):
+        newRow.append(row1[i])
     return newRow
 
 def getDataWithEmptyRow(columns, row):
     newRow = []
     for value in row:
         newRow.append(value)
-    for i in range(0, columns):
+	# Append since 3 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have this data from Cadastro.csv).
+    for i in range(3, columns):
         newRow.append('')
     return newRow
 

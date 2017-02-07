@@ -56,8 +56,8 @@ filter {
 output {
 	elasticsearch {
 		action => "index"
-		user => "cw14"
-		password => "123mudar"
+		user => "%(user)s"
+		password => "%(password)s"
 		hosts => "http://node1.c3sl.ufpr.br:9200"
 		index => "ufpr-csv-%(date)s"
 		workers => 1

@@ -8,22 +8,6 @@ if len(sys.argv) != 6:
     print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <username> <password>")
     sys.exit()
 
-data = {
-	"path": "Dados_Servidores/" + sys.argv[1] + "-" + sys.argv[2] + "/"
-	, "date": sys.argv[1] + sys.argv[2] + sys.argv[3]
-	, "file1": "_Remuneracao.csv"
-	, "file2": "_Cadastro_Ufpr_Unique.csv"
-	, "idColumn1": 2
-	, "idColumn2": 0
-	, "quotechar": "\""
-	, "delimiter": "\t"
-	, "lineterminator": "\n"
-	, "outputFile": "Dados_Servidores/Processados/" + sys.argv[1] + sys.argv[2] + ".csv"
-}
-
-with open('configs/config-' + sys.argv[1] + '-' + sys.argv[2] + '.json', 'w') as outfile:
-    json.dump(data, outfile, indent=4, sort_keys=True)
-
 with open('logstash_config.example') as infile:
 	example = infile.read()
 

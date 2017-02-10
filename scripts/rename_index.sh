@@ -1,0 +1,20 @@
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <user:password> <old-index> <new-index>"
+    echo "Example: $0 myuser:mypass ufpr-csv-2016-11 ufpr-servidores-2016-11"
+    exit
+fi
+
+# Copy old index to new index...
+curl -u $1 -XPOST 'http://node1.c3sl.ufpr.br:9200/_reindex?pretty' -H 'Content-Type: application/json' -d'
+  {
+    "source": {
+      "index": "'$2'"
+    },
+    "dest": {
+       "index": "'$3'"
+    }
+  }
+'
+
+# Delete old index...
+curl -u $1 -XDELETE "http://node1.c3sl.ufpr.br:9200/$2?pretty"

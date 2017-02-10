@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Usage: $0 <user> <password>"
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 <user> <password>"
+	exit
+fi
 
 ./insert_register_payment.sh 2016 11 30 $1 $2
 ./insert_register_payment.sh 2016 10 31 $1 $2

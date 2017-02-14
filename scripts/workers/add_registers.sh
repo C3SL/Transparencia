@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# WARNING: This was used to insert data, and should not be executed again (unless someone deleted the whole database).
+
+# Input: Kibana/ElasticSearch's user and password.
+# Output: Nothing, if it executes correctly. It will insert csv's from http://www.portaldatransparencia.gov.br/downloads/servidores.asp, from 2013-01 to 2016-11.
+
 if [ "$#" -ne 2 ]; then
 	echo "Usage: $0 <user> <password>"
 	exit

@@ -21,7 +21,7 @@ fi
 
 echo "Processing data with args = $path and ${date}"
 
-input="${path}${date}/AplicacoesDiretasDespesaOrgao.csv"
+input="${path}${date}/${dateWithoutHyphen}_GastosDiretos.csv"
 output="${path}processed/${dateWithoutHyphen}.csv"
 
 # About this command:

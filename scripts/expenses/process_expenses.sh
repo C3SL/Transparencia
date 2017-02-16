@@ -1,76 +1,64 @@
-./resumo_gastos.sh ../../Favorecidos/ 2016-11
-./resumo_gastos.sh ../../Favorecidos/ 2016-10
-./resumo_gastos.sh ../../Favorecidos/ 2016-09
-./resumo_gastos.sh ../../Favorecidos/ 2016-08
-./resumo_gastos.sh ../../Favorecidos/ 2016-07
-./resumo_gastos.sh ../../Favorecidos/ 2016-06
-./resumo_gastos.sh ../../Favorecidos/ 2016-05
-./resumo_gastos.sh ../../Favorecidos/ 2016-04
-./resumo_gastos.sh ../../Favorecidos/ 2016-03
-./resumo_gastos.sh ../../Favorecidos/ 2016-02
-./resumo_gastos.sh ../../Favorecidos/ 2016-01
+#!/bin/bash
 
-./resumo_gastos.sh ../../Favorecidos/ 2015-12
-./resumo_gastos.sh ../../Favorecidos/ 2015-11
-./resumo_gastos.sh ../../Favorecidos/ 2015-10
-./resumo_gastos.sh ../../Favorecidos/ 2015-09
-./resumo_gastos.sh ../../Favorecidos/ 2015-08
-./resumo_gastos.sh ../../Favorecidos/ 2015-07
-./resumo_gastos.sh ../../Favorecidos/ 2015-06
-./resumo_gastos.sh ../../Favorecidos/ 2015-05
-./resumo_gastos.sh ../../Favorecidos/ 2015-04
-./resumo_gastos.sh ../../Favorecidos/ 2015-03
-./resumo_gastos.sh ../../Favorecidos/ 2015-02
-./resumo_gastos.sh ../../Favorecidos/ 2015-01
+# WARNING: This script should not be called unless the database is erased. Its still here for 2 reasons:
+# 1- Log: To know what months of data have been inserted.
+# 2- Example: To give example of how to call script insert_expenses.sh.
 
-./resumo_gastos.sh ../../Favorecidos/ 2014-12
-./resumo_gastos.sh ../../Favorecidos/ 2014-11
-./resumo_gastos.sh ../../Favorecidos/ 2014-10
-./resumo_gastos.sh ../../Favorecidos/ 2014-09
-./resumo_gastos.sh ../../Favorecidos/ 2014-08
-./resumo_gastos.sh ../../Favorecidos/ 2014-07
-./resumo_gastos.sh ../../Favorecidos/ 2014-06
-./resumo_gastos.sh ../../Favorecidos/ 2014-05
-./resumo_gastos.sh ../../Favorecidos/ 2014-04
-./resumo_gastos.sh ../../Favorecidos/ 2014-03
-./resumo_gastos.sh ../../Favorecidos/ 2014-02
-./resumo_gastos.sh ../../Favorecidos/ 2014-01
+# This script only calls insert_expenses for all years and months.
 
-./resumo_gastos.sh ../../Favorecidos/ 2013-12
-./resumo_gastos.sh ../../Favorecidos/ 2013-11
-./resumo_gastos.sh ../../Favorecidos/ 2013-10
-./resumo_gastos.sh ../../Favorecidos/ 2013-09
-./resumo_gastos.sh ../../Favorecidos/ 2013-08
-./resumo_gastos.sh ../../Favorecidos/ 2013-07
-./resumo_gastos.sh ../../Favorecidos/ 2013-06
-./resumo_gastos.sh ../../Favorecidos/ 2013-05
-./resumo_gastos.sh ../../Favorecidos/ 2013-04
-./resumo_gastos.sh ../../Favorecidos/ 2013-03
-./resumo_gastos.sh ../../Favorecidos/ 2013-02
-./resumo_gastos.sh ../../Favorecidos/ 2013-01
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 <user> <password>"
+	echo "Example: $0 myuser mypass"
+	exit
+fi
 
-./resumo_gastos.sh ../../Favorecidos/ 2012-12
-./resumo_gastos.sh ../../Favorecidos/ 2012-11
-./resumo_gastos.sh ../../Favorecidos/ 2012-10
-./resumo_gastos.sh ../../Favorecidos/ 2012-09
-./resumo_gastos.sh ../../Favorecidos/ 2012-08
-./resumo_gastos.sh ../../Favorecidos/ 2012-07
-./resumo_gastos.sh ../../Favorecidos/ 2012-06
-./resumo_gastos.sh ../../Favorecidos/ 2012-05
-./resumo_gastos.sh ../../Favorecidos/ 2012-04
-./resumo_gastos.sh ../../Favorecidos/ 2012-03
-./resumo_gastos.sh ../../Favorecidos/ 2012-02
-./resumo_gastos.sh ../../Favorecidos/ 2012-01
+./insert_expenses.sh 2016 11 30 $1 $2
+./insert_expenses.sh 2016 10 31 $1 $2
+./insert_expenses.sh 2016 09 30 $1 $2
+./insert_expenses.sh 2016 08 31 $1 $2
+./insert_expenses.sh 2016 07 31 $1 $2
+./insert_expenses.sh 2016 06 30 $1 $2
+./insert_expenses.sh 2016 05 31 $1 $2
+./insert_expenses.sh 2016 04 30 $1 $2
+./insert_expenses.sh 2016 03 31 $1 $2
+./insert_expenses.sh 2016 02 29 $1 $2
+./insert_expenses.sh 2016 01 31 $1 $2
 
-./resumo_gastos.sh ../../Favorecidos/ 2011-12
-./resumo_gastos.sh ../../Favorecidos/ 2011-11
-./resumo_gastos.sh ../../Favorecidos/ 2011-10
-./resumo_gastos.sh ../../Favorecidos/ 2011-09
-./resumo_gastos.sh ../../Favorecidos/ 2011-08
-./resumo_gastos.sh ../../Favorecidos/ 2011-07
-./resumo_gastos.sh ../../Favorecidos/ 2011-06
-./resumo_gastos.sh ../../Favorecidos/ 2011-05
-./resumo_gastos.sh ../../Favorecidos/ 2011-04
-./resumo_gastos.sh ../../Favorecidos/ 2011-03
-./resumo_gastos.sh ../../Favorecidos/ 2011-02
-./resumo_gastos.sh ../../Favorecidos/ 2011-01
+./insert_expenses.sh 2015 12 31 $1 $2
+./insert_expenses.sh 2015 11 30 $1 $2
+./insert_expenses.sh 2015 10 31 $1 $2
+./insert_expenses.sh 2015 09 30 $1 $2
+./insert_expenses.sh 2015 08 31 $1 $2
+./insert_expenses.sh 2015 07 31 $1 $2
+./insert_expenses.sh 2015 06 30 $1 $2
+./insert_expenses.sh 2015 05 31 $1 $2
+./insert_expenses.sh 2015 04 30 $1 $2
+./insert_expenses.sh 2015 03 31 $1 $2
+./insert_expenses.sh 2015 02 28 $1 $2
+./insert_expenses.sh 2015 01 31 $1 $2
+
+./insert_expenses.sh 2014 12 31 $1 $2
+./insert_expenses.sh 2014 11 30 $1 $2
+./insert_expenses.sh 2014 10 31 $1 $2
+./insert_expenses.sh 2014 09 30 $1 $2
+./insert_expenses.sh 2014 08 31 $1 $2
+./insert_expenses.sh 2014 07 31 $1 $2
+./insert_expenses.sh 2014 06 30 $1 $2
+./insert_expenses.sh 2014 05 31 $1 $2
+./insert_expenses.sh 2014 04 30 $1 $2
+./insert_expenses.sh 2014 03 31 $1 $2
+./insert_expenses.sh 2014 02 28 $1 $2
+./insert_expenses.sh 2014 01 31 $1 $2
+
+./insert_expenses.sh 2013 12 31 $1 $2
+./insert_expenses.sh 2013 11 30 $1 $2
+./insert_expenses.sh 2013 10 31 $1 $2
+./insert_expenses.sh 2013 09 30 $1 $2
+./insert_expenses.sh 2013 08 31 $1 $2
+./insert_expenses.sh 2013 07 31 $1 $2
+./insert_expenses.sh 2013 06 30 $1 $2
+./insert_expenses.sh 2013 05 31 $1 $2
+./insert_expenses.sh 2013 04 30 $1 $2
+./insert_expenses.sh 2013 03 31 $1 $2
+./insert_expenses.sh 2013 02 28 $1 $2
+./insert_expenses.sh 2013 01 31 $1 $2

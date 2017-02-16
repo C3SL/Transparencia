@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# WARNING: This script should not be called directly. Look at 'insert_expenses.sh' before calling this script.
+
+# This script is used to create a Logstash Config file.
+
+# Input: year, month and day, ElasticSearch's username and password.
+
 import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
@@ -16,5 +22,5 @@ output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.ar
 					 , "user": sys.argv[4]
 					 , "password": sys.argv[5] }
 
-with open('logstash_configs/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
+with open('../../configs/expenses/logstash/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
 	outfile.write(output)

@@ -1,4 +1,4 @@
-Dados_Servidores
-logstash_configs
+data
 configs
-Favorecidos
+*.swp
+*.swo

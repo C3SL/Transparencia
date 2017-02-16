@@ -1,17 +1,33 @@
 Projeto utilizando ElasticSearch + Kibana na tentativa de auxiliar a transparência da Universidade Federal do Paraná (UFPR).
 
-Árvore de Diretórios:
+O projeto contém dados referentes a:
+- Servidores da UFPR
+- Gastos Diretos da UFPR
 
+Árvore de Diretórios:
 .
-├── Dados_Servidores - Contém uma diretório para cada mês.
-│   ├── 2016-12 - Diretório que contém os CSVs referentes a Dezembro de 2016.
-│   ├── 2016-11 - Diretório que contém os CSVs referentes a Novembro de 2016.
-│   ├── ...
-│   └── Processados - Diretório que contém CSVs resultantes da união de CSVs do portal transparência.
-├── config.json.example - Exemplo de arquivo do diretório 'configs'.
-├── logstash_configs - Diretório com arquivos de configuração do Logstash para inserção de dados no Kibana/ElasticSearch.
-├── logstash_config.example - Exemplo de arquivo do diretório 'logstash_configs'. É usado pelo script 'create_config.py' para gerar o arquivo de configuração do logstash.
-├── create_config.py - Script que cria arquivos de configuração que ficam contidos nos diretórios 'configs' e 'logstash_configs'.
-├── resumo_cadastro.sh - Script que filtra dados do CSV de Cadastro do Portal Transparência, selecionando dados das Universidades interessantes para este projeto.
-├── merge_files_es.py - Script que usa um arquivo de configuração do diretório 'configs' para unir dois CSVs (Cadastro e Remuneração) do portal transparência em um só e salvá-lo no diretório Dados_Servidores/Processados
-└── insert_data.sh - Script que gerencia os outros scripts.
+├── data - Contém uma diretório para cada mês.
+│   ├── workers - Contém dados de Servidores do Portal Transparência (obtidos em http://www.portaldatransparencia.gov.br/downloads/servidores.asp#exercicios2016).
+│   │   ├── 2016-12 - Diretório que contém os CSVs referentes a Dezembro de 2016.
+│   │   ├── 2016-11 - Diretório que contém os CSVs referentes a Novembro de 2016.
+│   │   ├── ...
+│   │   └── processed - Diretório que contém CSVs resultantes da união de CSVs do portal transparência.
+│   │
+│   └── expenses - Contém dados de Gastos do Portal Transparência (obtidos em http://www.portaldatransparencia.gov.br/downloads/servidores.asp#exercicios2016).
+│       ├── 2016-12 - Diretório que contém os CSVs referentes a Dezembro de 2016.
+│       ├── 2016-11 - Diretório que contém os CSVs referentes a Novembro de 2016.
+│       ├── ...
+│       └── processed - Diretório que contém CSVs resultantes da união de CSVs do portal transparência.
+│
+├── configs - Contém arquivos de configuração gerados por scripts.
+│   ├── workers - Contém arquivos de configuração de Servidores.
+│   │   ├── JSON - Contém arquivos de configuração no formato JSON, usados pelo script merge_files_es.py.
+│   │   └── logstash - Contém arquivos de configuração para o logstash.
+│   │
+│   └── expenses - Contém arquivos de configuração de Gastos.
+│       └── logstash - Contém arquivos de configuração para o logstash.
+│
+└── scripts - Contém scripts que auxiliam no projeto.
+    ├── workers - Contém scripts para gerenciar dados de Servidores.
+    ├── expenses - Contém scripts para gerenciar dados de Gastos.
+    └── curl - Contém scripts que auxiliam na utilização do curl.

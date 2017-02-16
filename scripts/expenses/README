@@ -1,0 +1,7 @@
+The easiest way to insert expenses data is to use 'insert_expenses.sh'.
+
+Script's input: Year, month and day from the data to be inserted, ElasticSearch's user and password. The day should be the last day of the month.
+Example: ./insert_expenses.sh 2016 10 31 myuser mypass
+Example 2: ./insert_expenses.sh 2014 11 30 myuser mypass
+
+The other script's will be called by 'insert_expenses.sh' correctly.

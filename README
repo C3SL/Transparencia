@@ -3,6 +3,7 @@ Projeto utilizando ElasticSearch + Kibana na tentativa de auxiliar a transparên
 O projeto contém dados referentes a:
 - Servidores da UFPR
 - Gastos Diretos da UFPR
+- Diárias de Viagem da UFPR
 
 Árvore de Diretórios:
 .
@@ -13,7 +14,13 @@ O projeto contém dados referentes a:
 │   │   ├── ...
 │   │   └── processed - Diretório que contém CSVs resultantes da união de CSVs do portal transparência.
 │   │
-│   └── expenses - Contém dados de Gastos do Portal Transparência (obtidos em http://www.portaldatransparencia.gov.br/downloads/servidores.asp#exercicios2016).
+│   ├── travel_allowance - Contém dados de Diárias de Viagem do Portal Transparência (obtidos em http://www.portaldatransparencia.gov.br/downloads/mensal.asp?c=Diarias).
+│   │   ├── 2016-12 - Diretório que contém os CSVs referentes a Dezembro de 2016.
+│   │   ├── 2016-11 - Diretório que contém os CSVs referentes a Novembro de 2016.
+│   │   ├── ...
+│   │   └── processed - Diretório que contém CSVs resultantes da união de CSVs do portal transparência.
+│   │
+│   └── expenses - Contém dados de Gastos do Portal Transparência (obtidos em http://www.portaldatransparencia.gov.br/downloads/mensal.asp?c=GastosDiretos).
 │       ├── 2016-12 - Diretório que contém os CSVs referentes a Dezembro de 2016.
 │       ├── 2016-11 - Diretório que contém os CSVs referentes a Novembro de 2016.
 │       ├── ...
@@ -24,10 +31,14 @@ O projeto contém dados referentes a:
 │   │   ├── JSON - Contém arquivos de configuração no formato JSON, usados pelo script merge_files_es.py.
 │   │   └── logstash - Contém arquivos de configuração para o logstash.
 │   │
+│   ├── travel_allowance - Contém arquivos de configuração de Servidores.
+│   │   └── logstash - Contém arquivos de configuração para o logstash.
+│   │
 │   └── expenses - Contém arquivos de configuração de Gastos.
 │       └── logstash - Contém arquivos de configuração para o logstash.
 │
 └── scripts - Contém scripts que auxiliam no projeto.
     ├── workers - Contém scripts para gerenciar dados de Servidores.
-    ├── expenses - Contém scripts para gerenciar dados de Gastos.
+    ├── travel_allowance - Contém scripts para gerenciar dados de Diárias de Viagens.
+    ├── expenses - Contém scripts para gerenciar dados de Pagamentos.
     └── curl - Contém scripts que auxiliam na utilização do curl.

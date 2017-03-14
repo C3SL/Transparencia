@@ -1,0 +1,7 @@
+The easiest way to insert travel allowance data is to use 'insert_travel_allowance.sh'.
+
+Script's input: Year and month from the data to be inserted, ElasticSearch's user and password.
+Example: ./insert_travel_allowance.sh 2016 10 myuser mypass
+Example 2: ./insert_travel_allowance.sh 2014 11 myuser mypass
+
+The other script's will be called by 'insert_travel_allowance.sh' correctly.

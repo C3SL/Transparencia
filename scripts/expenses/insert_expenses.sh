@@ -3,7 +3,7 @@
 # This script is the one that should be called to insert data from one month.
 
 # Input: Year, month and day from the data to be inserted, ElasticSearch's user and password. The day should be the last day of the month.
-# Example: ./insert_expenses.sh 2016 10 31 myuser mypass
+# Example: ./insert_expenses.sh 2016 10 myuser mypass
 # It has 4 steps:
 #   1- Download files and put them in the right location.
 #   2- Generate logstash config file via create_expenses_config.py.
@@ -11,12 +11,19 @@
 #   4- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_expenses.sh.
 # Output: The commands/scripts outputs.
 
-if [ "$#" -ne 5 ]; then
-	echo "Usage: $0 <year> <month> <day> <user> <password>"
-	echo "Example: $0 2016 12 31 myuser mypass"
+if [ "$#" -ne 4 ]; then
+	echo "Usage: $0 <year> <month> <user> <password>"
+	echo "Example: $0 2016 12 myuser mypass"
 	exit
 fi
 
+# Getting the Last day of this month (Using date 2016-05-15 as example):
+# First, get next month (201606).
+aux=$(date +%Y%m -d "$(date +%Y%m15) next month")
+# Append day 01 (20160601).
+temp=$(date -d "${aux}01")
+# Remove 1 day: 20160531, get only day: 31.
+day=$(date -d "$temp - 1 day" "+%d")
 
 ym=$1-$2
 dataPath="../../data/"
@@ -44,7 +51,7 @@ unzip $path$ym/${1}${2}_GastosDiretos.zip -d $path$ym/
 rm $path$ym/${1}${2}_GastosDiretos.zip
 
 # Step 2:
-./create_expenses_config.py $1 $2 $3 $4 $5
+./create_expenses_config.py $1 $2 $day $3 $4
 # Step 3:
 ./resume_expenses.sh ../../data/expenses/ ${1}-${2}
 # Step 4:

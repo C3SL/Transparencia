@@ -19,22 +19,21 @@ path=$1
 date=$2
 filter=$3
 
-echo "Processing data with args = ${path} and ${date}"
-
 input="${path}${date}_Cadastro.csv"
 output="${path}${date}_Cadastro_Ufpr_Unique.csv"
 
-columns="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42"
+if [ ! -d "${path}" ]; then
+    mkdir -p "${path}"
+fi
 
 # About this command:
-# - Sed wraps fields in double quotes.
+# - Sed wraps fields in double quotes. Its not needed anymore.
 # - Grep removes everyone that does not work in UFPR.
-# - Cut selects the important columns.
 # - Uniq removes repeated values.
 # - Tr removes null characters (ctrl + @).
 
 # Get data from all universities.
-# cat $input | egrep --binary-files=text "(UNIVERSIDADE FED*|Id_SERVIDOR_PORTAL	NOME)" | sed -e 's/"//g' -e 's/^\|$/"/g' -e 's/\t/"\t"/g' | tr -d '\000' > $output
+# cat $input | egrep --binary-files=text "(UNIVERSIDADE FED*)" | sed -e 's/"//g' -e 's/^\|$/"/g' -e 's/\t/"\t"/g' | tr -d '\000' > $output
 
 # Get only data from UFPR.
 cat $input | egrep --binary-files=text "$filter" | tr -d '\000' > $output

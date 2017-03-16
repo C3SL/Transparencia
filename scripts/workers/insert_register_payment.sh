@@ -25,20 +25,24 @@ fi
 ym=$1-$2
 dataPath="../../data/"
 path="../../data/workers/"
+configPath="../../configs/workers/"
 
 source config.sh
 
 # Check if Data and Workers directories already exist:
-if [ ! -d "$dataPath" ]; then
-	mkdir "$dataPath"
-fi
 if [ ! -d "$path" ]; then
-	mkdir "$path"
+	mkdir -p "$path"
+fi
+if [ ! -d "$configPath/json" ]; then
+	mkdir -p "$configPath/json"
+fi
+if [ ! -d "$configPath/logstash" ]; then
+	mkdir -p "$configPath/logstash"
 fi
 
 # Step 1:
 # Create directory to store files
-mkdir $path$ym
+mkdir -p $path$ym
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&d=C&consulta=Servidores'
@@ -55,11 +59,11 @@ day=$(ls $path$ym | grep -m 1 $1$2 | cut -c 7,8)
 
 # Step 2:
 # Create config files
-./create_config.py $1 $2 $day $index $host $3 $4
+./create_config.py $1 $2 "$day" "$index" "$host" $3 $4
 
 # Step 3:
 # Start processing
-./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json $filter
+./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json "$filter"
 
 # Step 4:
 # Insert data in ElasticSearch

@@ -28,17 +28,18 @@ day=$(date -d "$temp - 1 day" "+%d")
 ym=$1-$2
 dataPath="../../data/"
 path="../../data/expenses/"
+configPath="../../configs/expenses/logstash/"
 
-if [ ! -d "$dataPath" ]; then
-	mkdir "$dataPath"
-fi
 if [ ! -d "$path" ]; then
-	mkdir "$path"
+	mkdir -p "$path"
+fi
+if [ ! -d "$configPath" ]; then
+	mkdir -p "$configPath"
 fi
 
 # Step 1:
 # Create directory to store files
-mkdir $path$ym
+mkdir -p $path$ym
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=GastosDiretos'
@@ -50,12 +51,14 @@ unzip $path$ym/${1}${2}_GastosDiretos.zip -d $path$ym/
 # Remove zip file
 rm $path$ym/${1}${2}_GastosDiretos.zip
 
-source config.sh
+source ./config.sh
+
+echo $filter
 
 # Step 2:
 ./create_expenses_config.py $1 $2 $day $index $host $3 $4
 # Step 3:
-./resume_expenses.sh ../../data/expenses/ ${1}-${2} $filter
+./resume_expenses.sh ../../data/expenses/ ${1}-${2} "$filter"
 # Step 4:
 logstash -f ../../configs/expenses/logstash/config-${1}-${2} < ../../data/expenses/processed/${1}${2}.csv
 # Data inserted, we can now remove it.

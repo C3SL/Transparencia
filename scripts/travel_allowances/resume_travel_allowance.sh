@@ -19,10 +19,12 @@ if [ "$#" -ne 3 ]; then
 	exit
 fi
 
-echo "Processing data with args = $path and ${date}"
-
 input="${path}${date}/${dateWithoutHyphen}_Diarias.csv"
 output="${path}processed/${dateWithoutHyphen}.csv"
+
+if [ ! -d "${path}processsed" ]; then
+    mkdir -p "${path}processed"
+fi
 
 # About this command:
 # - Grep removes everyone that does not work in UFPR.

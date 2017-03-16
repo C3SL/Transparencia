@@ -21,10 +21,12 @@ filter=$3
 # dateWithoutHyphen example: 201611
 dateWithoutHyphen=${date//-}
 
-echo "Processing data with args = $path and ${date}"
-
 input="${path}${date}/${dateWithoutHyphen}_GastosDiretos.csv"
 output="${path}processed/${dateWithoutHyphen}.csv"
+
+if [ ! -d "${path}processsed" ]; then
+    mkdir -p "${path}processed"
+fi
 
 # About this command:
 # - Grep removes everyone that does not work in UFPR.

@@ -32,9 +32,6 @@ configPath="../../configs/travel_allowance/logstash/"
 
 source config.sh
 
-if [ ! -d "$dataPath" ]; then
-	mkdir "$dataPath"
-fi
 if [ ! -d "$path/processed" ]; then
 	mkdir -p "$path/processed"
 fi
@@ -44,7 +41,7 @@ fi
 
 # Step 1:
 # Create directory to store files
-mkdir $path$ym
+mkdir -p $path$ym
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
@@ -57,9 +54,9 @@ unzip $path$ym/${1}${2}_Diarias.zip -d $path$ym/
 rm $path$ym/${1}${2}_Diarias.zip
 
 # Step 2:
-./create_travel_allowance_config.py $1 $2 $day $index $host $3 $4
+./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" $3 $4
 # Step 3:
-./resume_travel_allowance.sh $path ${1}-${2} $filter
+./resume_travel_allowance.sh $path ${1}-${2} "$filter"
 # Step 4:
 logstash -f ../../configs/travel_allowance/logstash/config-${1}-${2} < ${path}processed/${1}${2}.csv
 

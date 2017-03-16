@@ -19,7 +19,7 @@ fi
 
 # Getting the Last day of this month (Using date 2016-05-15 as example):
 # First, get next month (201606).
-aux=$(date +%Y%m -d "$(date +%Y%m15) next month")
+aux=$(date +%Y%m -d "$(date +${1}${2}15) next month")
 # Append day 01 (20160601).
 temp=$(date -d "${aux}01")
 # Remove 1 day: 20160531, get only day: 31.
@@ -29,6 +29,8 @@ ym=$1-$2
 dataPath="../../data/"
 path="../../data/travel_allowance/"
 configPath="../../configs/travel_allowance/logstash/"
+
+source config.sh
 
 if [ ! -d "$dataPath" ]; then
 	mkdir "$dataPath"
@@ -55,8 +57,11 @@ unzip $path$ym/${1}${2}_Diarias.zip -d $path$ym/
 rm $path$ym/${1}${2}_Diarias.zip
 
 # Step 2:
-./create_travel_allowance_config.py $1 $2 $day $3 $4
+./create_travel_allowance_config.py $1 $2 $day $index $host $3 $4
 # Step 3:
-./resume_travel_allowance.sh $path ${1}-${2}
+./resume_travel_allowance.sh $path ${1}-${2} $filter
 # Step 4:
 logstash -f ../../configs/travel_allowance/logstash/config-${1}-${2} < ${path}processed/${1}${2}.csv
+
+# Remove processed file
+rm ${path}processed/${1}${2}.csv

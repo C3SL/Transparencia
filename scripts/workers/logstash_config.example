@@ -58,8 +58,8 @@ output {
 		action => "index"
 		user => "%(user)s"
 		password => "%(password)s"
-		hosts => "http://node1.c3sl.ufpr.br:9200"
-		index => "ufpr-servidores-%(date)s"
+		hosts => "http://$(host):9200"
+		index => "ufpr-$(index)s-%(date)s"
 		workers => 1
 	}
 	stdout {}

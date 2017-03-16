@@ -10,13 +10,14 @@
 # Output: CSV file named YearMonthDay_Cadastro_Ufpr_Unique.csv, in the $path folder.
 # Example of CSV location (using same parameters as input): ../../data/workers/2016-10/20161031_Cadastro_Ufpr_Unique.csv
 
-path=$1
-date=$2
-
-if [ "$#" -ne 2 ]; then
-	echo "Usage: $0 <path> <date>"
+if [ "$#" -ne 3 ]; then
+	echo "Usage: $0 <path> <date> <filter>"
 	exit
 fi
+
+path=$1
+date=$2
+filter=$3
 
 echo "Processing data with args = ${path} and ${date}"
 
@@ -36,4 +37,4 @@ columns="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27
 # cat $input | egrep --binary-files=text "(UNIVERSIDADE FED*|Id_SERVIDOR_PORTAL	NOME)" | sed -e 's/"//g' -e 's/^\|$/"/g' -e 's/\t/"\t"/g' | tr -d '\000' > $output
 
 # Get only data from UFPR.
-cat $input | egrep --binary-files=text "(UNIVERSIDADE FEDERAL DO PARANA|Id_SERVIDOR_PORTAL	NOME)" | tr -d '\000' > $output
+cat $input | egrep --binary-files=text "$filter" | tr -d '\000' > $output

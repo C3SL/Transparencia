@@ -22,8 +22,8 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
-if len(sys.argv) != 2:
-    print("Usage: " + sys.argv[0] + " <config.json>")
+if len(sys.argv) != 3:
+    print("Usage: " + sys.argv[0] + " <config.json> <filter>")
     sys.exit()
 
 with open(sys.argv[1]) as f:
@@ -48,7 +48,7 @@ title1 = csv_1.pop(0)
 file_exists = Path(file2)
 if not file_exists.is_file():
 	print("File2 does not exist. Calling script resume_register to create it...")
-	call(["./resume_register.sh " +  params['path'] + " " + params['date']], shell=True)
+	call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + sys.argv[2]], shell=True)
 
 with open(file2, newline='', encoding='Windows-1252') as f:
     csv_2 = [ i for i in csv.reader(f, 'dialect') ]

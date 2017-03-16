@@ -26,6 +26,8 @@ ym=$1-$2
 dataPath="../../data/"
 path="../../data/workers/"
 
+source config.sh
+
 # Check if Data and Workers directories already exist:
 if [ ! -d "$dataPath" ]; then
 	mkdir "$dataPath"
@@ -51,15 +53,17 @@ rm $path$ym/${1}${2}_Servidores.zip
 # Get day
 day=$(ls $path$ym | grep -m 1 $1$2 | cut -c 7,8)
 
-
 # Step 2:
 # Create config files
-./create_config.py $1 $2 $day $3 $4
+./create_config.py $1 $2 $day $index $host $3 $4
 
 # Step 3:
 # Start processing
-./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json
+./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json $filter
 
 # Step 4:
 # Insert data in ElasticSearch
 logstash -f ../../configs/workers/logstash/config-${1}-${2} < ../../data/workers/processed/${1}${2}.csv
+
+# Remove data
+rm ../../data/workers/processed/${1}${2}.csv

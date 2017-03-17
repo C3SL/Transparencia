@@ -45,20 +45,25 @@ mkdir -p $path$ym
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
-curl -o $path$ym/${1}${2}_Diarias.zip $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed
+curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path$ym/${1}${2}_Diarias.zip
 
 # Unzip them
-unzip $path$ym/${1}${2}_Diarias.zip -d $path$ym/
+unzip -o $path$ym/${1}${2}_Diarias.zip -d $path$ym/
 
 # Remove zip file
 rm $path$ym/${1}${2}_Diarias.zip
 
-# Step 2:
-./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" $3 $4
-# Step 3:
-./resume_travel_allowance.sh $path ${1}-${2} "$filter"
-# Step 4:
-logstash -f ../../configs/travel_allowance/logstash/config-${1}-${2} < ${path}processed/${1}${2}.csv
+length=${#filter[@]}
 
-# Remove processed file
-rm ${path}processed/${1}${2}.csv
+for (( i=0; i<${length}; i++ ));
+do
+    # Step 2:
+    ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "${university[$i]}" $3 $4
+    # Step 3:
+    echo "${filter[$i]}"
+    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$i]}"
+    # Step 4:
+    logstash -f ../../configs/travel_allowance/logstash/config-${1}-${2} < ${path}processed/${1}${2}.csv
+    # Remove processed file
+    rm ${path}processed/${1}${2}.csv
+done

@@ -32,5 +32,4 @@ fi
 # - Grep removes everyone that does not work in UFPR.
 # - Tr removes null characters (ctrl + @).
 
-cat $input | egrep --binary-files=text "$filter" | tr -d '\000' > $output
-rm $input
+cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"

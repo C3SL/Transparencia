@@ -13,6 +13,7 @@ path=$1
 date=$2
 # dateWithoutHyphen example: 201611
 dateWithoutHyphen=${date//-}
+filter=$3
 
 if [ "$#" -ne 3 ]; then
 	echo "Usage: $0 <path> <date> <filter>"
@@ -30,4 +31,4 @@ fi
 # - Grep removes everyone that does not work in UFPR.
 # - Tr removes null characters (ctrl + @).
 
-cat $input | egrep --binary-files=text "$filter" | tr -d '\000' > $output
+cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"

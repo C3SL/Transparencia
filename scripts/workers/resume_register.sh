@@ -20,7 +20,7 @@ date=$2
 filter=$3
 
 input="${path}${date}_Cadastro.csv"
-output="${path}${date}_Cadastro_Ufpr_Unique.csv"
+output="${path}${date}_Cadastro_Unique.csv"
 
 if [ ! -d "${path}" ]; then
     mkdir -p "${path}"
@@ -35,5 +35,7 @@ fi
 # Get data from all universities.
 # cat $input | egrep --binary-files=text "(UNIVERSIDADE FED*)" | sed -e 's/"//g' -e 's/^\|$/"/g' -e 's/\t/"\t"/g' | tr -d '\000' > $output
 
+echo $filter
+
 # Get only data from UFPR.
-cat $input | egrep --binary-files=text "$filter" | tr -d '\000' > $output
+cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"

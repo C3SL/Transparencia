@@ -59,7 +59,7 @@ output {
 		user => "%(user)s"
 		password => "%(password)s"
 		hosts => "http://$(host)s:9200"
-		index => "ufpr-%(index)s-%(date)s"
+		index => "%(index)s-%(university)s-%(date)s"
 		workers => 1
 	}
 	stdout {}

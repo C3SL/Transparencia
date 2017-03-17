@@ -2,7 +2,7 @@
 	"path": "Dados_Servidores/2016-10/"
 	, "date": "20161031"
     , "file1" : "_Remuneracao.csv"
-    , "file2" : "_Cadastro_Ufpr_Unique.csv"
+    , "file2" : "_Cadastro_Unique.csv"
     , "idColumn1" : 2
     , "idColumn2" : 0
 	, "quotechar": "\""

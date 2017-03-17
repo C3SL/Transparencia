@@ -4,15 +4,12 @@
 
 index="gastos-diarias"
 
-# Filter: The string that will be used on 'egrep' to filter data to get only relevant universities.
-# Ex: Getting only UFPR:
-# filter="UNIVERSIDADE FEDERAL DO PARANA"
-# Getting UFPR and UFMG:
-# filter="UNIVERSIDADE FEDERAL DO PARANA|UNIVERSIDADE FEDERAL DE MINAS GERAIS"
-# Getting all universities:
-# filter="UNIVERSIDADE FEDERAL*"
+# Filter: An array of strings that will be used on 'egrep' to filter data to get only relevant universities.
+# University: An array of initials, corresponding to Filter.
+# Warning: Filter's length must be the same as university's!!
 
-filter="UNIVERSIDADE FEDERAL DO PARANA|UNIVERSIDADE FEDERAL DE MINAS GERAIS|UNIVERSIDADE FEDERAL DE SANTA CATARINA|UNIVERSIDADE FEDERAL DE PERNAMBUCO|UNIVERSIDADE FEDERAL DE SANTA MARIA"
+filter=("UNIVERSIDADE FEDERAL DO PARANA" "UNIVERSIDADE FEDERAL DE MINAS GERAIS" "UNIVERSIDADE FEDERAL DE SANTA CATARINA" "UNIVERSIDADE FEDERAL DE PERNAMBUCO" "UNIVERSIDADE FEDERAL DE SANTA MARIA")
+university=("ufpr" "ufmg" "ufsc" "ufpe" "ufsm")
 
 # Host: ElasticSearch's host. Examples: "localhost"
 

@@ -17,6 +17,25 @@ if [ "$#" -ne 4 ]; then
 	exit
 fi
 
+source ./config.sh
+
+if [ -z ${index+x} ]; then
+    echo "Var 'index' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    exit;
+fi
+if [ -z ${host+x} ]; then
+    echo "Var 'host' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    exit;
+fi
+if [ -z ${filter+x} ]; then
+    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    exit;
+fi
+if [ -z ${university+x} ]; then
+    echo "Var 'university' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    exit;
+fi
+
 # Getting the Last day of this month (Using date 2016-05-15 as example):
 # First, get next month (201606).
 aux=$(date +%Y%m -d "$(date +${1}${2}15) next month")
@@ -50,8 +69,6 @@ unzip -o $path$ym/${1}${2}_GastosDiretos.zip -d $path$ym/
 
 # Remove zip file
 rm $path$ym/${1}${2}_GastosDiretos.zip
-
-source ./config.sh
 
 length=${#filter[@]}
 

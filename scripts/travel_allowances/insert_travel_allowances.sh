@@ -17,6 +17,25 @@ if [ "$#" -ne 4 ]; then
 	exit
 fi
 
+source config.sh
+
+if [ -z ${index+x} ]; then
+    echo "Var 'index' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    exit;
+fi
+if [ -z ${host+x} ]; then
+    echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    exit;
+fi
+if [ -z ${filter+x} ]; then
+    echo "Var 'filter' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    exit;
+fi
+if [ -z ${university+x} ]; then
+    echo "Var 'university' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    exit;
+fi
+
 # Getting the Last day of this month (Using date 2016-05-15 as example):
 # First, get next month (201606).
 aux=$(date +%Y%m -d "$(date +${1}${2}15) next month")
@@ -29,8 +48,6 @@ ym=$1-$2
 dataPath="../../data/"
 path="../../data/travel_allowance/"
 configPath="../../configs/travel_allowance/logstash/"
-
-source config.sh
 
 if [ ! -d "$path/processed" ]; then
 	mkdir -p "$path/processed"

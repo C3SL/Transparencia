@@ -22,12 +22,29 @@ if [ "$#" -ne 4 ]; then
 	exit
 fi
 
+source config.sh
+
+if [ -z ${index+x} ]; then
+    echo "Var 'index' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+if [ -z ${host+x} ]; then
+    echo "Var 'host' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+if [ -z ${filter+x} ]; then
+    echo "Var 'filter' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+if [ -z ${university+x} ]; then
+    echo "Var 'university' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+
 ym=$1-$2
 dataPath="../../data/"
 path="../../data/workers/"
 configPath="../../configs/workers/"
-
-source config.sh
 
 # Check if Data and Workers directories already exist:
 if [ ! -d "$path" ]; then

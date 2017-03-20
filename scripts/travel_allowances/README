@@ -1,6 +1,12 @@
 The easiest way to insert travel allowance data is to use 'insert_travel_allowance.sh'.
 
 Script's input: Year and month from the data to be inserted, ElasticSearch's user and password.
+The script also uses a config file named 'config.sh'. This is a small shell script that need to only declare some variables: index, host, filter and universities:
+- Index: The index prefix to be saved on ElasticSearch.
+- Host: The hostname of the machine runnning ElasticSearch.
+- Filter: An array of n values, that will create n indexes in ElasticSearch, each one filtering data from Portal Transparencia using its corresponding string. Ex: "UNIVERSIDADE FEDERAL DO PARANA"
+- University: An array of n values, with n being the same n as Filter's array. This array should contain the initials from Universities declared in Filter array, in the same order.
+
 Example: ./insert_travel_allowance.sh 2016 10 myuser mypass
 Example 2: ./insert_travel_allowance.sh 2014 11 myuser mypass
 

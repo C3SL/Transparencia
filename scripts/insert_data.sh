@@ -1,4 +1,11 @@
 # This script will call every script needed to insert data.
+# Parameters are the year and month from the data that will be inserted, and an elasticsearch username and password.
+# Also, scripts called by insert_data.sh use a config file, located in every subfolder and called 'config.sh'.
+# Those config files have some variables that have to be set:
+# - Index: The index prefix to be saved on ElasticSearch.
+# - Host: The hostname of the machine runnning ElasticSearch.
+# - Filter: An array of n values, that will create n indexes in ElasticSearch, each one filtering data from Portal Transparencia using its corresponding string. Ex: "UNIVERSIDADE FEDERAL DO PARANA"
+# - University: An array of n values, with n being the same n as Filter's array. This array should contain the initials from Universities declared in Filter array, in the same order.
 
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"

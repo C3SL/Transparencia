@@ -5,7 +5,7 @@
 index="gastos-pagamentos"
 
 # Filter: An array of strings that will be used on 'egrep' to filter data to get only relevant universities.
-# University: An array of initials, corresponding to Filter.
+# University: An array of initials, corresponding to Filter's array. They have to be in the same order!
 # Warning: Filter's length must be the same as university's!!
 
 filter=("UNIVERSIDADE FEDERAL DO PARANA" "UNIVERSIDADE FEDERAL DE MINAS GERAIS" "UNIVERSIDADE FEDERAL DE SANTA CATARINA" "UNIVERSIDADE FEDERAL DE PERNAMBUCO" "UNIVERSIDADE FEDERAL DE SANTA MARIA")

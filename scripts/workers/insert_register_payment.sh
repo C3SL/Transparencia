@@ -22,28 +22,52 @@ if [ "$#" -ne 4 ]; then
 	exit
 fi
 
+source config.sh
+
+if [ -z ${index+x} ]; then
+    echo "Var 'index' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+if [ -z ${host+x} ]; then
+    echo "Var 'host' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+if [ -z ${filter+x} ]; then
+    echo "Var 'filter' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+if [ -z ${university+x} ]; then
+    echo "Var 'university' is unset. Set it in file 'scripts/workers/config.sh'.";
+    exit;
+fi
+
 ym=$1-$2
 dataPath="../../data/"
 path="../../data/workers/"
+configPath="../../configs/workers/"
 
 # Check if Data and Workers directories already exist:
-if [ ! -d "$dataPath" ]; then
-	mkdir "$dataPath"
-fi
 if [ ! -d "$path" ]; then
-	mkdir "$path"
+	mkdir -p "$path"
+fi
+if [ ! -d "$configPath/json" ]; then
+	mkdir -p "$configPath/json"
+fi
+if [ ! -d "$configPath/logstash" ]; then
+	mkdir -p "$configPath/logstash"
 fi
 
 # Step 1:
 # Create directory to store files
-mkdir $path$ym
+mkdir -p $path$ym
+mkdir -p ${path}processed/
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&d=C&consulta=Servidores'
-curl -o $path$ym/${1}${2}_Servidores.zip $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_    64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.portaldatranspar    encia.gov.br/downloads/servidores.asp' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBC    EEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed
+curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_    64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.portaldatranspar    encia.gov.br/downloads/servidores.asp' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBC    EEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path$ym/${1}${2}_Servidores.zip
 
 # Unzip them
-unzip $path$ym/${1}${2}_Servidores.zip -d $path$ym/
+unzip -o $path$ym/${1}${2}_Servidores.zip -d $path$ym/
 
 # Remove zip file
 rm $path$ym/${1}${2}_Servidores.zip
@@ -51,15 +75,26 @@ rm $path$ym/${1}${2}_Servidores.zip
 # Get day
 day=$(ls $path$ym | grep -m 1 $1$2 | cut -c 7,8)
 
+length=${#filter[@]}
 
-# Step 2:
-# Create config files
-./create_config.py $1 $2 $day $3 $4
+for (( i=0; i<${length}; i++ ));
+do
+    # Step 2:
+    # Create config files
+    ./create_config.py $1 $2 "$day" "$index" "$host" "${university[$i]}" $3 $4
 
-# Step 3:
-# Start processing
-./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json
+    # Step 3:
+    # Start processing
+    aux=$( echo "${filter[$i]}" | sed 's/ /\\ /g' )
+    ./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json "$aux"
+    echo "removing..."
+    rm $path$ym/${1}${2}${day}_Cadastro_Unique.csv
+    echo "success"
 
-# Step 4:
-# Insert data in ElasticSearch
-logstash -f ../../configs/workers/logstash/config-${1}-${2} < ../../data/workers/processed/${1}${2}.csv
+    # Step 4:
+    # Insert data in ElasticSearch
+    logstash -f ../../configs/workers/logstash/config-${1}-${2} < ../../data/workers/processed/${1}${2}.csv
+
+    # Remove data
+    #rm ../../data/workers/processed/${1}${2}.csv
+done

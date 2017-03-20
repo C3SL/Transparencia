@@ -41,8 +41,8 @@ output {
 		action => "index"
 		user => "%(user)s"
 		password => "%(password)s"
-		hosts => "localhost:9200"
-		index => "ufpr-gastos-pagamentos-%(date)s"
+		hosts => "http://%(host)s:9200"
+		index => "%(index)s-%(university)s-%(date)s"
 		workers => 1
 	}
 	stdout {}

@@ -13,21 +13,22 @@ path=$1
 date=$2
 # dateWithoutHyphen example: 201611
 dateWithoutHyphen=${date//-}
+filter=$3
 
-if [ "$#" -ne 2 ]; then
-	echo "Usage: $0 <path> <date>"
+if [ "$#" -ne 3 ]; then
+	echo "Usage: $0 <path> <date> <filter>"
 	exit
 fi
-
-echo "Processing data with args = $path and ${date}"
 
 input="${path}${date}/${dateWithoutHyphen}_Diarias.csv"
 output="${path}processed/${dateWithoutHyphen}.csv"
 
+if [ ! -d "${path}processsed" ]; then
+    mkdir -p "${path}processed"
+fi
+
 # About this command:
 # - Grep removes everyone that does not work in UFPR.
 # - Tr removes null characters (ctrl + @).
-# - Head -n1 gets first line (column names). Then, I append the data.
 
-head -n1 $input > $output
-cat $input | egrep --binary-files=text "UNIVERSIDADE FEDERAL DO PARANA" | tr -d '\000' >> $output
+cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"

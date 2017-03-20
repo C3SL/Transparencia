@@ -12,15 +12,15 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
-if len(sys.argv) != 6:
-    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <username> <password>")
+if len(sys.argv) != 9:
+    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <university> <username> <password>")
     sys.exit()
 
 data = {
 	"path": "../../data/workers/" + sys.argv[1] + "-" + sys.argv[2] + "/"
 	, "date": sys.argv[1] + sys.argv[2] + sys.argv[3]
 	, "file1": "_Remuneracao.csv"
-	, "file2": "_Cadastro_Ufpr_Unique.csv"
+	, "file2": "_Cadastro_Unique.csv"
 	, "idColumn1": 2
 	, "idColumn2": 0
 	, "quotechar": "\""
@@ -41,8 +41,11 @@ else:
 
 output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
 					 , "date": sys.argv[1] + '-' + sys.argv[2]
-					 , "user": sys.argv[4]
-					 , "password": sys.argv[5] }
+                     , "index": sys.argv[4]
+                     , "host": sys.argv[5]
+                     , "university": sys.argv[6]
+					 , "user": sys.argv[7]
+					 , "password": sys.argv[8] }
 
 with open('../../configs/workers/logstash/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
 	outfile.write(output)

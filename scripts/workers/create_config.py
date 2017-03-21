@@ -33,7 +33,7 @@ with open('../../configs/workers/json/config-' + sys.argv[1] + '-' + sys.argv[2]
     json.dump(data, outfile, indent=4, sort_keys=True)
 
 if int(sys.argv[1]) <= 2014 or (int(sys.argv[1]) == 2015 and int(sys.argv[2]) <= 3):
-	with open('logstash_config_2013.example') as infile:
+	with open('previous_logstash_config.example') as infile:
 		example = infile.read()
 else:
 	with open('logstash_config.example') as infile:

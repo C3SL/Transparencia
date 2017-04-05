@@ -23,4 +23,4 @@ fi
 (cd workers && ./insert_register_payment.sh $1 $2 $3 $4)
 
 # Last but not least, insert data from Health Ministry.
-(cd health_ministry && ./insert_health_ministry.sh $1 $2 $3 $4)
+(cd ministry_of_health && ./insert_ministry_of_health.sh $1 $2 $3 $4)

@@ -1,4 +1,4 @@
-The easiest way to insert health ministry data is to use 'insert_health_ministry.sh'.
+The easiest way to insert health ministry data is to use 'insert_ministry_of_health.sh'.
 
 Script's input: Year, month and day from the data to be inserted, ElasticSearch's user and password. The day should be the last day of the month.
 The script also uses a config file named 'config.sh'. This is a small shell script that need to only declare some variables: index, host and filter:
@@ -6,7 +6,7 @@ The script also uses a config file named 'config.sh'. This is a small shell scri
 - Host: The hostname of the machine runnning ElasticSearch.
 - Filter: A string that will be used to 'egrep' the data obtained from Portal Transparência.
 
-Example: ./insert_health_ministry.sh 2016 10 31 myuser mypass
-Example 2: ./insert_health_ministry.sh 2014 11 30 power ranger
+Example: ./insert_ministry_of_health.sh 2016 10 31 myuser mypass
+Example 2: ./insert_ministry_of_health.sh 2014 11 30 power ranger
 
-The other script's will be called by 'insert_health_ministry.sh' correctly.
+The other script's will be called by 'insert_ministry_of_health.sh' correctly.

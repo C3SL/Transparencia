@@ -21,3 +21,6 @@ fi
 
 # Now, insert Workers data.
 (cd workers && ./insert_register_payment.sh $1 $2 $3 $4)
+
+# Last but not least, insert data from Health Ministry.
+(cd health_ministry && ./insert_health_ministry.sh $1 $2 $3 $4)

@@ -3,12 +3,12 @@
 # This script is the one that should be called to insert data from one month.
 
 # Input: Year, month and day from the data to be inserted, ElasticSearch's user and password. The day should be the last day of the month.
-# Example: ./insert_health_ministry.sh 2016 10 myuser mypass
+# Example: ./insert_ministry_of_health.sh 2016 10 myuser mypass
 # It has 4 steps:
 #   1- Download files and put them in the right location.
-#   2- Generate logstash config file via create_health_ministry_config.py.
-#   3- Generate a CSV with only UFPR data via resume_health_ministry.sh, which is stored in ./tmp/year-month.csv
-#   4- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_health_ministry.sh.
+#   2- Generate logstash config file via create_ministry_of_health_config.py.
+#   3- Generate a CSV with only UFPR data via resume_ministry_of_health.sh, which is stored in ./tmp/year-month.csv
+#   4- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_ministry_of_health.sh.
 # Output: The commands/scripts outputs.
 
 if [ "$#" -ne 4 ]; then
@@ -20,15 +20,15 @@ fi
 source ./config.sh
 
 if [ -z ${index+x} ]; then
-    echo "Var 'index' is unset. Set it in file 'scripts/health_ministry/config.sh'.";
+    echo "Var 'index' is unset. Set it in file 'scripts/ministry_of_health/config.sh'.";
     exit;
 fi
 if [ -z ${host+x} ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/health_ministry/config.sh'.";
+    echo "Var 'host' is unset. Set it in file 'scripts/ministry_of_health/config.sh'.";
     exit;
 fi
 if [ -z ${filter+x} ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/health_ministry/config.sh'.";
+    echo "Var 'filter' is unset. Set it in file 'scripts/ministry_of_health/config.sh'.";
     exit;
 fi
 
@@ -61,9 +61,9 @@ unzip -o $path/${year}${month}_GastosDiretos.zip -d $path/
 rm $path/${year}${month}_GastosDiretos.zip
 
 # Step 2:
-./create_health_ministry_config.py $year $month "$day" "$index" "$host" $3 $4
+./create_ministry_of_health_config.py $year $month "$day" "$index" "$host" $3 $4
 # Step 3:
-./resume_health_ministry.sh "${path}" ${year}-${month} "$filter"
+./resume_ministry_of_health.sh "${path}" ${year}-${month} "$filter"
 # Step 4:
 logstash -f $path/config-${year}-${month} < $path/${year}${month}.csv
 

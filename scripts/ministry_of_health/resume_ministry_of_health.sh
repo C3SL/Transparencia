@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# WARNING: This script should not be called directly. Look at 'insert_health_ministry.sh' before calling this script.
+# WARNING: This script should not be called directly. Look at 'insert_ministry_of_health.sh' before calling this script.
 
 # Input: First parameter is the path to data files and the second one is the date in the name of the files. Data files can be found in: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos
-# Example: ./resume_health_ministry.sh ./tmp_2016-11 2016-11 "MINISTERIO DA SAUDE"
+# Example: ./resume_ministry_of_health.sh ./tmp_2016-11 2016-11 "MINISTERIO DA SAUDE"
 
-# Output: A CSV file in folder processed, filtering the data to get only relevant data (in our case, from UFPR).
+# Output: A CSV file in folder processed, filtering the data to get only relevant data (in our case, from MINISTERIO DA SAUDE).
 
 if [ "$#" -ne 3 ]; then
 	echo "Usage: $0 <path> <date> <filter>"

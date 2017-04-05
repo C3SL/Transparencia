@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# WARNING: This script should not be called directly. Look at 'insert_health_ministry.sh' before calling this script.
+# WARNING: This script should not be called directly. Look at 'insert_ministry_of_health.sh' before calling this script.
 
 # This script is used to create a Logstash Config file.
 

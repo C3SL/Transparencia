@@ -70,15 +70,13 @@ unzip -o $path$ym/${1}${2}_Diarias.zip -d $path$ym/
 # Remove zip file
 rm $path$ym/${1}${2}_Diarias.zip
 
-length=${#filter[@]}
-
-for (( i=0; i<${length}; i++ ));
+for key in "${!filter[@]}"
 do
     # Step 2:
-    ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "${university[$i]}" $3 $4
+    ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4
     # Step 3:
     echo "${filter[$i]}"
-    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$i]}"
+    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$key]}"
     # Step 4:
     logstash -f ../../configs/travel_allowance/logstash/config-${1}-${2} < ${path}processed/${1}${2}.csv
     # Remove processed file

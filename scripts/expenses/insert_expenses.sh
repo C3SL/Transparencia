@@ -19,6 +19,7 @@ fi
 
 source ./config.sh
 
+# Check if all variables in config file are set:
 if [ -z ${index+x} ]; then
     echo "Var 'index' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
@@ -27,12 +28,10 @@ if [ -z ${host+x} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
-if [ -z ${filter+x} ]; then
+
+size=${#filter[@]}
+if [ "$size" -lt 1 ]; then
     echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
-    exit;
-fi
-if [ -z ${university+x} ]; then
-    echo "Var 'university' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
 
@@ -70,14 +69,12 @@ unzip -o $path$ym/${1}${2}_GastosDiretos.zip -d $path$ym/
 # Remove zip file
 rm $path$ym/${1}${2}_GastosDiretos.zip
 
-length=${#filter[@]}
-
-for (( i=0; i<${length}; i++ ));
+for key in "${!filter[@]}"
 do
     # Step 2:
-    ./create_expenses_config.py $1 $2 "$day" "$index" "$host" "${university[$i]}" $3 $4
+    ./create_expenses_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4
     # Step 3:
-    ./resume_expenses.sh "${path}" ${1}-${2} "${filter[$i]}"
+    ./resume_expenses.sh "${path}" ${1}-${2} "${filter[$key]}"
     # Step 4:
     logstash -f ../../configs/expenses/logstash/config-${1}-${2} < ../../data/expenses/processed/${1}${2}.csv
     # Data inserted, we can now remove it.

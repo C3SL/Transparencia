@@ -37,8 +37,6 @@ file2 = params['path'] + params['date'] + params['file2']
 idPointColumn1 = params['idColumn1']
 idPointColumn2 = params['idColumn2']
 
-print("Reading files...")
-
 csv.register_dialect('dialect', lineterminator = params['lineterminator'], delimiter=params['delimiter'], quotechar=params['quotechar'])
 
 with open(file1, newline='', encoding='Windows-1252') as f:
@@ -102,9 +100,6 @@ for row2 in csv_2:
         newRow = getDataWithEmptyRow(columns1, row2)
         result.append(newRow)
         errors += 1
-
-#print("Number of rows in file 2 but not in file 1: " + str(errors))
-print("Saving data...")
 
 with open(params['outputFile'], 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter='\t')

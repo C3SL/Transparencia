@@ -75,26 +75,22 @@ rm $path$ym/${1}${2}_Servidores.zip
 # Get day
 day=$(ls $path$ym | grep -m 1 $1$2 | cut -c 7,8)
 
-length=${#filter[@]}
-
-for (( i=0; i<${length}; i++ ));
+for key in "${!filter[@]}"
 do
     # Step 2:
     # Create config files
-    ./create_config.py $1 $2 "$day" "$index" "$host" "${university[$i]}" $3 $4
+    ./create_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4
 
     # Step 3:
     # Start processing
-    aux=$( echo "${filter[$i]}" | sed 's/ /\\ /g' )
+    aux=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
     ./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json "$aux"
-    echo "removing..."
     rm $path$ym/${1}${2}${day}_Cadastro_Unique.csv
-    echo "success"
 
     # Step 4:
     # Insert data in ElasticSearch
     logstash -f ../../configs/workers/logstash/config-${1}-${2} < ../../data/workers/processed/${1}${2}.csv
 
     # Remove data
-    #rm ../../data/workers/processed/${1}${2}.csv
+    rm ../../data/workers/processed/${1}${2}.csv
 done

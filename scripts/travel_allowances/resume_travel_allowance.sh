@@ -28,7 +28,7 @@ if [ ! -d "${path}processsed" ]; then
 fi
 
 # About this command:
-# - Grep removes everyone that does not work in UFPR.
+# - Grep removes irrelevant data. -w option forces to match the whole word, to avoid "UNIVERSIDADE FEDERAL DO PARA" from matching with "UNIVERSIDADE FEDERAL DO PARANA"
 # - Tr removes null characters (ctrl + @).
 
-cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"
+cat "$input" | egrep -w --binary-files=text "$filter" | tr -d '\000' > "$output"

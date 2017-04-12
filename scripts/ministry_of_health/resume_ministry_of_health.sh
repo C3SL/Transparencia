@@ -25,7 +25,7 @@ input="${path}/${dateWithoutHyphen}_GastosDiretos.csv"
 output="${path}/${dateWithoutHyphen}.csv"
 
 # About this command:
-# - Grep removes unnecessary data.
+# - Grep removes everyone data thas is not from Ministerio da Saude.
 # - Tr removes null characters (ctrl + @).
 
-cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"
+cat "$input" | egrep -w --binary-files=text "$filter" | tr -d '\000' > "$output"

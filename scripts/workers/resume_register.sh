@@ -27,15 +27,8 @@ if [ ! -d "${path}" ]; then
 fi
 
 # About this command:
-# - Sed wraps fields in double quotes. Its not needed anymore.
-# - Grep removes everyone that does not work in UFPR.
-# - Uniq removes repeated values.
+# - Grep removes everyone that does not work in UFPR. -w option forces to match the whole word, to avoid "UNIVERSIDADE FEDERAL DO PARA" from matching with "UNIVERSIDADE FEDERAL DO PARANA"
 # - Tr removes null characters (ctrl + @).
 
-# Get data from all universities.
-# cat $input | egrep --binary-files=text "(UNIVERSIDADE FED*)" | sed -e 's/"//g' -e 's/^\|$/"/g' -e 's/\t/"\t"/g' | tr -d '\000' > $output
-
-echo $filter
-
 # Get only data from UFPR.
-cat "$input" | egrep --binary-files=text "$filter" | tr -d '\000' > "$output"
+cat "$input" | egrep -w --binary-files=text "$filter" | tr -d '\000' > "$output"

@@ -32,12 +32,9 @@ if [ -z ${host+x} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/workers/config.sh'.";
     exit;
 fi
-if [ -z ${filter+x} ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/workers/config.sh'.";
-    exit;
-fi
-if [ -z ${university+x} ]; then
-    echo "Var 'university' is unset. Set it in file 'scripts/workers/config.sh'.";
+size=${#filter[@]}
+if [ "$size" -lt 1 ]; then
+    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
 

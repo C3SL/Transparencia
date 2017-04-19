@@ -10,8 +10,8 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
-if len(sys.argv) != 9:
-    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <university> <username> <password>")
+if len(sys.argv) != 10:
+    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <entity> <username> <password> <path>")
     sys.exit()
 
 with open('logstash_config.example') as infile:
@@ -19,11 +19,11 @@ with open('logstash_config.example') as infile:
 
 output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
 					 , "date": sys.argv[1] + '-' + sys.argv[2]
-                     , "index": sys.argv[4]
+                     , "index": sys.argv[4] + '-' + sys.argv[6]
                      , "host": sys.argv[5]
-                     , "university": sys.argv[6]
 					 , "user": sys.argv[7]
 					 , "password": sys.argv[8] }
 
-with open('../../configs/expenses/logstash/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
+date = sys.argv[1] + '-' + sys.argv[2]
+with open(sys.argv[9] + '/config-' + date, 'w') as outfile:
 	outfile.write(output)

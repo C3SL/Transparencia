@@ -41,7 +41,7 @@ else:
 
 output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
 					 , "date": sys.argv[1] + '-' + sys.argv[2]
-                     , "index": sys.argv[4] + sys.argv[6]
+                     , "index": sys.argv[4] + '-' + sys.argv[6]
                      , "host": sys.argv[5]
 					 , "user": sys.argv[7]
 					 , "password": sys.argv[8] }

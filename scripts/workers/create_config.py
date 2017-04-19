@@ -12,12 +12,12 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
-if len(sys.argv) != 9:
-    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <university> <username> <password>")
+if len(sys.argv) != 10:
+    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <entity> <username> <password> <path>")
     sys.exit()
 
 data = {
-	"path": "../../data/workers/" + sys.argv[1] + "-" + sys.argv[2] + "/"
+	"path": sys.argv[9]
 	, "date": sys.argv[1] + sys.argv[2] + sys.argv[3]
 	, "file1": "_Remuneracao.csv"
 	, "file2": "_Cadastro_Unique.csv"
@@ -26,10 +26,10 @@ data = {
 	, "quotechar": "\""
 	, "delimiter": "\t"
 	, "lineterminator": "\n"
-	, "outputFile": "../../data/workers/processed/" + sys.argv[1] + sys.argv[2] + ".csv"
+	, "outputFile": sys.argv[9] + '/' + sys.argv[1] + sys.argv[2] + sys.argv[3] + ".csv"
 }
 
-with open('../../configs/workers/json/config-' + sys.argv[1] + '-' + sys.argv[2] + '.json', 'w') as outfile:
+with open(sys.argv[9] + '/config-' + sys.argv[1] + '-' + sys.argv[2] + '.json', 'w') as outfile:
     json.dump(data, outfile, indent=4, sort_keys=True)
 
 if int(sys.argv[1]) <= 2014 or (int(sys.argv[1]) == 2015 and int(sys.argv[2]) <= 3):
@@ -41,11 +41,10 @@ else:
 
 output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
 					 , "date": sys.argv[1] + '-' + sys.argv[2]
-                     , "index": sys.argv[4]
+                     , "index": sys.argv[4] + sys.argv[6]
                      , "host": sys.argv[5]
-                     , "university": sys.argv[6]
 					 , "user": sys.argv[7]
 					 , "password": sys.argv[8] }
 
-with open('../../configs/workers/logstash/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
+with open(sys.argv[9] + '/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
 	outfile.write(output)

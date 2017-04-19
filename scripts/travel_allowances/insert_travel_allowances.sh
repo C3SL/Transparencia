@@ -17,8 +17,9 @@ if [ "$#" -ne 4 ]; then
 	exit
 fi
 
-source config.sh
+source ./config.sh
 
+# Check if all variables in config file are set:
 if [ -z ${index+x} ]; then
     echo "Var 'index' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
     exit;
@@ -27,6 +28,7 @@ if [ -z ${host+x} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
     exit;
 fi
+
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
     echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
@@ -42,39 +44,34 @@ temp=$(date -d "${aux}01")
 day=$(date -d "$temp - 1 day" "+%d")
 
 ym=$1-$2
-dataPath="../../data/"
-path="../../data/travel_allowance/"
-configPath="../../configs/travel_allowance/logstash/"
-
-if [ ! -d "$path/processed" ]; then
-	mkdir -p "$path/processed"
-fi
-if [ ! -d "$configPath" ]; then
-	mkdir -p "$configPath"
-fi
+path="./tmp_$ym"
 
 # Step 1:
 # Create directory to store files
-mkdir -p $path$ym
+mkdir -p "$path"
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
-curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path$ym/${1}${2}_Diarias.zip
+curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path/${1}${2}_Diarias.zip
 
 # Unzip them
-unzip -o $path$ym/${1}${2}_Diarias.zip -d $path$ym/
+unzip -o $path/${1}${2}_Diarias.zip -d $path/
 
 # Remove zip file
-rm $path$ym/${1}${2}_Diarias.zip
+rm $path/${1}${2}_Diarias.zip
 
 for key in "${!filter[@]}"
 do
     # Step 2:
-    ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4
+    ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4 "${path}"
     # Step 3:
-    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$key]}"
+    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$key]}" "${columnId}"
     # Step 4:
-    logstash -f ../../configs/travel_allowance/logstash/config-${1}-${2} < ${path}processed/${1}${2}.csv
+    logstash -f ${path}/config-${1}-${2} < ${path}/${1}${2}.csv
     # Remove processed file
-    rm ${path}processed/${1}${2}.csv
+    rm ${path}/${1}${2}.csv
+    rm ${path}/config-${1}-${2}
 done
+
+rm $path/${1}${2}_Diarias.csv
+rmdir $path

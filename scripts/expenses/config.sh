@@ -2,51 +2,18 @@
 
 # Index prefix: The prefix of the index in elasticsearch. Ex: gastos
 
-index="mec-gastos-pagamentos"
+index="despesas-pagamentos"
 
-# Filter: An associative array that will be used on 'egrep' to filter data to get only relevant universities.
-# The key must be the university initials and the value should be the university name (equal to its name in Portal Transparencia's csv!).
+# ColumnId: The number of the column from the CSV that we will use to filter data.
+
+columnId=2
+
+# Filter: An associative array that will be used to filter data. The key should be the initials, and they will be used to generate the index name.
+# The value should be the same as in the CSV, since it will be used to match data.
 
 declare -A filter
 filter=(
-    [ufal]="UNIVERSIDADE FEDERAL DE ALAGOAS"
-    [ufba]="UNIVERSIDADE FEDERAL DA BAHIA"
-    [ufc]="UNIVERSIDADE FEDERAL DO CEARA"
-    [ufes]="UNIVERSIDADE FEDERAL DO ESPIRITO SANTO"
-    [ufg]="UNIVERSIDADE FEDERAL DE GOIAS"
-    [uff]="UNIVERSIDADE FEDERAL FLUMINENSE"
-    [ufjf]="UNIVERSIDADE FEDERAL DE JUIZ DE FORA"
-    [ufmg]="UNIVERSIDADE FEDERAL DE MINAS GERAIS"
-    [ufpa]="UNIVERSIDADE FEDERAL DO PARA"
-    [ufpb]="UNIVERSIDADE FEDERAL DA PARAIBA"
-    [ufpr]="UNIVERSIDADE FEDERAL DO PARANA"
-    [ufpe]="UNIVERSIDADE FEDERAL DE PERNAMBUCO"
-    [ufrn]="UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE"
-    [ufrgs]="UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL"
-    [ufrj]="UNIVERSIDADE FEDERAL DO RIO DE JANEIRO"
-    [ufsc]="UNIVERSIDADE FEDERAL DE SANTA CATARINA"
-    [ufsm]="UNIVERSIDADE FEDERAL DE SANTA MARIA"
-    [ufrpe]="UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO"
-    [ufrrj]="UNIVERSIDADE FEDERAL RURAL DO RIO DE JANEIRO"
-    [ufrr]="UNIVERSIDADE FEDERAL DE RORAIMA"
-    [ufcg]="UNIVERSIDADE FEDERAL DE CAMPINA GRANDE"
-    [ufra]="UNIVERSIDADE FEDERAL RURAL DA AMAZONIA"
-    [uftm]="UNIVERSIDADE FEDERAL DO TRIANGULO MINEIRO"
-    [ufvjm]="UNIVERSIDADE FED.VALES JEQUITINHONHA E MUCURI"
-    [utfpr]="UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA"
-    [unifal]="UNIVERSIDADE FEDERAL DE ALFENAS"
-    [unifei]="UNIVERSIDADE FEDERAL DE ITAJUBA - MG"
-    [unifesp]="UNIVERSIDADE FEDERAL DE SÃO PAULO"
-    [ufla]="UNIVERSIDADE FEDERAL DE LAVRAS"
-    [ufersa]="UNIVERSIDADE FEDERAL RURAL DO SEMI-ARIDO"
-    [unirio]="UNIVERSIDADE FEDERAL DO ESTADO RIO DE JANEIRO"
-    [furg]="UNIVERSIDADE FEDERAL DO RIO GRANDE - FURG"
-    [ufrb]="UNIVERSIDADE FEDERAL DO RECONCAVO DA BAHIA"
-    [uffs]="UNIVERSIDADE FEDERAL DA FRONTEIRA SUL"
-    [ufopa]="UNIVERSIDADE FEDERAL DO OESTE DO PARA"
-    [ufob]="UNIVERSIDADE FEDERAL DO OESTE DA BAHIA - UFOB"
-    [ufca]="UNIVERSIDADE FEDERAL DO CARIRI - UFCA"
-    [ufsb]="UNIVERSIDADE FEDERAL DO SUL DA BAHIA - UFESBA"
+    [mec]="MINISTERIO DA EDUCACAO"
 )
 
 # Host: ElasticSearch's host. Ex: "localhost"

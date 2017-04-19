@@ -1,7 +1,5 @@
 #!/bin/bash
 
-input="201612_GastosDiretos.csv"
-
 if [ "$#" -ne 4 ]; then
     echo "Usage $0 <path> <date> <filter> <column-id>"
     echo "Example: $0 ./tmp_201612 201612 MEC 2"

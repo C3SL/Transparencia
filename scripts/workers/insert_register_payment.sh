@@ -22,7 +22,7 @@ if [ "$#" -ne 4 ]; then
 	exit
 fi
 
-source config.sh
+source ./config.sh
 
 if [ -z ${index+x} ]; then
     echo "Var 'index' is unset. Set it in file 'scripts/workers/config.sh'.";
@@ -32,65 +32,63 @@ if [ -z ${host+x} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/workers/config.sh'.";
     exit;
 fi
-if [ -z ${filter+x} ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/workers/config.sh'.";
+if [ -z ${columnName+x} ]; then
+    echo "Var 'columnName' is unset. Set it in file 'scripts/workers/config.sh'.";
     exit;
 fi
-if [ -z ${university+x} ]; then
-    echo "Var 'university' is unset. Set it in file 'scripts/workers/config.sh'.";
+
+size=${#filter[@]}
+if [ "$size" -lt 1 ]; then
+    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
 
 ym=$1-$2
-dataPath="../../data/"
-path="../../data/workers/"
-configPath="../../configs/workers/"
-
-# Check if Data and Workers directories already exist:
-if [ ! -d "$path" ]; then
-	mkdir -p "$path"
-fi
-if [ ! -d "$configPath/json" ]; then
-	mkdir -p "$configPath/json"
-fi
-if [ ! -d "$configPath/logstash" ]; then
-	mkdir -p "$configPath/logstash"
-fi
+path="./tmp_$ym"
 
 # Step 1:
 # Create directory to store files
-mkdir -p $path$ym
-mkdir -p ${path}processed/
+mkdir -p "$path"
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&d=C&consulta=Servidores'
-curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_    64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.portaldatranspar    encia.gov.br/downloads/servidores.asp' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBC    EEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path$ym/${1}${2}_Servidores.zip
+curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_    64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.portaldatranspar    encia.gov.br/downloads/servidores.asp' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBC    EEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path/${1}${2}_Servidores.zip
 
 # Unzip them
-unzip -o $path$ym/${1}${2}_Servidores.zip -d $path$ym/
+unzip -o $path/${1}${2}_Servidores.zip -d $path/
 
 # Remove zip file
-rm $path$ym/${1}${2}_Servidores.zip
+rm $path/${1}${2}_Servidores.zip
 
 # Get day
-day=$(ls $path$ym | grep -m 1 $1$2 | cut -c 7,8)
+day=$(ls $path | grep -m 1 $1$2 | cut -c 7,8)
 
 for key in "${!filter[@]}"
 do
     # Step 2:
     # Create config files
-    ./create_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4
+    ./create_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4 "${path}"
 
     # Step 3:
     # Start processing
     aux=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
-    ./merge_files_es.py ../../configs/workers/json/config-${1}-${2}.json "$aux"
-    rm $path$ym/${1}${2}${day}_Cadastro_Unique.csv
+    ./merge_files_es.py $path/config-${1}-${2}.json "$aux" "${columnName}"
+    rm $path/${1}${2}${day}_Cadastro_Unique.csv
 
     # Step 4:
     # Insert data in ElasticSearch
-    logstash -f ../../configs/workers/logstash/config-${1}-${2} < ../../data/workers/processed/${1}${2}.csv
+    logstash -f $path/config-${1}-${2} < $path/${1}${2}${day}.csv
 
     # Remove data
-    rm ../../data/workers/processed/${1}${2}.csv
+    rm -f $path/config-${1}-${2}
+    rm -f $path/config-${1}-${2}.json
+    rm -f $path/${1}${2}${day}.csv
 done
+
+rm -f $path/${1}${2}${day}_Afastamentos.csv
+rm -f $path/${1}${2}${day}_Cadastro.csv
+rm -f $path/${1}${2}${day}_Honorarios\(Jetons\).csv
+rm -f $path/${1}${2}${day}_Jetom.csv
+rm -f $path/${1}${2}${day}_Observacoes.csv
+rm -f $path/${1}${2}${day}_Remuneracao.csv
+rmdir $path

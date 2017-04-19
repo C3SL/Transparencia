@@ -1,5 +1,5 @@
 {
-	"path": "Dados_Servidores/2016-10/"
+	"path": "tmp_2016-10/"
 	, "date": "20161031"
     , "file1" : "_Remuneracao.csv"
     , "file2" : "_Cadastro_Unique.csv"
@@ -8,5 +8,5 @@
 	, "quotechar": "\""
     , "delimiter": "\t"
     , "lineterminator": "\n"
-    , "outputFile": "Dados_Servidores/Processados/201610.csv"
+    , "outputFile": "tmp_/201610.csv"
 }

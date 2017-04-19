@@ -22,16 +22,16 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
-if len(sys.argv) != 3:
-    print("Usage: " + sys.argv[0] + " <config.json> <filter>")
+if len(sys.argv) != 4:
+    print("Usage: " + sys.argv[0] + " <config.json> <filter> <columnId>")
     sys.exit()
 
 with open(sys.argv[1]) as f:
     params = json.load(f)
 
 # Which files should be merged?
-file1 = params['path'] + params['date'] + params['file1']
-file2 = params['path'] + params['date'] + params['file2']
+file1 = params['path'] + '/' + params['date'] + params['file1']
+file2 = params['path'] + '/' + params['date'] + params['file2']
 
 # Which column in each file contains the common column?
 idPointColumn1 = params['idColumn1']
@@ -46,7 +46,7 @@ title1 = csv_1.pop(0)
 file_exists = Path(file2)
 if not file_exists.is_file():
 	print("File2 does not exist. Calling script resume_register to create it...")
-	call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + sys.argv[2]], shell=True)
+	call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + sys.argv[2] + " " + sys.argv[3]], shell=True)
 
 with open(file2, newline='', encoding='Windows-1252') as f:
     csv_2 = [ i for i in csv.reader(f, 'dialect') ]

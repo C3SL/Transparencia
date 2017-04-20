@@ -4,9 +4,9 @@
 
 index="despesas-pagamentos"
 
-# ColumnId: The number of the column from the CSV that we will use to filter data.
+# Column Name: The name of the column we will use to filter data.
 
-columnId=2
+columnName="Nome Órgão Superior"
 
 # Filter: An associative array that will be used to filter data. The key should be the initials, and they will be used to generate the index name.
 # The value should be the same as in the CSV, since it will be used to match data.

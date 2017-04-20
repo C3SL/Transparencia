@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 4 ]; then
-    echo "Usage $0 <path> <date> <filter> <column-id>"
+    echo "Usage $0 <path> <date> <filter> <column-name>"
     echo "Example: $0 ./tmp_201612 201612 MEC 2"
     exit
 fi
@@ -9,14 +9,17 @@ fi
 path=$1
 date=$2
 filter=$3
-columnId=$4
-
 dateWithoutHyphen=${date//-}
-cmd="\$$columnId == \"${filter}\""
 
-# Input will probably look like: ./tmp_201612/201612_GastosDiretos.csv
 input="${path}/${dateWithoutHyphen}_Diarias.csv"
-# Output will probably look like: ./tmp_201612/201612.csv
 output="${path}/${dateWithoutHyphen}.csv"
+
+head -n1 ${input} > $path/header.csv
+iconv -f WINDOWS-1252 -t UTF-8 -o $path/tmp.csv $path/header.csv
+columnId=$(sed s/${4}.*$/${4}/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
+columnId=`expr $columnId + 1`
+rm -f $path/tmp.csv $path/header.csv
+
+cmd="\$$columnId == \"${filter}\""
 
 cat "${input}" | awk -F $'\t' "$cmd" > "$output"

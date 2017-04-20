@@ -28,6 +28,10 @@ if [ -z ${host+x} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
     exit;
 fi
+if [ -z ${columnName+x} ]; then
+    echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    exit;
+fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
@@ -65,7 +69,7 @@ do
     # Step 2:
     ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4 "${path}"
     # Step 3:
-    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$key]}" "${columnId}"
+    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$key]}" "${columnName}"
     # Step 4:
     logstash -f ${path}/config-${1}-${2} < ${path}/${1}${2}.csv
     # Remove processed file

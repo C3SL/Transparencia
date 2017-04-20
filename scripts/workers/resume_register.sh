@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# WARNING: This script should not be called if you dont know what you're doing! Look for 'merge_files_es.py'.
-
-input="${path}${date}_Cadastro.csv"
-output="${path}${date}_Cadastro_Unique.csv"
-
 if [ "$#" -ne 4 ]; then
     echo "Usage $0 <path> <date> <filter> <column-name>"
     echo "Example: $0 ./tmp_201612 201612 MEC 2"

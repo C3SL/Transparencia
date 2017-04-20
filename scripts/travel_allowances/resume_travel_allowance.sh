@@ -16,10 +16,13 @@ output="${path}/${dateWithoutHyphen}.csv"
 
 head -n1 ${input} > $path/header.csv
 iconv -f WINDOWS-1252 -t UTF-8 -o $path/tmp.csv $path/header.csv
-columnId=$(sed s/${4}.*$/${4}/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
-columnId=`expr $columnId + 1`
+columnId=$(sed s/"${4}".*$/"${4}"/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
 rm -f $path/tmp.csv $path/header.csv
 
 cmd="\$$columnId == \"${filter}\""
+
+# Print selected column's name:
+# cmd2="{ print \$$columnId }"
+# head -n1 "${input}" | awk -F $'\t' "$cmd2"
 
 cat "${input}" | awk -F $'\t' "$cmd" > "$output"

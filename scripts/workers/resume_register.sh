@@ -20,5 +20,4 @@ columnId=`expr $columnId + 1`
 rm -f $path/tmp.csv $path/header.csv
 
 cmd="\$$columnId == \"${filter}\""
-
-cat "${input}" | awk -F $'\t' "$cmd" | tr -d '\000' > "$output"
+cat "${input}" | tr -d '\000' | awk -F $'\t' "$cmd" > "$output"

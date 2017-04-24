@@ -20,9 +20,4 @@ columnId=$(sed s/"${4}".*$/"${4}"/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
 rm -f $path/tmp.csv $path/header.csv
 
 cmd="\$$columnId == \"${filter}\""
-
-# Print selected column's name:
-# cmd2="{ print \$$columnId }"
-# head -n1 "${input}" | awk -F $'\t' "$cmd2"
-
-cat "${input}" | awk -F $'\t' "$cmd" > "$output"
+cat "${input}" | tr -d '\000' | awk -F $'\t' "$cmd" > "$output"

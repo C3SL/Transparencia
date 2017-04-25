@@ -10,7 +10,6 @@
 
 # Input: Year, Month from CSV file, ElasticSearch's user and password.
 # Example (inserting data from file 20130930_Cadastro.csv): ./insert_register_payment.sh 2013 09 myuser mypassword
-# If you want to look at more examples, check add_registers.sh.
 
 # Output: The same output as the scripts and commands called.
 

@@ -8,6 +8,5 @@ The script also uses a config file named 'config.sh'. This is a small shell scri
 - University: An array of n values, with n being the same n as Filter's array. This array should contain the initials from Universities declared in Filter array, in the same order.
 
 Example (inserting data from file 20130930_Cadastro.csv): ./insert_register_payment.sh 2013 09 myuser mypassword
-If you want to look at more examples, check add_registers.sh.
 
 The other script's will be called by 'insert_register_payment.sh' correctly.

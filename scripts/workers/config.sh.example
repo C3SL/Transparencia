@@ -1,3 +1,5 @@
+# WARNING: This is only an example file. You should copy it and rename to 'config.sh' in the same directory as this file, and then apply your modifications.
+
 # This file only contains some config variables:
 
 # Index prefix: The prefix of the index in elasticsearch. Ex: gastos

@@ -31,9 +31,3 @@ if [[ "$5" == "all" || "$5" == "workers" ]]; then
     echo "Inserting Workers from ${1}-${2}..."
     (cd workers && ./insert_register_payment.sh $1 $2 $3 $4)
 fi
-
-if [[ "$5" == "all" || "$5" == "ministry_of_health" ]]; then
-    # Last but not least, insert data from Health Ministry.
-    echo "Inserting data from Ministry Of Health from ${1}-${2}..."
-    (cd ministry_of_health && ./insert_ministry_of_health.sh $1 $2 $3 $4)
-fi

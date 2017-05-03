@@ -12,12 +12,12 @@ filter=$3
 dateWithoutHyphen=${date//-}
 
 input="${path}/${dateWithoutHyphen}_GastosDiretos.csv"
-output="${path}/${dateWithoutHyphen}.csv"
+output="${path}/${dateWithoutHyphen}_GastosDiretosFiltered.csv"
 
-head -n1 ${input} > $path/header.csv
-iconv -f WINDOWS-1252 -t UTF-8 -o $path/tmp.csv $path/header.csv
+head -n1 "${input}" > "$output"
+iconv -f WINDOWS-1252 -t UTF-8 -o $path/tmp.csv "$output"
 columnId=$(sed s/"${4}".*$/"${4}"/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
-rm -f $path/tmp.csv $path/header.csv
+rm -f $path/tmp.csv
 
 cmd="\$$columnId == \"${filter}\""
-cat "${input}" | tr -d '\000' | awk -F $'\t' "$cmd" > "$output"
+cat "${input}" | tr -d '\000' | awk -F $'\t' "$cmd" >> "$output"

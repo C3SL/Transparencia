@@ -4,7 +4,7 @@ input {
 
 filter {
 	csv {
-        columns => ["Código Órgão Superior","Nome Órgão Superior","Código Órgão","Nome Órgao","Código Unidade Gestora","Nome Unidade Gestora","Código Grupo Despesa","Nome Grupo Despesa","Código Elemento Despesa","Nome Elemento Despesa","Código Função","Nome Função","Código Subfunção","Nome Subfunção","Código Programa","Nome Programa","Código Ação","Nome Ação","Linguagem Cidadã","Código Favorecido","Nome Favorecido","Número Documento","Gestão Pagamento","Data Pagamento","Valor","Código CNAE","Código Natureza Jurídica","Código Seção","Descrição Seção","Descrição Subclasse"]
+        columns => ["Código Órgão Superior","Nome Órgão Superior","Código Órgão","Nome Órgao","Código Unidade Gestora","Nome Unidade Gestora","Código Grupo Despesa","Nome Grupo Despesa","Código Elemento Despesa","Nome Elemento Despesa","Código Função","Nome Função","Código Subfunção","Nome Subfunção","Código Programa","Nome Programa","Código Ação","Nome Ação","Linguagem Cidadã","Código Favorecido","Nome Favorecido","Número Documento","Gestão Pagamento","Data Pagamento","Valor","Código CNAE","Código Natureza Jurídica","Descrição Seção","Descrição Subclasse","Descrição Natureza Jurídica"]
 		separator => "	"
 		add_field => { "timestamp" => "%(timestamp)s" }
 	}
@@ -19,9 +19,10 @@ filter {
 		convert => { "Código Programa" => "integer" }
 		convert => { "Código Ação" => "integer" }
 		convert => { "Código Favorecido" => "integer" }
-		convert => { "Código CNAE" => "integer" }
 		convert => { "Gestão Pagamento" => "integer" }
 		convert => { "Valor" => "float" }
+		convert => { "Código CNAE" => "integer" }
+		convert => { "Código Natureza Jurídica" => "integer" }
 	}
 	date {
 		match => [ "timestamp", "dd/MM/YYYY HH:mm:ss", "ISO8601" ]

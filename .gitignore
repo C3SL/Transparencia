@@ -2,3 +2,4 @@ data
 configs
 *.swp
 *.swo
+*config.sh

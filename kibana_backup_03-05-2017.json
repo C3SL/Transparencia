@@ -1,0 +1,1246 @@
+[
+  {
+    "_id": "292049e0-ee38-11e6-b30d-67a61dd77fcc",
+    "_type": "dashboard",
+    "_source": {
+      "title": "MEC - Despesas",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"a01a9a80-edf4-11e6-9932-495d25e0d5d0\",\"panelIndex\":1,\"row\":28,\"size_x\":6,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"690c7730-ee39-11e6-b30d-67a61dd77fcc\",\"panelIndex\":2,\"row\":11,\"size_x\":12,\"size_y\":8,\"type\":\"visualization\"},{\"col\":1,\"id\":\"2d0b1140-ee3b-11e6-9edf-8773023a172e\",\"panelIndex\":3,\"row\":41,\"size_x\":12,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"a1bca790-ee3d-11e6-9edf-8773023a172e\",\"panelIndex\":4,\"row\":36,\"size_x\":12,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"c1a853b0-ff8b-11e6-978e-71cb5ebfbbeb\",\"panelIndex\":5,\"row\":22,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":7,\"id\":\"8f7f8730-ff8d-11e6-978e-71cb5ebfbbeb\",\"panelIndex\":6,\"row\":28,\"size_x\":6,\"size_y\":7,\"type\":\"visualization\"},{\"col\":7,\"id\":\"8736c830-001f-11e7-a356-b51689e2b9b3\",\"panelIndex\":7,\"row\":8,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"e4c62a00-0b54-11e7-b184-07b7ac4a5194\",\"panelIndex\":8,\"row\":4,\"size_x\":6,\"size_y\":6,\"type\":\"visualization\"},{\"col\":8,\"id\":\"907bcb70-10fa-11e7-a369-ed44e11c4df9\",\"panelIndex\":9,\"row\":3,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"3841e970-134e-11e7-aca2-976e9c04967b\",\"panelIndex\":10,\"row\":10,\"size_x\":12,\"size_y\":1,\"type\":\"visualization\"},{\"col\":7,\"id\":\"2d1de440-134e-11e7-aca2-976e9c04967b\",\"panelIndex\":11,\"row\":7,\"size_x\":6,\"size_y\":1,\"type\":\"visualization\"},{\"col\":1,\"id\":\"1b250fc0-134e-11e7-aca2-976e9c04967b\",\"panelIndex\":12,\"row\":3,\"size_x\":6,\"size_y\":1,\"type\":\"visualization\"},{\"size_x\":12,\"size_y\":3,\"panelIndex\":13,\"type\":\"visualization\",\"id\":\"33e824e0-1351-11e7-8813-4d59f627564b\",\"col\":1,\"row\":19},{\"size_x\":12,\"size_y\":1,\"panelIndex\":14,\"type\":\"visualization\",\"id\":\"c80c0880-1351-11e7-8813-4d59f627564b\",\"col\":1,\"row\":40},{\"size_x\":12,\"size_y\":1,\"panelIndex\":15,\"type\":\"visualization\",\"id\":\"6dd62940-1351-11e7-8813-4d59f627564b\",\"col\":1,\"row\":35},{\"size_x\":6,\"size_y\":1,\"panelIndex\":17,\"type\":\"visualization\",\"id\":\"8a198850-1350-11e7-8813-4d59f627564b\",\"col\":1,\"row\":27},{\"size_x\":6,\"size_y\":1,\"panelIndex\":18,\"type\":\"visualization\",\"id\":\"9c0a9f30-1351-11e7-8813-4d59f627564b\",\"col\":7,\"row\":27},{\"size_x\":12,\"size_y\":2,\"panelIndex\":19,\"type\":\"visualization\",\"id\":\"8e205330-1403-11e7-a295-3dbf6c24fac2\",\"col\":1,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-2\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"vis\":{\"defaultColors\":{\"2 - 71\":\"rgb(255,255,204)\",\"71 - 139\":\"rgb(255,230,146)\",\"139 - 208\":\"rgb(254,191,90)\",\"208 - 276\":\"rgb(253,141,60)\",\"276 - 345\":\"rgb(244,61,37)\",\"345 - 413\":\"rgb(202,8,35)\"}}},\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":5,\"direction\":\"desc\"}}}},\"P-8\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2017-01-01T19:48:04.085Z",
+      "timeFrom": "2016-01-01T19:48:04.085Z",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Alguns-gráficos",
+    "_type": "dashboard",
+    "_source": {
+      "title": "MEC - Servidores",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Distribuição-de-salários-sobre-a-Remuneração-Líquida\",\"panelIndex\":1,\"row\":11,\"size_x\":8,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"351e1340-edf6-11e6-9932-495d25e0d5d0\",\"panelIndex\":3,\"row\":22,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Top-15-Cargos\",\"panelIndex\":4,\"row\":27,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"b037cb30-ee36-11e6-9300-935f9d81b0e9\",\"panelIndex\":5,\"row\":4,\"size_x\":4,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"5e7f3280-eee3-11e6-8890-9dd63d289bc4\",\"panelIndex\":6,\"row\":17,\"size_x\":8,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"e0314110-eee3-11e6-8890-9dd63d289bc4\",\"panelIndex\":7,\"row\":22,\"size_x\":8,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"8a9a7150-003a-11e7-a356-b51689e2b9b3\",\"panelIndex\":8,\"row\":18,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"4eff8a40-0990-11e7-8a1b-838cd40fc888\",\"panelIndex\":9,\"row\":12,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"9e1130c0-0b52-11e7-b184-07b7ac4a5194\",\"panelIndex\":10,\"row\":4,\"size_x\":8,\"size_y\":6,\"type\":\"visualization\"},{\"size_x\":8,\"size_y\":1,\"panelIndex\":11,\"type\":\"visualization\",\"id\":\"1b250fc0-134e-11e7-aca2-976e9c04967b\",\"col\":1,\"row\":3},{\"size_x\":4,\"size_y\":1,\"panelIndex\":12,\"type\":\"visualization\",\"id\":\"c134b900-13d1-11e7-895d-a5c772a21301\",\"col\":9,\"row\":3},{\"size_x\":8,\"size_y\":1,\"panelIndex\":13,\"type\":\"visualization\",\"id\":\"1ec3ae50-13d2-11e7-895d-a5c772a21301\",\"col\":1,\"row\":16},{\"size_x\":4,\"size_y\":1,\"panelIndex\":14,\"type\":\"visualization\",\"id\":\"098cece0-13d2-11e7-895d-a5c772a21301\",\"col\":9,\"row\":11},{\"size_x\":4,\"size_y\":1,\"panelIndex\":15,\"type\":\"visualization\",\"id\":\"4134aac0-13d2-11e7-895d-a5c772a21301\",\"col\":9,\"row\":17},{\"size_x\":8,\"size_y\":1,\"panelIndex\":16,\"type\":\"visualization\",\"id\":\"e286b0e0-13d1-11e7-895d-a5c772a21301\",\"col\":1,\"row\":10},{\"size_x\":4,\"size_y\":1,\"panelIndex\":17,\"type\":\"visualization\",\"id\":\"522ab540-13d2-11e7-895d-a5c772a21301\",\"col\":9,\"row\":26},{\"size_x\":12,\"size_y\":2,\"panelIndex\":18,\"type\":\"visualization\",\"id\":\"0d970f60-1412-11e7-9a3d-bb95ac833b83\",\"col\":1,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-10\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-3\":{\"vis\":{\"legendOpen\":true}},\"P-4\":{\"vis\":{\"legendOpen\":true}},\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-6\":{\"vis\":{\"legendOpen\":true}},\"P-8\":{\"vis\":{\"legendOpen\":true}},\"P-9\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2017-01-01T21:39:06.527Z",
+      "timeFrom": "2016-01-01T21:24:06.526Z",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "a24ae180-0cc0-11e7-a7e6-43856546f942",
+    "_type": "dashboard",
+    "_source": {
+      "title": "MEC - Diárias",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"72ab42d0-0cc0-11e7-a7e6-43856546f942\",\"panelIndex\":1,\"row\":8,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"0f59b180-0cc0-11e7-a7e6-43856546f942\",\"panelIndex\":2,\"row\":16,\"size_x\":12,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"e526af80-0cd3-11e7-a7e6-43856546f942\",\"panelIndex\":3,\"row\":28,\"size_x\":12,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"85a20f40-0cd4-11e7-a7e6-43856546f942\",\"panelIndex\":4,\"row\":23,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"becd6a70-0cd5-11e7-a7e6-43856546f942\",\"panelIndex\":5,\"row\":24,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"4484b8c0-13d5-11e7-beda-c9f3f165714c\",\"panelIndex\":6,\"row\":23,\"size_x\":6,\"size_y\":1,\"type\":\"visualization\"},{\"col\":1,\"id\":\"ff455da0-13d4-11e7-beda-c9f3f165714c\",\"panelIndex\":7,\"row\":13,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"96f4f580-13d4-11e7-beda-c9f3f165714c\",\"panelIndex\":8,\"row\":3,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"61779c40-13d5-11e7-beda-c9f3f165714c\",\"panelIndex\":9,\"row\":27,\"size_x\":12,\"size_y\":1,\"type\":\"visualization\"},{\"col\":9,\"id\":\"710547b0-13d6-11e7-a90f-99b675656ca7\",\"panelIndex\":10,\"row\":14,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"2d1de440-134e-11e7-aca2-976e9c04967b\",\"panelIndex\":11,\"row\":13,\"size_x\":4,\"size_y\":1,\"type\":\"visualization\"},{\"size_x\":12,\"size_y\":2,\"panelIndex\":13,\"type\":\"visualization\",\"id\":\"6b3ff650-1407-11e7-b7f1-6fce8f133eec\",\"col\":1,\"row\":1},{\"size_x\":4,\"size_y\":5,\"panelIndex\":14,\"type\":\"visualization\",\"id\":\"907bcb70-10fa-11e7-a369-ed44e11c4df9\",\"col\":9,\"row\":3}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-2\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":3,\"direction\":null}}}},\"P-3\":{\"vis\":{\"defaultColors\":{\"1 - 5\":\"rgb(255,255,204)\",\"5 - 8\":\"rgb(255,230,146)\",\"8 - 11\":\"rgb(254,191,90)\",\"11 - 15\":\"rgb(253,141,60)\",\"15 - 18\":\"rgb(244,61,37)\",\"18 - 21\":\"rgb(202,8,35)\"}}},\"P-4\":{\"vis\":{\"defaultColors\":{\"142 - 468\":\"rgb(255,255,204)\",\"468 - 794\":\"rgb(255,230,146)\",\"794 - 1119\":\"rgb(254,191,90)\",\"1119 - 1445\":\"rgb(253,141,60)\",\"1445 - 1771\":\"rgb(244,61,37)\",\"1771 - 2096\":\"rgb(202,8,35)\"}}},\"P-5\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2017-01-01T19:48:04.085Z",
+      "timeFrom": "2016-01-01T19:48:04.085Z",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "3cf74620-1ebd-11e7-a645-13f1be1b66ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "MS - Despesas",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"94043950-1eb8-11e7-81ff-33a72ba75d6c\",\"panelIndex\":1,\"row\":1,\"size_x\":12,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"6c75f6b0-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":2,\"row\":3,\"size_x\":6,\"size_y\":1,\"type\":\"visualization\"},{\"col\":8,\"id\":\"86f999d0-1eb8-11e7-81ff-33a72ba75d6c\",\"panelIndex\":3,\"row\":3,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"f3839780-1eb9-11e7-a645-13f1be1b66ac\",\"panelIndex\":4,\"row\":4,\"size_x\":7,\"size_y\":6,\"type\":\"visualization\"},{\"col\":1,\"id\":\"90c6d6b0-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":5,\"row\":10,\"size_x\":12,\"size_y\":1,\"type\":\"visualization\"},{\"col\":8,\"id\":\"c77c7e50-1eb8-11e7-81ff-33a72ba75d6c\",\"panelIndex\":6,\"row\":7,\"size_x\":5,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"bb6147e0-1eb8-11e7-81ff-33a72ba75d6c\",\"panelIndex\":7,\"row\":12,\"size_x\":12,\"size_y\":9,\"type\":\"visualization\"},{\"col\":1,\"id\":\"ab44e9a0-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":8,\"row\":11,\"size_x\":12,\"size_y\":1,\"type\":\"visualization\"},{\"col\":1,\"id\":\"bdec4da0-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":9,\"row\":21,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"d85cb6e0-1eb8-11e7-81ff-33a72ba75d6c\",\"panelIndex\":10,\"row\":24,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"d8c26ba0-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":11,\"row\":29,\"size_x\":6,\"size_y\":1,\"type\":\"visualization\"},{\"col\":1,\"id\":\"d04f2e90-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":12,\"row\":30,\"size_x\":6,\"size_y\":7,\"type\":\"visualization\"},{\"col\":7,\"id\":\"e629aa10-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":13,\"row\":29,\"size_x\":6,\"size_y\":1,\"type\":\"visualization\"},{\"col\":7,\"id\":\"6fd5fc80-1eb8-11e7-81ff-33a72ba75d6c\",\"panelIndex\":14,\"row\":30,\"size_x\":6,\"size_y\":7,\"type\":\"visualization\"},{\"col\":1,\"id\":\"f553a720-1eba-11e7-a645-13f1be1b66ac\",\"panelIndex\":15,\"row\":37,\"size_x\":12,\"size_y\":1,\"type\":\"visualization\"},{\"col\":1,\"id\":\"41cb6040-1eb9-11e7-81ff-33a72ba75d6c\",\"panelIndex\":16,\"row\":38,\"size_x\":12,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"17cbf690-1ebb-11e7-a645-13f1be1b66ac\",\"panelIndex\":17,\"row\":42,\"size_x\":12,\"size_y\":1,\"type\":\"visualization\"},{\"col\":1,\"id\":\"2ac731d0-1eb9-11e7-81ff-33a72ba75d6c\",\"panelIndex\":18,\"row\":43,\"size_x\":12,\"size_y\":6,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-10\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-18\":{\"vis\":{\"defaultColors\":{\"13 - 168\":\"rgb(255,255,204)\",\"168 - 322\":\"rgb(255,230,146)\",\"322 - 477\":\"rgb(254,191,90)\",\"477 - 631\":\"rgb(253,141,60)\",\"631 - 786\":\"rgb(244,61,37)\",\"786 - 940\":\"rgb(202,8,35)\"}}},\"P-4\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-7\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2017-01-01T01:59:59.999Z",
+      "timeFrom": "2016-01-01T02:00:00.000Z",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "33e824e0-1351-11e7-8813-4d59f627564b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: elemento despesa",
+      "visState": "{\"title\":\"MEC - Texto: elemento despesa\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__A tabela mostra em categorias os gastos por elemento de despesa.__\\n\\n__- Média__: média de pagamentos em relação a determinado elemento. Exemplo: a média do auxilio financeiro a estudantes é a soma de todos os auxílios, dividido pela quantidade deles que são liberados.\\n\\n __- 50th percentile of valor__: mostra que metade dos pagamentos está abaixo do valor exibido na tabela. Exemplo: se a tabela mostra R$400, significa que, o elemento custa 50% das vezes, menos que R$400. \\n\\n __- 99th percentile of valor__: significa que 99 por cento dos pagamentos estão abaixo do exibido na tabela. Exemplo: se a tabela mostra R$1.700, significa que o valor do pagamento é, em 99% das vezes, menor do que R$1.700 reais.\\n\\n__- Maior valor__: maior valor pago em relação a determinado elemento.\\n\\n__- Quantidade de Ocorrências__: quantas vezes o elemento foi pago. \\n\\n__- Total__: Despesa total com o elemento.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "96f4f580-13d4-11e7-beda-c9f3f165714c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: lista de universidades em diárias",
+      "visState": "{\"title\":\"MEC - Texto: lista de universidades em diárias\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Lista de Universidades__\\n\\n__- Nome:__ nome das instituições de ensino. \\n\\n__- 50th percentile of Valor:__ significa que 50% das diárias pagas foram menores que o valor mostrado na tabela. \\n\\n__- 99th percentile of Valor:__ significa que 99% das diárias pagas foram menores que o valor mostrado na tabela. \\n\\n__- Qtd de diárias pagas:__ quantas diárias foram pagas no período selecionado no calendário da tela de despesas.\\n \\n__- Maior diária:__ maior montante de diária paga no período de tempo selecionado no calendário.\\n\\n__- Valor total gasto com diárias:__ por período selecionado.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "3841e970-134e-11e7-aca2-976e9c04967b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: despesas por favorecido",
+      "visState": "{\"title\":\"MEC - Texto: despesas por favorecido\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Despesas do período selecionado no calendário, destinadas a cada um dos favorecidos citados a baixo. Na parte superior do quadro está identificado os favorecidos seguindo logo abaixo o tipo do elemento de despesa e o valor correspondente pago.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "6b3ff650-1407-11e7-b7f1-6fce8f133eec",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Descrição Dashboard - Diárias",
+      "visState": "{\"title\":\"MEC - Descrição Dashboard - Diárias\",\"type\":\"markdown\",\"params\":{\"markdown\":\"#### __Diárias:__ o servidor civil da administração federal direta, autárquica e fundacional que se deslocar a serviço, da localidade onde tem exercício para outro ponto do território nacional, ou para o exterior, fará jus à percepção de diárias segundo as disposições do Decreto nº 5.992, de 19 de dezembro de 2006. As diárias serão concedidas por dia de afastamento da sede do serviço, destinando-se a indenizar o servidor por despesas extraordinárias com pousada, alimentação e locomoção urbana.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ff455da0-13d4-11e7-beda-c9f3f165714c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: lista de gastos com diárias",
+      "visState": "{\"title\":\"MEC - Texto: lista de gastos com diárias\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Lista de gastos com diárias__ \\n\\n__- Nome:__ favorecidos que receberam diárias.\\n\\n__- Valor médio:__ a soma de *X* diárias, valor por valor, tem seu resultado dividido novamente pelo valor *X*, o que gera uma média (o valor das diárias não são necessariamente iguais).\\n\\n__- 99th percentile of valor:__ significa que 99% das diárias tiveram valor inferior ao colocado na tabela. \\n\\n__- Qtd de pagamento:__ para cada favorecido. \\n\\n__- Maior diária:__ maior montante de diária liberado para cada favorecido. \\n\\n__- Valor total:__ gasto com diárias no período selecionado.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e286b0e0-13d1-11e7-895d-a5c772a21301",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: distribuição de salários sobre a remuneração líquida",
+      "visState": "{\"title\":\"MEC - Texto: distribuição de salários sobre a remuneração líquida\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra os gastos das universidades com relação a remunerações especificas.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2d1de440-134e-11e7-aca2-976e9c04967b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: despesas totais no período",
+      "visState": "{\"title\":\"MEC - Texto: despesas totais no período\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__No período escolhido no calendário, e relacionado também a seleção feita na lista de universidades.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "61779c40-13d5-11e7-beda-c9f3f165714c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: favorecidos recorrentes agrupados por mês:",
+      "visState": "{\"title\":\"MEC - Texto: favorecidos recorrentes agrupados por mês:\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Beneficiados por número de diárias e agrupadas por mês conforme o número de ocorrências.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2e3b00b0-13d5-11e7-beda-c9f3f165714c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: quantidade de pagamentos agrupados por mês",
+      "visState": "{\"title\":\"MEC - Texto: quantidade de pagamentos agrupados por mês\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Quantidade de pagamentos agrupados por mês:__ quantas diárias foram pagas as universidades por mês.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1ec3ae50-13d2-11e7-895d-a5c772a21301",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: número de servidores por cargo",
+      "visState": "{\"title\":\"MEC - Texto: número de servidores por cargo\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Número de servidores existentes na universidade, mês a mês, em cargos específicos.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "098cece0-13d2-11e7-895d-a5c772a21301",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: lotação servidor",
+      "visState": "{\"title\":\"MEC - Texto: lotação servidor\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra o número de servidores contratados em cada departamento das universidades.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8a198850-1350-11e7-8813-4d59f627564b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: top 20 despesas",
+      "visState": "{\"title\":\"MEC - Texto: top 20 despesas\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra visualmente a proporções de gastos, relacionada as despesas por favorecido.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "0d970f60-1412-11e7-9a3d-bb95ac833b83",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Descrição Dashboard - Despesa com Pessoal",
+      "visState": "{\"title\":\"MEC - Descrição Dashboard - Despesa com Pessoal\",\"type\":\"markdown\",\"params\":{\"markdown\":\"#### __Despesa com Pessoal:__  corresponde à despesa com pessoal ativo, inativo e pensionista, incluindo vencimentos e vantagens, subsídios, proventos da aposentadoria, reformas e pensões, adicionais, gratificações, horas extras e vantagens pessoais, bem como os encargos sociais e as contribuições às entidades de previdência. Excluem-se as indenizações por demissão, os incentivos à demissão voluntária, as decorrentes de decisão judicial de competência de período anterior e de inativos, custeadas por recursos provenientes da arrecadação de contribuições dos próprios segurados, conforme o disposto no art. 18 da LRF.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8e205330-1403-11e7-a295-3dbf6c24fac2",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Descrição Dashboard - Despesas",
+      "visState": "{\"title\":\"MEC - Descrição Dashboard - Despesas\",\"type\":\"markdown\",\"params\":{\"markdown\":\"#### __Despesa Corrente:__ despesas de custeio de manutenção das atividades dos órgãos da administração pública, como por exemplo: despesas com pessoal, juros da dívida, aquisição de bens de consumo, serviços de terceiros, manutenção de equipamentos, despesas com água, energia, telefone etc. Estão nesta categoria as despesas que não concorrem para ampliação dos serviços prestados pelo órgão, nem para a expansão das suas atividades (definição [Tesouro Nacional](http://www.tesouro.fazenda.gov.br/)).\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "6dd62940-1351-11e7-8813-4d59f627564b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: favorecidos recorrentes por período",
+      "visState": "{\"title\":\"MEC - Texto: favorecidos recorrentes por período\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra os principais favorecidos a partir do número de ocorrências de pagamentos, não tendo importância o valor pago. Exemplo: Uma empresa *X* recebe 2 pagamentos de R$100.000, e uma empresa *Y* recebe 24 pagamentos de R$12,00, é a empresa Y que aparecerá em destaque nessa tabela.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "9c0a9f30-1351-11e7-8813-4d59f627564b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: barra elemento despesa",
+      "visState": "{\"title\":\"MEC - Texto: barra elemento despesa\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Demonstra o valor exato que foi usado com elementos específicos como auxílio-alimentação, locação de mão-de-obra, etc. Estão separados por mês e basta colocar o cursor na respectiva cor, para que os dados apareçam.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c134b900-13d1-11e7-895d-a5c772a21301",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: remuneração média",
+      "visState": "{\"title\":\"MEC - Texto: remuneração média\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Todos os salários de um tempo *X* somados, divididos pelo mesmo tempo *X* (selecionado no calendário da aba despesas) .__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1b250fc0-134e-11e7-aca2-976e9c04967b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: lista universidades",
+      "visState": "{\"title\":\"MEC - Texto: lista universidades\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__É possível escolher entre elas. É só clicar em cima da universidade escolhida.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4484b8c0-13d5-11e7-beda-c9f3f165714c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: gasto mensal por diárias",
+      "visState": "{\"title\":\"MEC - Texto: gasto mensal por diárias\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Gasto mensal acumulado: valores totais dos gastos com diárias, mês a mês.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "522ab540-13d2-11e7-895d-a5c772a21301",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: top 15 cargos",
+      "visState": "{\"title\":\"MEC - Texto: top 15 cargos\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra visualmente as porcentagens de cargos ocupados dentro das universidades.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1cd3cc60-0504-11e7-9e07-35d1fb059083",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Relative Time Picker",
+      "visState": "{\"title\":\"MEC - Relative Time Picker\",\"type\":\"time\",\"params\":{\"enable_quick\":false,\"enable_relative\":true,\"enable_absolut\":false,\"enable_animation\":false},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "bdec4da0-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: elemento despesa",
+      "visState": "{\"title\":\"MS - Texto: elemento despesa\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__A tabela mostra em categorias os gastos por elemento de despesa.__\\n\\n__- Média__: média de pagamentos em relação a determinado elemento. Exemplo: a média do auxilio financeiro a estudantes é a soma de todos os auxílios, dividido pela quantidade deles que são liberados.\\n\\n __- 50th percentile of valor__: mostra que metade dos pagamentos está abaixo do valor exibido na tabela. Exemplo: se a tabela mostra R$400, significa que, o elemento custa 50% das vezes, menos que R$400. \\n\\n __- 99th percentile of valor__: significa que 99 por cento dos pagamentos estão abaixo do exibido na tabela. Exemplo: se a tabela mostra R$1.700, significa que o valor do pagamento é, em 99% das vezes, menor do que R$1.700 reais.\\n\\n__- Maior valor__: maior valor pago em relação a determinado elemento.\\n\\n__- Quantidade de Ocorrências__: quantas vezes o elemento foi pago. \\n\\n__- Total__: Despesa total com o elemento.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8d91d550-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Descrição Dashboard - Despesa com Pessoal",
+      "visState": "{\"title\":\"MS - Descrição Dashboard - Despesa com Pessoal\",\"type\":\"markdown\",\"params\":{\"markdown\":\"#### __Despesa com Pessoal:__  corresponde à despesa com pessoal ativo, inativo e pensionista, incluindo vencimentos e vantagens, subsídios, proventos da aposentadoria, reformas e pensões, adicionais, gratificações, horas extras e vantagens pessoais, bem como os encargos sociais e as contribuições às entidades de previdência. Excluem-se as indenizações por demissão, os incentivos à demissão voluntária, as decorrentes de decisão judicial de competência de período anterior e de inativos, custeadas por recursos provenientes da arrecadação de contribuições dos próprios segurados, conforme o disposto no art. 18 da LRF.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ab189460-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Descrição Dashboard - Diárias",
+      "visState": "{\"title\":\"MS - Descrição Dashboard - Diárias\",\"type\":\"markdown\",\"params\":{\"markdown\":\"#### __Diárias:__ o servidor civil da administração federal direta, autárquica e fundacional que se deslocar a serviço, da localidade onde tem exercício para outro ponto do território nacional, ou para o exterior, fará jus à percepção de diárias segundo as disposições do Decreto nº 5.992, de 19 de dezembro de 2006. As diárias serão concedidas por dia de afastamento da sede do serviço, destinando-se a indenizar o servidor por despesas extraordinárias com pousada, alimentação e locomoção urbana.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "94043950-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Descrição Dashboard - Despesas",
+      "visState": "{\"title\":\"MS - Descrição Dashboard - Despesas\",\"type\":\"markdown\",\"params\":{\"markdown\":\"#### __Despesa Corrente:__ despesas de custeio de manutenção das atividades dos órgãos da administração pública, como por exemplo: despesas com pessoal, juros da dívida, aquisição de bens de consumo, serviços de terceiros, manutenção de equipamentos, despesas com água, energia, telefone etc. Estão nesta categoria as despesas que não concorrem para ampliação dos serviços prestados pelo órgão, nem para a expansão das suas atividades (definição [Tesouro Nacional](http://www.tesouro.fazenda.gov.br/)).\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c80c0880-1351-11e7-8813-4d59f627564b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: favorecidos recorrentes",
+      "visState": "{\"title\":\"MEC - Texto: favorecidos recorrentes\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra mês a mês os favorecidos que rebeberam pagamentos e o número de ocorrência em cada mês.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4134aac0-13d2-11e7-895d-a5c772a21301",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Texto: funções servidores",
+      "visState": "{\"title\":\"MEC - Texto: funções servidores\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra visualmente as porcentagens de cargos que cada servidor ocupa.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "907bcb70-10fa-11e7-a369-ed44e11c4df9",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Datepicker",
+      "visState": "{\"title\":\"MEC - Datepicker\",\"type\":\"time\",\"params\":{\"submit_right\":false,\"hide_input\":false,\"hide_calendar\":false,\"language\":\"pt-br\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "86f999d0-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Datepicker",
+      "visState": "{\"title\":\"MS - Datepicker\",\"type\":\"time\",\"params\":{\"submit_right\":false,\"hide_input\":false,\"hide_calendar\":false,\"language\":\"pt-br\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2d0b1140-ee3b-11e6-9edf-8773023a172e",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Favorecidos recorrentes agrupados por mês",
+      "visState": "{\"title\":\"MEC - Favorecidos recorrentes agrupados por mês\",\"type\":\"heatmap\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"colorsNumber\":6,\"colorsRange\":[],\"enableHover\":false,\"invertColors\":false,\"legendPosition\":\"top\",\"percentageMode\":false,\"setColorRange\":false,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"color\":\"#555\",\"rotate\":0,\"show\":true},\"scale\":{\"defaultYExtents\":true,\"type\":\"linear\"},\"show\":false,\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Ocorrências\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"2 - 71\":\"rgb(255,255,204)\",\"71 - 139\":\"rgb(255,230,146)\",\"139 - 208\":\"rgb(254,191,90)\",\"208 - 276\":\"rgb(253,141,60)\",\"276 - 345\":\"rgb(244,61,37)\",\"345 - 413\":\"rgb(202,8,35)\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e3ee5230-f44b-11e6-8ec0-a9ae65c2e20b",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Favorecidos com Maior Número de Benefícios",
+      "visState": "{\"title\":\"MEC - Favorecidos com Maior Número de Benefícios\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Número de Benefícios\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Total Ganho\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "690c7730-ee39-11e6-b30d-67a61dd77fcc",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Despesas por Favorecido",
+      "visState": "{\"title\":\"MEC - Despesas por Favorecido\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":true,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\",\"row\":false}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Elemento Despesa.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Tipo\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f553a720-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: favorecidos recorrentes por período",
+      "visState": "{\"title\":\"MS - Texto: favorecidos recorrentes por período\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra os principais favorecidos a partir do número de ocorrências de pagamentos, não tendo importância o valor pago. Exemplo: Uma empresa *X* recebe 2 pagamentos de R$100.000, e uma empresa *Y* recebe 24 pagamentos de R$12,00, é a empresa Y que aparecerá em destaque nessa tabela.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ab44e9a0-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: despesas por favorecido",
+      "visState": "{\"title\":\"MS - Texto: despesas por favorecido\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Despesas do período selecionado no calendário, destinadas a cada um dos favorecidos citados a baixo. Na parte superior do quadro está identificado os favorecidos seguindo logo abaixo o tipo do elemento de despesa e o valor correspondente pago.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e629aa10-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: barra elemento despesa",
+      "visState": "{\"title\":\"MS - Texto: barra elemento despesa\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Demonstra o valor exato que foi usado com elementos específicos como auxílio-alimentação, locação de mão-de-obra, etc. Estão separados por mês e basta colocar o cursor na respectiva cor, para que os dados apareçam.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "17cbf690-1ebb-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: favorecidos recorrentes",
+      "visState": "{\"title\":\"MS - Texto: favorecidos recorrentes\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra mês a mês os favorecidos que rebeberam pagamentos e o número de ocorrência em cada mês.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "d8c26ba0-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: top 20 despesas",
+      "visState": "{\"title\":\"MS - Texto: top 20 despesas\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__Mostra visualmente a proporções de gastos, relacionada as despesas por favorecido.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "85a20f40-0cd4-11e7-a7e6-43856546f942",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Quantidade de diárias concedidas por mês",
+      "visState": "{\"title\":\"MEC - Quantidade de diárias concedidas por mês\",\"type\":\"heatmap\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"top\",\"times\":[],\"colorsNumber\":6,\"colorSchema\":\"Yellow to Red\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":true},\"labels\":{\"show\":true,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Quantidade de pagamentos\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"142 - 468\": \"rgb(255,255,204)\",\n      \"468 - 794\": \"rgb(255,230,146)\",\n      \"794 - 1119\": \"rgb(254,191,90)\",\n      \"1119 - 1445\": \"rgb(253,141,60)\",\n      \"1445 - 1771\": \"rgb(244,61,37)\",\n      \"1771 - 2096\": \"rgb(202,8,35)\"\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8f7f8730-ff8d-11e6-978e-71cb5ebfbbeb",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Barra Elemento Despesa",
+      "visState": "{\"title\":\"MEC - Barra Elemento Despesa\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":true,\"defaultYExtents\":false,\"setYExtents\":false,\"orderBucketsBySum\":false},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Nome Elemento Despesa.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"3\",\"customLabel\":\"Elemento Despesa\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Outros Serviços de Terceiros - Pessoa Jurídica\":\"#508642\",\"Sum of Valor\":\"#508642\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c1a853b0-ff8b-11e6-978e-71cb5ebfbbeb",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Elemento Despesa",
+      "visState": "{\"title\":\"MEC - Elemento Despesa\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"count\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Elemento Despesa.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"4\",\"customLabel\":\"Elemento Despesa\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Média (R$)\"}},{\"id\":\"1\",\"enabled\":false,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"percents\":[50,99],\"customLabel\":\"Valor (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Maior Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Qtd Ocorrências\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Total (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1d162960-1888-11e7-b8ca-d5841aad1019",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Ação",
+      "visState": "{\"title\":\"MEC - Ação\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"count\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Ação.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"6\",\"customLabel\":\"Ação\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Média (R$)\"}},{\"id\":\"1\",\"enabled\":false,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"percents\":[50,99],\"customLabel\":\"Valor (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Maior Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Qtd Ocorrências\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Total (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e4c62a00-0b54-11e7-b184-07b7ac4a5194",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Lista de Universidades (Despesas)",
+      "visState": "{\"title\":\"MEC - Lista de Universidades (Despesas)\",\"type\":\"table\",\"params\":{\"perPage\":13,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Despesas Totais no Período (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Órgao.keyword\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Órgão\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "a1bca790-ee3d-11e6-9edf-8773023a172e",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Favorecidos recorrentes por período (tag cloud)",
+      "visState": "{\"title\":\"MEC - Favorecidos recorrentes por período (tag cloud)\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"log\",\"orientation\":\"single\",\"minFontSize\":15,\"maxFontSize\":42,\"hideLabel\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Ocorrêncas no Período\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "a01a9a80-edf4-11e6-9932-495d25e0d5d0",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Top 20 Despesas",
+      "visState": "{\"title\":\"MEC - Top 20 Despesas\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Despesa Total (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8736c830-001f-11e7-a356-b51689e2b9b3",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Despesas totais no período",
+      "visState": "{\"title\":\"MEC - Despesas totais no período\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Despesas totais no período (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "db0f3c90-eebc-11e6-8347-db4adc844e2f",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Despesa Total no Período",
+      "visState": "{\"title\":\"MEC - Despesa Total no Período\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Gasto Total\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e526af80-0cd3-11e7-a7e6-43856546f942",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Beneficiados recorrentes agrupados por mês",
+      "visState": "{\"title\":\"MEC - Beneficiados recorrentes agrupados por mês\",\"type\":\"heatmap\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"top\",\"times\":[],\"colorsNumber\":6,\"colorSchema\":\"Yellow to Red\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":true},\"labels\":{\"show\":true,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Ocorrências\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Nome\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"1 - 5\": \"rgb(255,255,204)\",\n      \"5 - 8\": \"rgb(255,230,146)\",\n      \"8 - 11\": \"rgb(254,191,90)\",\n      \"11 - 15\": \"rgb(253,141,60)\",\n      \"15 - 18\": \"rgb(244,61,37)\",\n      \"18 - 21\": \"rgb(202,8,35)\"\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "7832cb60-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Beneficiados recorrentes agrupados por mês",
+      "visState": "{\"title\":\"MS - Beneficiados recorrentes agrupados por mês\",\"type\":\"heatmap\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"top\",\"times\":[],\"colorsNumber\":6,\"colorSchema\":\"Yellow to Red\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":true},\"labels\":{\"show\":true,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Ocorrências\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Nome\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"3 - 8\":\"rgb(255,255,204)\",\"8 - 13\":\"rgb(255,230,146)\",\"13 - 18\":\"rgb(254,191,90)\",\"18 - 23\":\"rgb(253,141,60)\",\"23 - 28\":\"rgb(244,61,37)\",\"28 - 33\":\"rgb(202,8,35)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "0f59b180-0cc0-11e7-a7e6-43856546f942",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Lista de Gastos com Diárias",
+      "visState": "{\"title\":\"MEC - Lista de Gastos com Diárias\",\"type\":\"table\",\"params\":{\"perPage\":15,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":100000,\"order\":\"desc\",\"orderBy\":\"3\",\"customLabel\":\"Nome\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor Médio (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"percents\":[99],\"customLabel\":\"Valor (R$)\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Qtd Pagamentos\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Maior Diária (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor Total (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": 0,\n        \"direction\": \"asc\"\n      }\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "617c2b40-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Lista de Gastos com Diárias",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Nome\",\"field\":\"Nome Favorecido.keyword\",\"order\":\"desc\",\"orderBy\":\"3\",\"size\":100000},\"schema\":\"bucket\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"6\",\"params\":{\"customLabel\":\"Valor Médio (R$)\",\"field\":\"Valor\"},\"schema\":\"metric\",\"type\":\"avg\"},{\"enabled\":true,\"id\":\"4\",\"params\":{\"customLabel\":\"Valor (R$)\",\"field\":\"Valor\",\"percents\":[99]},\"schema\":\"metric\",\"type\":\"percentiles\"},{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Qtd Pagamentos\"},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"5\",\"params\":{\"customLabel\":\"Maior Diária (R$)\",\"field\":\"Valor\"},\"schema\":\"metric\",\"type\":\"max\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"customLabel\":\"Valor Total (R$)\",\"field\":\"Valor\"},\"schema\":\"metric\",\"type\":\"sum\"}],\"listeners\":{},\"params\":{\"perPage\":15,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"title\":\"MS - Lista de Gastos com Diárias\",\"type\":\"table\"}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":0,\"direction\":\"asc\"}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "72ab42d0-0cc0-11e7-a7e6-43856546f942",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Lista de Universidades (Diárias)",
+      "visState": "{\"title\":\"MEC - Lista de Universidades (Diárias)\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Órgao.keyword\",\"size\":50000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Nome\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"percents\":[50,99],\"customLabel\":\"Valor (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Qtd diárias pagas\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Maior Diária (R$)\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor Total (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4fb7ad30-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Gasto Mensal com Diárias",
+      "visState": "{\"title\":\"MS - Gasto Mensal com Diárias\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "becd6a70-0cd5-11e7-a7e6-43856546f942",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Gasto Mensal com Diárias",
+      "visState": "{\"title\":\"MEC - Gasto Mensal com Diárias\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "5571bdb0-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Gasto total com diárias no período",
+      "visState": "{\"title\":\"MS - Gasto total com diárias no período\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"40\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Gasto total no período (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "710547b0-13d6-11e7-a90f-99b675656ca7",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Gasto total com diárias no período",
+      "visState": "{\"title\":\"MEC - Gasto total com diárias no período\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"40\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Gasto total no período (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-gastos-diarias-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Quantidade-de-funcionários-agrupados-por-intervalos-de-salário-durante-o-ano",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Quantidade de funcionários agrupados por intervalos de salário durante o ano",
+      "visState": "{\"title\":\"MEC - Quantidade de funcionários agrupados por intervalos de salário durante o ano\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Número de Servidores\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Meses do Ano\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"group\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"interval\":5000,\"min_doc_count\":false,\"extended_bounds\":{\"min\":0,\"max\":4000},\"customLabel\":\"Remuneração Líquida\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": true\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"index\":\"mec-servidores-*\",\"formattedValue\":\"-5,000\",\"negate\":true,\"key\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"value\":\"-5,000 to 0\",\"disabled\":false,\"alias\":null},\"range\":{\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\":{\"gte\":-5000,\"lt\":0}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"mec-servidores-*\",\"formattedValue\":\"45,000\",\"negate\":true,\"key\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"value\":\"45,000 to 50,000\",\"disabled\":false,\"alias\":null},\"range\":{\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\":{\"gte\":45000,\"lt\":50000}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Distribuição-de-salários-sobre-a-Remuneração-Líquida",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Distribuição de salários sobre a Remuneração Líquida",
+      "visState": "{\"title\":\"MEC - Distribuição de salários sobre a Remuneração Líquida\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"customLabel\":\"Remuneração Líquida (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"range\",\"schema\":\"group\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"ranges\":[{\"from\":0,\"to\":5000},{\"from\":5001,\"to\":10000},{\"from\":10001,\"to\":15000},{\"from\":15001,\"to\":20000},{\"from\":20001,\"to\":25000},{\"from\":25001,\"to\":50000},{\"from\":50001,\"to\":1000000}],\"customLabel\":\"Intervalo de Remuneração Líquida (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"0 to 5,000\":\"#F9BA8F\",\"5,001 to 10,000\":\"#F9934E\",\"10,001 to 15,000\":\"#EA6460\",\"15,001 to 20,000\":\"#E24D42\",\"20,001 to 25,000\":\"#BF1B00\",\"25,001 to 50,000\":\"#890F02\",\"50,001 to 1,000,000\":\"#58140C\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "d07f9f50-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Distribuição de salários sobre a Remuneração Líquida",
+      "visState": "{\"title\":\"MS - Distribuição de salários sobre a Remuneração Líquida\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"customLabel\":\"Remuneração Líquida (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"range\",\"schema\":\"group\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"ranges\":[{\"from\":0,\"to\":5000},{\"from\":5001,\"to\":10000},{\"from\":10001,\"to\":15000},{\"from\":15001,\"to\":20000},{\"from\":20001,\"to\":25000},{\"from\":25001,\"to\":50000},{\"from\":50001,\"to\":1000000}],\"customLabel\":\"Intervalo de Remuneração Líquida (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"0 to 5,000\":\"#F9BA8F\",\"5,001 to 10,000\":\"#F9934E\",\"10,001 to 15,000\":\"#EA6460\",\"15,001 to 20,000\":\"#E24D42\",\"20,001 to 25,000\":\"#BF1B00\",\"25,001 to 50,000\":\"#890F02\",\"50,001 to 1,000,000\":\"#58140C\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "5e7f3280-eee3-11e6-8890-9dd63d289bc4",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Número de servidores por cargo",
+      "visState": "{\"title\":\"MEC - Número de servidores por cargo\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"log\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{\"max\":3000,\"min\":50},\"orderBucketsBySum\":false},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Número de Servidores\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"DESCRICAO_CARGO.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"2\",\"customLabel\":\"Cargo\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Número de Servidores\":\"#508642\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e0314110-eee3-11e6-8890-9dd63d289bc4",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Número de servidores por jornada de trabalho",
+      "visState": "{\"title\":\"MEC - Número de servidores por jornada de trabalho\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"showCircles\":true,\"interpolate\":\"cardinal\",\"scale\":\"log\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{\"max\":5000,\"min\":1}},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Número de Servidores\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"JORNADA_DE_TRABALHO.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"2\",\"customLabel\":\"Jornada de Trabalho\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Número de Servidores\":\"#508642\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "b037cb30-ee36-11e6-9300-935f9d81b0e9",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Maiores Salários",
+      "visState": "{\"title\":\"MEC - Maiores Salários\",\"type\":\"table\",\"params\":{\"perPage\":15,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"customLabel\":\"Remuneração Média no Período\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"NOME.keyword\",\"size\":20000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Nome\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}},\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "351e1340-edf6-11e6-9932-495d25e0d5d0",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Jornada de Trabalho",
+      "visState": "{\"title\":\"MEC - Jornada de Trabalho\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\",\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Porcentagem\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"JORNADA_DE_TRABALHO.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Jornada de Trabalho\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"index\":\"ufpr-csv-*\",\"negate\":true,\"key\":\"SIGLA_FUNCAO.keyword\",\"value\":\"SIGLA_FUNCAO\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"SIGLA_FUNCAO.keyword\":{\"query\":\"SIGLA_FUNCAO\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "9e1130c0-0b52-11e7-b184-07b7ac4a5194",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Lista de Universidades (Servidores)",
+      "visState": "{\"title\":\"MEC - Lista de Universidades (Servidores)\",\"type\":\"table\",\"params\":{\"perPage\":13,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"NOME.keyword\",\"customLabel\":\"Quantidade de Servidores\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"ORG_LOTACAO.keyword\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Órgão\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4eff8a40-0990-11e7-8a1b-838cd40fc888",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Lotação Servidores",
+      "visState": "{\"title\":\"MEC - Lotação Servidores\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Qtd de Servidores\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"UORG_LOTACAO.keyword\",\"size\":5000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Lotação\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Remuneração-UFPR-2",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Remuneração UFPR",
+      "visState": "{\"title\":\"MEC - Remuneração UFPR\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"legendPosition\":\"right\",\"mode\":\"grouped\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Meses do ano\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)\",\"customLabel\":\"Remuneração Total Líquida\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"REMUNERAÇÃO BÁSICA BRUTA (R$)\",\"customLabel\":\"Remuneração Total Bruta\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"colors\": {\n      \"Remuneração Total Bruta\": \"#7EB26D\",\n      \"Remuneração Total Líquida\": \"#3F6833\",\n      \"0 to 5,000: Remuneração Total Líquida\": \"#FCE2DE\"\n    },\n    \"legendOpen\": false\n  }\n}",
+      "description": "Remuneração bruta e líquida em 2016",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "6fd5fc80-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Barra Elemento Despesa",
+      "visState": "{\"title\":\"MS - Barra Elemento Despesa\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":true,\"defaultYExtents\":false,\"setYExtents\":false,\"orderBucketsBySum\":false},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Nome Elemento Despesa.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"3\",\"customLabel\":\"Elemento Despesa\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Outros Serviços de Terceiros - Pessoa Jurídica\":\"#508642\",\"Sum of Valor\":\"#508642\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "d85cb6e0-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Elemento Despesa",
+      "visState": "{\"title\":\"MS - Elemento Despesa\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"count\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Elemento Despesa.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"4\",\"customLabel\":\"Elemento Despesa\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Média (R$)\"}},{\"id\":\"1\",\"enabled\":false,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"percents\":[50,99],\"customLabel\":\"Valor (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Maior Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Qtd Ocorrências\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Total (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e57d4f60-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Favorecidos com Maior Número de Benefícios",
+      "visState": "{\"title\":\"MS - Favorecidos com Maior Número de Benefícios\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Número de Benefícios\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Total Ganho\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "bb6147e0-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Despesas por Favorecido",
+      "visState": "{\"title\":\"MS - Despesas por Favorecido\",\"type\":\"table\",\"params\":{\"perPage\":5,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":true,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\",\"row\":false}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Elemento Despesa.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Tipo\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "5ac1c1c0-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Jornada de Trabalho",
+      "visState": "{\"title\":\"MS - Jornada de Trabalho\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\",\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Porcentagem\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"JORNADA_DE_TRABALHO.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Jornada de Trabalho\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"index\":\"ufpr-csv-*\",\"negate\":true,\"key\":\"SIGLA_FUNCAO.keyword\",\"value\":\"SIGLA_FUNCAO\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"SIGLA_FUNCAO.keyword\":{\"query\":\"SIGLA_FUNCAO\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-15-Cargos",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Top 15 Cargos",
+      "visState": "{\"title\":\"MEC - Top 15 Cargos\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\",\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Número de Servidores\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"DESCRICAO_CARGO.keyword\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Cargo\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"index\":\"mec-servidores-*\",\"negate\":true,\"key\":\"SIGLA_FUNCAO.keyword\",\"value\":\"SIGLA_FUNCAO\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"SIGLA_FUNCAO.keyword\":{\"query\":\"SIGLA_FUNCAO\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "8a9a7150-003a-11e7-a356-b51689e2b9b3",
+    "_type": "visualization",
+    "_source": {
+      "title": "MEC - Funções Servidores",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Servidores\",\"field\":\"ID_SERVIDOR_PORTAL.keyword\"},\"schema\":\"metric\",\"type\":\"cardinality\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Função\",\"field\":\"FUNCAO.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":10},\"schema\":\"segment\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\"},\"title\":\"MEC - Funções Servidores\",\"type\":\"pie\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"index\":\"ufpr-mec-servidores-*\",\"negate\":true,\"key\":\"FUNCAO.keyword\",\"value\":\"Funcao\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"FUNCAO.keyword\":{\"query\":\"FUNCAO\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "c77c7e50-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Despesas totais no período",
+      "visState": "{\"title\":\"MS - Despesas totais no período\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Despesas totais no período (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2ac731d0-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Favorecidos recorrentes agrupados por mês",
+      "visState": "{\"title\":\"MS - Favorecidos recorrentes agrupados por mês\",\"type\":\"heatmap\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"colorsNumber\":6,\"colorsRange\":[],\"enableHover\":false,\"invertColors\":false,\"legendPosition\":\"top\",\"percentageMode\":false,\"setColorRange\":false,\"times\":[],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"color\":\"#555\",\"rotate\":0,\"show\":true},\"scale\":{\"defaultYExtents\":true,\"type\":\"linear\"},\"show\":false,\"type\":\"value\"}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Ocorrências\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"Data Pagamento Timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Mês\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"31 - 296\":\"rgb(255,255,204)\",\"296 - 561\":\"rgb(255,230,146)\",\"561 - 825\":\"rgb(254,191,90)\",\"825 - 1090\":\"rgb(253,141,60)\",\"1090 - 1355\":\"rgb(244,61,37)\",\"1355 - 1619\":\"rgb(202,8,35)\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "90d44b90-1eb7-11e7-b5bc-fd4d7a673b5f",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Ação",
+      "visState": "{\"title\":\"MS - Ação\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"count\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Ação.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"6\",\"customLabel\":\"Ação\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Média (R$)\"}},{\"id\":\"1\",\"enabled\":false,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"percents\":[50,99],\"customLabel\":\"Valor (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Maior Valor (R$)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Qtd Ocorrências\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Total (R$)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "49a4a740-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Funções Servidores",
+      "visState": "{\"title\":\"MS - Funções Servidores\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"ID_SERVIDOR_PORTAL.keyword\",\"customLabel\":\"Servidores\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"FUNCAO.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Função\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"mec-servidores-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"index\":\"ufpr-mec-servidores-*\",\"negate\":true,\"key\":\"FUNCAO.keyword\",\"value\":\"Funcao\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"FUNCAO.keyword\":{\"query\":\"FUNCAO\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "41cb6040-1eb9-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Favorecidos recorrentes por período (tag cloud)",
+      "visState": "{\"title\":\"MS - Favorecidos recorrentes por período (tag cloud)\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"log\",\"orientation\":\"single\",\"minFontSize\":15,\"maxFontSize\":42,\"hideLabel\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Ocorrêncas no Período\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "d04f2e90-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Top 20 Despesas",
+      "visState": "{\"title\":\"MS - Top 20 Despesas\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Despesa Total (R$)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Nome Favorecido.keyword\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Favorecido\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "b42ca550-1eb8-11e7-81ff-33a72ba75d6c",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Despesa Total no Período",
+      "visState": "{\"title\":\"MS - Despesa Total no Período\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Gasto Total\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "6c75f6b0-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: lista entidades",
+      "visState": "{\"title\":\"MS - Texto: lista entidades\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__É possível escolher entre elas. É só clicar em cima da entidade escolhida.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f3839780-1eb9-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Lista de Entidades (Despesas)",
+      "visState": "{\"title\":\"MS - Lista de Entidades (Despesas)\",\"type\":\"table\",\"params\":{\"perPage\":13,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Valor\",\"customLabel\":\"Despesas Totais no Período (R$)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Órgao.keyword\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Órgão\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"Nome Unidade Gestora.keyword\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Unidade Gestora\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":2,\"direction\":\"desc\"}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ms-gastos-pagamentos-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "90c6d6b0-1eba-11e7-a645-13f1be1b66ac",
+    "_type": "visualization",
+    "_source": {
+      "title": "MS - Texto: despesas totais no período",
+      "visState": "{\"title\":\"MS - Texto: despesas totais no período\",\"type\":\"markdown\",\"params\":{\"markdown\":\"__No período escolhido no calendário, e relacionado também a seleção feita na lista de entidades.__\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

@@ -5,10 +5,11 @@
 # Input: Year, month and day from the data to be inserted, ElasticSearch's user and password. The day should be the last day of the month.
 # Example: ./insert_expenses.sh 2016 10 myuser mypass
 # It has 4 steps:
-#   1- Download files and put them in the right location.
-#   2- Generate logstash config file via create_expenses_config.py.
-#   3- Generate a CSV with only UFPR data via resume_expenses.sh, which is stored in transparencia/data/expenses/processed/year-month.csv
-#   4- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_expenses.sh.
+#   1- Download files and put them in the right location (a temporary directory, inside this directory).
+#   2- Generate logstash config file and config files to merge downloaded CSVs, via create_expenses_config.py.
+#   3- Generate a CSV with the filtered data via resume_expenses.sh.
+#   4- Merge CSVs using merge_files.py, based on config files created by create_expenses_config.py.
+#   5- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_expenses.sh.
 # Output: The commands/scripts outputs.
 
 if [ "$#" -ne 4 ]; then
@@ -72,7 +73,9 @@ rm $path/${1}${2}_Favorecidos.zip
 
 # Remove null bytes
 cat $path/${1}${2}_CNPJ.csv | tr -d '\000' > $path/${1}{$2}_CNPJ_NotNull.csv
+cat $path/${1}${2}_NaturezaJuridica.csv | tr -d '\000' > $path/${1}{$2}_NatJur_NotNull.csv
 mv $path/${1}{$2}_CNPJ_NotNull.csv $path/${1}${2}_CNPJ.csv
+mv $path/${1}{$2}_NatJur_NotNull.csv $path/${1}${2}_NaturezaJuridica.csv
 
 for key in "${!filter[@]}"
 do
@@ -81,16 +84,19 @@ do
     # Step 3:
     ./resume_expenses.sh "${path}" ${1}-${2} "${filter[$key]}" "${columnName}"
     aux=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
-    ./merge_files_by_cnpj.py $path/config-cnpj-${1}-${2}.json "$aux" "${columnName}"
-    ./merge_files_by_cnae.py $path/config-cnae-${1}-${2}.json "$aux" "${columnName}"
+    ./merge_files.py $path/config-cnpj-${1}-${2}.json "$aux" "${columnName}"
+    ./merge_files.py $path/config-cnae-${1}-${2}.json "$aux" "${columnName}"
+    ./merge_files.py $path/config-natjur-${1}-${2}.json "$aux" "${columnName}"
     # Step 4:
     logstash -f ${path}/config-${1}-${2} < ${path}/${1}${2}.csv
     # Data inserted, we can now remove it.
     rm ${path}/${1}${2}.csv
     rm ${path}/${1}${2}_merged_by_cnpj.csv
+    rm ${path}/${1}${2}_merged_by_cnae.csv
     rm ${path}/config-${1}-${2}
     rm ${path}/config-cnae-${1}-${2}.json
     rm ${path}/config-cnpj-${1}-${2}.json
+    rm ${path}/config-natjur-${1}-${2}.json
 done
 
 # Remove downloaded csvs.

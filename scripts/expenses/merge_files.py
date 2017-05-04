@@ -45,7 +45,7 @@ idPointColumn2 = params['idColumn2']
 ignoreColumns1 = params['ignoreColumns1']
 ignoreColumns2 = params['ignoreColumns2']
 
-csv.register_dialect('dialect', lineterminator = params['lineterminator'], delimiter=params['delimiter'], quotechar=params['quotechar'])
+csv.register_dialect('dialect', lineterminator = params['lineterminator'], delimiter=params['delimiter'], quoting=csv.QUOTE_NONE)
 
 file_exists = Path(file1)
 if not file_exists.is_file():

@@ -20,15 +20,15 @@ fi
 source ./config.sh
 
 # Check if all variables in config file are set:
-if [ -z ${index+x} ]; then
+if [ -z ${index} ]; then
     echo "Var 'index' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
     exit;
 fi
-if [ -z ${host+x} ]; then
+if [ -z ${host} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
     exit;
 fi
-if [ -z ${columnName+x} ]; then
+if [ -z ${columnName} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
     exit;
 fi

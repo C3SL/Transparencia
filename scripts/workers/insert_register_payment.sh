@@ -23,15 +23,15 @@ fi
 
 source ./config.sh
 
-if [ -z ${index+x} ]; then
+if [ -z ${index} ]; then
     echo "Var 'index' is unset. Set it in file 'scripts/workers/config.sh'.";
     exit;
 fi
-if [ -z ${host+x} ]; then
+if [ -z ${host} ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/workers/config.sh'.";
     exit;
 fi
-if [ -z ${columnName+x} ]; then
+if [ -z ${columnName} ]; then
     echo "Var 'columnName' is unset. Set it in file 'scripts/workers/config.sh'.";
     exit;
 fi

@@ -15,15 +15,15 @@ if len(sys.argv) != 10:
     sys.exit()
 
 with open('logstash_config.example') as infile:
-	example = infile.read()
+    example = infile.read()
 
 output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
-					 , "date": sys.argv[1] + '-' + sys.argv[2]
+                     , "date": sys.argv[1] + '-' + sys.argv[2]
                      , "index": sys.argv[4] + '-' + sys.argv[6]
                      , "host": sys.argv[5]
-					 , "user": sys.argv[7]
-					 , "password": sys.argv[8] }
+                     , "user": sys.argv[7]
+                     , "password": sys.argv[8] }
 
 date = sys.argv[1] + '-' + sys.argv[2]
 with open(sys.argv[9] + '/config-' + date, 'w') as outfile:
-	outfile.write(output)
+    outfile.write(output)

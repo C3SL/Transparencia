@@ -1,66 +1,66 @@
 input {
-	stdin {
-		codec => plain {
-			charset => "Windows-1252"
-		}
-	}
+    stdin {
+        codec => plain {
+            charset => "Windows-1252"
+        }
+    }
 }
 
 filter {
-	csv {
-		columns => [ "ID_SERVIDOR_PORTAL", "NOME", "CPF", "MATRICULA", "DESCRICAO_CARGO", "CLASSE_CARGO", "REFERENCIA_CARGO", "PADRAO_CARGO", "NIVEL_CARGO", "SIGLA_FUNCAO", "NIVEL_FUNCAO", "FUNCAO", "CODIGO_ATIVIDADE", "ATIVIDADE", "OPCAO_FUNCAO_TOTAL", "UORG_LOTACAO", "COD_ORG_LOTACAO", "ORG_LOTACAO", "COD_ORGSUP_LOTACAO", "ORGSUP_LOTACAO", "UORG_EXERCICIO", "COD_ORG_EXERCICIO", "ORG_EXERCICIO", "COD_ORGSUP_EXERCICIO", "ORGSUP_EXERCICIO", "TIPO_VINCULO", "SITUACAO_VINCULO", "DATA_INICIO_AFASTAMENTO", "DATA_TERMINO_AFASTAMENTO", "REGIME_JURIDICO", "JORNADA_DE_TRABALHO", "DATA_INGRESSO_CARGOFUNCAO", "DATA_NOMEACAO_CARGOFUNCAO", "DATA_INGRESSO_ORGAO", "DOCUMENTO_INGRESSO_SERVICOPUBLICO", "DATA_DIPLOMA_INGRESSO_SERVICOPUBLICO", "DIPLOMA_INGRESSO_CARGOFUNCAO", "DIPLOMA_INGRESSO_ORGAO", "DIPLOMA_INGRESSO_SERVICOPUBLICO", "UF_EXERCICIO", "ANO", "MES", "REMUNERAÇÃO BÁSICA BRUTA (R$)", "REMUNERAÇÃO BÁSICA BRUTA (U$)", "ABATE-TETO (R$)", "ABATE-TETO (U$)", "GRATIFICAÇÃO NATALINA (R$)", "GRATIFICAÇÃO NATALINA (U$)", "ABATE-TETO DA GRATIFICAÇÃO NATALINA (R$)", "ABATE-TETO DA GRATIFICAÇÃO NATALINA (U$)", "FÉRIAS (R$)", "FÉRIAS (U$)", "OUTRAS REMUNERAÇÕES EVENTUAIS (R$)", "OUTRAS REMUNERAÇÕES EVENTUAIS (U$)", "IRRF (R$)", "IRRF (U$)", "PSS/RPGS (R$)", "PSS/RPGS (U$)", "PENSÃO MILITAR (R$)", "PENSÃO MILITAR (U$)", "FUNDO DE SAÚDE (R$)", "FUNDO DE SAÚDE (U$)", "DEMAIS DEDUÇÕES (R$)", "DEMAIS DEDUÇÕES (U$)", "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)", "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (U$)", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (R$)(*)", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (U$)(*)    ", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (R$)(*)", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (U$)(*)", "TOTAL DE VERBAS INDENIZATÓRIAS (R$)(*)", "TOTAL DE VERBAS INDENIZATÓRIAS (U$)(*)", "TOTAL DE HONORÁRIOS (JETONS)"]
-		separator => "	"
-		add_field => { "timestamp" => "%(timestamp)s" }
-	}
-	mutate {
-		convert => { "ANO" => "integer" }
-		convert => { "MES" => "integer" }
-		convert => { "REMUNERAÇÃO BÁSICA BRUTA (R$)" => "float" }
-		convert => { "REMUNERAÇÃO BÁSICA BRUTA (U$)" => "float" }
-		convert => { "ABATE-TETO (R$)" => "float" }
-		convert => { "ABATE-TETO (U$)" => "float" }
-		convert => { "GRATIFICAÇÃO NATALINA (R$)" => "float" }
-		convert => { "GRATIFICAÇÃO NATALINA (U$)" => "float" }
-		convert => { "ABATE-TETO DA GRATIFICAÇÃO NATALINA (R$)" => "float" }
-		convert => { "ABATE-TETO DA GRATIFICAÇÃO NATALINA (U$)" => "float" }
-		convert => { "FÉRIAS (R$)" => "float" }
-		convert => { "FÉRIAS (U$)" => "float" }
-		convert => { "OUTRAS REMUNERAÇÕES EVENTUAIS (R$)" => "float" }
-		convert => { "OUTRAS REMUNERAÇÕES EVENTUAIS (U$)" => "float" }
-		convert => { "IRRF (R$)" => "float" }
-		convert => { "IRRF (U$)" => "float" }
-		convert => { "PSS/RPGS (R$)" => "float" }
-		convert => { "PSS/RPGS (U$)" => "float" }
-		convert => { "PENSÃO MILITAR (R$)" => "float" }
-		convert => { "PENSÃO MILITAR (U$)" => "float" }
-		convert => { "FUNDO DE SAÚDE (R$)" => "float" }
-		convert => { "FUNDO DE SAÚDE (U$)" => "float" }
-		convert => { "DEMAIS DEDUÇÕES (R$)" => "float" }
-		convert => { "DEMAIS DEDUÇÕES (U$)" => "float" }
-		convert => { "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)" => "float" }
-		convert => { "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (U$)" => "float" }
-		convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (R$)(*)" => "float" }
-		convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (U$)(*)" => "float" }
-		convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (R$)(*)" => "float" }
-		convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (U$)(*)" => "float" }
-		convert => { "TOTAL DE VERBAS INDENIZATÓRIAS (R$)(*)" => "float" }
-		convert => { "TOTAL DE VERBAS INDENIZATÓRIAS (U$)(*)" => "float" }
-		convert => { "TOTAL DE HONORÁRIOS (JETONS)" => "float" }
-	}
-	date {
-		match => [ "timestamp", "dd/MM/YYYY HH:mm:ss", "ISO8601" ]
-		target => [ "@timestamp" ]
-	}
+    csv {
+        columns => [ "ID_SERVIDOR_PORTAL", "NOME", "CPF", "MATRICULA", "DESCRICAO_CARGO", "CLASSE_CARGO", "REFERENCIA_CARGO", "PADRAO_CARGO", "NIVEL_CARGO", "SIGLA_FUNCAO", "NIVEL_FUNCAO", "FUNCAO", "CODIGO_ATIVIDADE", "ATIVIDADE", "OPCAO_FUNCAO_TOTAL", "UORG_LOTACAO", "COD_ORG_LOTACAO", "ORG_LOTACAO", "COD_ORGSUP_LOTACAO", "ORGSUP_LOTACAO", "UORG_EXERCICIO", "COD_ORG_EXERCICIO", "ORG_EXERCICIO", "COD_ORGSUP_EXERCICIO", "ORGSUP_EXERCICIO", "TIPO_VINCULO", "SITUACAO_VINCULO", "DATA_INICIO_AFASTAMENTO", "DATA_TERMINO_AFASTAMENTO", "REGIME_JURIDICO", "JORNADA_DE_TRABALHO", "DATA_INGRESSO_CARGOFUNCAO", "DATA_NOMEACAO_CARGOFUNCAO", "DATA_INGRESSO_ORGAO", "DOCUMENTO_INGRESSO_SERVICOPUBLICO", "DATA_DIPLOMA_INGRESSO_SERVICOPUBLICO", "DIPLOMA_INGRESSO_CARGOFUNCAO", "DIPLOMA_INGRESSO_ORGAO", "DIPLOMA_INGRESSO_SERVICOPUBLICO", "UF_EXERCICIO", "ANO", "MES", "REMUNERAÇÃO BÁSICA BRUTA (R$)", "REMUNERAÇÃO BÁSICA BRUTA (U$)", "ABATE-TETO (R$)", "ABATE-TETO (U$)", "GRATIFICAÇÃO NATALINA (R$)", "GRATIFICAÇÃO NATALINA (U$)", "ABATE-TETO DA GRATIFICAÇÃO NATALINA (R$)", "ABATE-TETO DA GRATIFICAÇÃO NATALINA (U$)", "FÉRIAS (R$)", "FÉRIAS (U$)", "OUTRAS REMUNERAÇÕES EVENTUAIS (R$)", "OUTRAS REMUNERAÇÕES EVENTUAIS (U$)", "IRRF (R$)", "IRRF (U$)", "PSS/RPGS (R$)", "PSS/RPGS (U$)", "PENSÃO MILITAR (R$)", "PENSÃO MILITAR (U$)", "FUNDO DE SAÚDE (R$)", "FUNDO DE SAÚDE (U$)", "DEMAIS DEDUÇÕES (R$)", "DEMAIS DEDUÇÕES (U$)", "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)", "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (U$)", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (R$)(*)", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (U$)(*)    ", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (R$)(*)", "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (U$)(*)", "TOTAL DE VERBAS INDENIZATÓRIAS (R$)(*)", "TOTAL DE VERBAS INDENIZATÓRIAS (U$)(*)", "TOTAL DE HONORÁRIOS (JETONS)"]
+        separator => "    "
+        add_field => { "timestamp" => "%(timestamp)s" }
+    }
+    mutate {
+        convert => { "ANO" => "integer" }
+        convert => { "MES" => "integer" }
+        convert => { "REMUNERAÇÃO BÁSICA BRUTA (R$)" => "float" }
+        convert => { "REMUNERAÇÃO BÁSICA BRUTA (U$)" => "float" }
+        convert => { "ABATE-TETO (R$)" => "float" }
+        convert => { "ABATE-TETO (U$)" => "float" }
+        convert => { "GRATIFICAÇÃO NATALINA (R$)" => "float" }
+        convert => { "GRATIFICAÇÃO NATALINA (U$)" => "float" }
+        convert => { "ABATE-TETO DA GRATIFICAÇÃO NATALINA (R$)" => "float" }
+        convert => { "ABATE-TETO DA GRATIFICAÇÃO NATALINA (U$)" => "float" }
+        convert => { "FÉRIAS (R$)" => "float" }
+        convert => { "FÉRIAS (U$)" => "float" }
+        convert => { "OUTRAS REMUNERAÇÕES EVENTUAIS (R$)" => "float" }
+        convert => { "OUTRAS REMUNERAÇÕES EVENTUAIS (U$)" => "float" }
+        convert => { "IRRF (R$)" => "float" }
+        convert => { "IRRF (U$)" => "float" }
+        convert => { "PSS/RPGS (R$)" => "float" }
+        convert => { "PSS/RPGS (U$)" => "float" }
+        convert => { "PENSÃO MILITAR (R$)" => "float" }
+        convert => { "PENSÃO MILITAR (U$)" => "float" }
+        convert => { "FUNDO DE SAÚDE (R$)" => "float" }
+        convert => { "FUNDO DE SAÚDE (U$)" => "float" }
+        convert => { "DEMAIS DEDUÇÕES (R$)" => "float" }
+        convert => { "DEMAIS DEDUÇÕES (U$)" => "float" }
+        convert => { "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (R$)" => "float" }
+        convert => { "REMUNERAÇÃO APÓS DEDUÇÕES OBRIGATÓRIAS (U$)" => "float" }
+        convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (R$)(*)" => "float" }
+        convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - CIVIL (U$)(*)" => "float" }
+        convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (R$)(*)" => "float" }
+        convert => { "VERBAS INDENIZATÓRIAS REGISTRADAS EM SISTEMAS DE PESSOAL - MILITAR (U$)(*)" => "float" }
+        convert => { "TOTAL DE VERBAS INDENIZATÓRIAS (R$)(*)" => "float" }
+        convert => { "TOTAL DE VERBAS INDENIZATÓRIAS (U$)(*)" => "float" }
+        convert => { "TOTAL DE HONORÁRIOS (JETONS)" => "float" }
+    }
+    date {
+        match => [ "timestamp", "dd/MM/YYYY HH:mm:ss", "ISO8601" ]
+        target => [ "@timestamp" ]
+    }
 }
 
 output {
-	elasticsearch {
-		action => "index"
-		user => "%(user)s"
-		password => "%(password)s"
-		hosts => "http://%(host)s:9200"
-		index => "%(index)s-%(date)s"
-		workers => 1
-	}
-	stdout {}
+    elasticsearch {
+        action => "index"
+        user => "%(user)s"
+        password => "%(password)s"
+        hosts => "http://%(host)s:9200"
+        index => "%(index)s-%(date)s"
+        workers => 1
+    }
+    stdout {}
 }

@@ -1,11 +1,11 @@
 {
-	"path": "tmp_2016-10/"
-	, "date": "20161031"
+    "path": "tmp_2016-10/"
+    , "date": "20161031"
     , "file1" : "_Remuneracao.csv"
     , "file2" : "_Cadastro_Unique.csv"
     , "idColumn1" : 2
     , "idColumn2" : 0
-	, "quotechar": "\""
+    , "quotechar": "\""
     , "delimiter": "\t"
     , "lineterminator": "\n"
     , "outputFile": "tmp_/201610.csv"

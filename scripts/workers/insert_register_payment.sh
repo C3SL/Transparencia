@@ -16,9 +16,9 @@
 # WARNING: We get the day from the CSV file by using cut in characters 7 and 8. This means we assume they will write something like 01 as day 1. If they change it to 1, this script will not work!
 
 if [ "$#" -ne 4 ]; then
-	echo "Usage: $0 <year> <month> <user> <password>"
-	echo "Example: $0 2016 12 myuser mypassword"
-	exit
+    echo "Usage: $0 <year> <month> <user> <password>"
+    echo "Example: $0 2016 12 myuser mypassword"
+    exit
 fi
 
 source ./config.sh

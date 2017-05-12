@@ -1,49 +1,49 @@
 input {
-	stdin {
-		codec => plain {
-			charset => "Windows-1252"
-		}
-	}
+    stdin {
+        codec => plain {
+            charset => "Windows-1252"
+        }
+    }
 }
 
 filter {
-	csv {
-		columns => ["Código Órgão Superior","Nome Órgão Superior","Código Órgão","Nome Órgao","Código Unidade Gestora","Nome Unidade Gestora","Código Função","Nome Função","Código Subfunção","Nome Subfunção","Código Programa","Nome Programa","Código Ação","Nome Ação","Linguagem Cidadã","CPF Favorecido","Nome Favorecido","Número Documento","Gestão Pagamento","Data Pagamento","Valor"]
-		separator => "	"
-		add_field => { "timestamp" => "%(timestamp)s" }
-	}
-	mutate {
-		convert => { "Código Órgão Superior" => "integer" }
-		convert => { "Código Órgão" => "integer" }
-		convert => { "Código Unidade Gestora" => "integer" }
-		convert => { "Código Grupo Despesa" => "integer" }
-		convert => { "Código Elemento Despesa" => "integer" }
-		convert => { "Código Função" => "integer" }
-		convert => { "Código Subfunção" => "integer" }
-		convert => { "Código Programa" => "integer" }
-		convert => { "Código Ação" => "integer" }
-		convert => { "Código Favorecido" => "integer" }
-		convert => { "Gestão Pagamento" => "integer" }
-		convert => { "Valor" => "float" }
-	}
-	date {
-		match => [ "timestamp", "dd/MM/YYYY HH:mm:ss", "ISO8601" ]
-		target => [ "@timestamp" ]
-	}
-	date {
+    csv {
+        columns => ["Código Órgão Superior","Nome Órgão Superior","Código Órgão","Nome Órgao","Código Unidade Gestora","Nome Unidade Gestora","Código Função","Nome Função","Código Subfunção","Nome Subfunção","Código Programa","Nome Programa","Código Ação","Nome Ação","Linguagem Cidadã","CPF Favorecido","Nome Favorecido","Número Documento","Gestão Pagamento","Data Pagamento","Valor"]
+        separator => "    "
+        add_field => { "timestamp" => "%(timestamp)s" }
+    }
+    mutate {
+        convert => { "Código Órgão Superior" => "integer" }
+        convert => { "Código Órgão" => "integer" }
+        convert => { "Código Unidade Gestora" => "integer" }
+        convert => { "Código Grupo Despesa" => "integer" }
+        convert => { "Código Elemento Despesa" => "integer" }
+        convert => { "Código Função" => "integer" }
+        convert => { "Código Subfunção" => "integer" }
+        convert => { "Código Programa" => "integer" }
+        convert => { "Código Ação" => "integer" }
+        convert => { "Código Favorecido" => "integer" }
+        convert => { "Gestão Pagamento" => "integer" }
+        convert => { "Valor" => "float" }
+    }
+    date {
+        match => [ "timestamp", "dd/MM/YYYY HH:mm:ss", "ISO8601" ]
+        target => [ "@timestamp" ]
+    }
+    date {
         match => [ "Data Pagamento", "dd/MM/YYYY" ]
         target => [ "Data Pagamento Timestamp" ]
-	}
+    }
 }
 
 output {
-	elasticsearch {
-		action => "index"
-		user => "%(user)s"
-		password => "%(password)s"
-		hosts => "http://%(host)s:9200"
-		index => "%(index)s-%(date)s"
-		workers => 1
-	}
-	stdout {}
+    elasticsearch {
+        action => "index"
+        user => "%(user)s"
+        password => "%(password)s"
+        hosts => "http://%(host)s:9200"
+        index => "%(index)s-%(date)s"
+        workers => 1
+    }
+    stdout {}
 }

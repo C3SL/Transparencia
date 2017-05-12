@@ -17,34 +17,34 @@ if len(sys.argv) != 10:
     sys.exit()
 
 data = {
-	"path": sys.argv[9]
-	, "date": sys.argv[1] + sys.argv[2] + sys.argv[3]
-	, "file1": "_Remuneracao.csv"
-	, "file2": "_Cadastro_Unique.csv"
-	, "idColumn1": 2
-	, "idColumn2": 0
-	, "quotechar": "\""
-	, "delimiter": "\t"
-	, "lineterminator": "\n"
-	, "outputFile": sys.argv[9] + '/' + sys.argv[1] + sys.argv[2] + sys.argv[3] + ".csv"
+    "path": sys.argv[9]
+    , "date": sys.argv[1] + sys.argv[2] + sys.argv[3]
+    , "file1": "_Remuneracao.csv"
+    , "file2": "_Cadastro_Unique.csv"
+    , "idColumn1": 2
+    , "idColumn2": 0
+    , "quotechar": "\""
+    , "delimiter": "\t"
+    , "lineterminator": "\n"
+    , "outputFile": sys.argv[9] + '/' + sys.argv[1] + sys.argv[2] + sys.argv[3] + ".csv"
 }
 
 with open(sys.argv[9] + '/config-' + sys.argv[1] + '-' + sys.argv[2] + '.json', 'w') as outfile:
     json.dump(data, outfile, indent=4, sort_keys=True)
 
 if int(sys.argv[1]) <= 2014 or (int(sys.argv[1]) == 2015 and int(sys.argv[2]) <= 3):
-	with open('previous_logstash_config.example') as infile:
-		example = infile.read()
+    with open('previous_logstash_config.example') as infile:
+        example = infile.read()
 else:
-	with open('logstash_config.example') as infile:
-		example = infile.read()
+    with open('logstash_config.example') as infile:
+        example = infile.read()
 
 output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
-					 , "date": sys.argv[1] + '-' + sys.argv[2]
+                     , "date": sys.argv[1] + '-' + sys.argv[2]
                      , "index": sys.argv[4] + '-' + sys.argv[6]
                      , "host": sys.argv[5]
-					 , "user": sys.argv[7]
-					 , "password": sys.argv[8] }
+                     , "user": sys.argv[7]
+                     , "password": sys.argv[8] }
 
 with open(sys.argv[9] + '/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
-	outfile.write(output)
+    outfile.write(output)

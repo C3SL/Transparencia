@@ -2,8 +2,8 @@
 # Output: The output for the curl query.
 
 if [ "$#" -ne 1 ]; then
-	echo "Usage: $0 <query-file>"
-	exit
+    echo "Usage: $0 <query-file>"
+    exit
 fi
 
 query=$(cat $1)

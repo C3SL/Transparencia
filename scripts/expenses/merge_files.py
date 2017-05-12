@@ -109,7 +109,7 @@ for row2 in csv_2:
         result.append(newRow)
         hits += 1
     else:
-		# This guy was in the second file, but not in the first one. Add him, but with null values in the second file.
+        # This guy was in the second file, but not in the first one. Add him, but with null values in the second file.
         newRow = getDataWithEmptyRow(columns1, row2)
         result.append(newRow)
         errors += 1

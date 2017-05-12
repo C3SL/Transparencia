@@ -45,8 +45,8 @@ title1 = csv_1.pop(0)
 
 file_exists = Path(file2)
 if not file_exists.is_file():
-	print("File2 does not exist. Calling script resume_register to create it...")
-	call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + sys.argv[2] + " " + sys.argv[3]], shell=True)
+    print("File2 does not exist. Calling script resume_register to create it...")
+    call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + sys.argv[2] + " " + sys.argv[3]], shell=True)
 
 with open(file2, newline='', encoding='Windows-1252') as f:
     csv_2 = [ i for i in csv.reader(f, 'dialect') ]
@@ -58,10 +58,10 @@ def getDataFromRows(row1, row2):
     newRow = []
     for value in row2:
         newRow.append(value)
-	# Append columns ANO e MES.
+    # Append columns ANO e MES.
     newRow.append(row1[0])
     newRow.append(row1[1])
-	# Start i in 5 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have it from Cadastro.csv). We might not have data from them.
+    # Start i in 5 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have it from Cadastro.csv). We might not have data from them.
     for i in range(5, len(row1)):
         newRow.append(row1[i])
     return newRow
@@ -70,7 +70,7 @@ def getDataWithEmptyRow(columns, row):
     newRow = []
     for value in row:
         newRow.append(value)
-	# Append since 3 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have this data from Cadastro.csv).
+    # Append since 3 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have this data from Cadastro.csv).
     for i in range(3, columns):
         newRow.append('')
     return newRow
@@ -96,7 +96,7 @@ for row2 in csv_2:
         result.append(newRow)
         hits += 1
     else:
-		# This guy was in the second file, but not in the first one. Add him, but with null values in the second file.
+        # This guy was in the second file, but not in the first one. Add him, but with null values in the second file.
         newRow = getDataWithEmptyRow(columns1, row2)
         result.append(newRow)
         errors += 1

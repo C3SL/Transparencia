@@ -12,9 +12,9 @@
 # Output: The commands/scripts outputs.
 
 if [ "$#" -ne 4 ]; then
-	echo "Usage: $0 <year> <month> <user> <password>"
-	echo "Example: $0 2016 12 myuser mypass"
-	exit
+    echo "Usage: $0 <year> <month> <user> <password>"
+    echo "Example: $0 2016 12 myuser mypass"
+    exit
 fi
 
 source ./config.sh

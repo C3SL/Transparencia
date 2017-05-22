@@ -15,7 +15,7 @@ columnName="COD_ORGSUP_EXERCICIO"
 
 declare -A filter
 filter=(
-    [mec]="MINISTERIO DA EDUCACAO"
+    [mec]="15000"
 )
 
 # Host: ElasticSearch's host. Examples: "localhost"

@@ -21,16 +21,16 @@ fi
 source ./config.sh
 
 # Check if all variables in config file are set:
-if [ -z ${index} ]; then
+if [ -z "${index}" ]; then
     echo "Var 'index' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
-if [ -z ${host} ]; then
+if [ -z "${host}" ]; then
     echo "Var 'host' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
-if [ -z ${columnName} ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/expenses/config.sh'.";
+if [ -z "${columnName}" ]; then
+    echo "Var 'columnName' is unset. Set it in file 'scripts/expenses/config.sh'.";
     exit;
 fi
 

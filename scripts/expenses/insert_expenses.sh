@@ -42,9 +42,9 @@ fi
 
 # Getting the Last day of this month (Using date 2016-05-15 as example):
 # First, get next month (201606).
-aux=$(date +%Y%m -d "$(date +${1}${2}15) next month")
+nxtMonth=$(date +%Y%m -d "$(date +${1}${2}15) next month")
 # Append day 01 (20160601).
-temp=$(date +%Y%m%d -d "${aux}01")
+temp=$(date +%Y%m%d -d "${nxtMonth}01")
 # Remove 1 day: 20160531, get only day: 31.
 day=$(date -d "$temp - 1 day" "+%d")
 
@@ -83,10 +83,10 @@ do
     ./create_expenses_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4 "${path}"
     # Step 3:
     ./resume_expenses.sh "${path}" ${1}-${2} "${filter[$key]}" "${columnName}"
-    aux=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
-    ./merge_files.py $path/config-cnpj-${1}-${2}.json "$aux" "${columnName}"
-    ./merge_files.py $path/config-cnae-${1}-${2}.json "$aux" "${columnName}"
-    ./merge_files.py $path/config-natjur-${1}-${2}.json "$aux" "${columnName}"
+    strReplacement=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
+    ./merge_files.py $path/config-cnpj-${1}-${2}.json "$strReplacement" "${columnName}"
+    ./merge_files.py $path/config-cnae-${1}-${2}.json "$strReplacement" "${columnName}"
+    ./merge_files.py $path/config-natjur-${1}-${2}.json "$strReplacement" "${columnName}"
     # Step 4:
     logstash -f ${path}/config-${1}-${2} < ${path}/${1}${2}.csv
     # Data inserted, we can now remove it.

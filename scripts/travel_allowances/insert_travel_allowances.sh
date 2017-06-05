@@ -41,11 +41,11 @@ fi
 
 # Getting the Last day of this month (Using date 2016-05-15 as example):
 # First, get next month (201606).
-aux=$(date +%Y%m -d "$(date +${1}${2}15) next month")
+nxtMonth=$(date +%Y%m -d "$(date +${1}${2}15) next month")
 # Append day 01 (20160601).
-temp=$(date -d "${aux}01")
+tempDate=$(date -d "${nxtMonth}01")
 # Remove 1 day: 20160531, get only day: 31.
-day=$(date -d "$temp - 1 day" "+%d")
+day=$(date -d "$tempDate - 1 day" "+%d")
 
 ym=$1-$2
 path="./tmp_$ym"

@@ -70,8 +70,8 @@ do
 
     # Step 3:
     # Start processing
-    aux=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
-    ./merge_files_es.py $path/config-${1}-${2}.json "$aux" "${columnName}"
+    strReplacement=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
+    ./merge_files_es.py $path/config-${1}-${2}.json "$strReplacement" "${columnName}"
     rm $path/${1}${2}${day}_Cadastro_Unique.csv
 
     # Step 4:

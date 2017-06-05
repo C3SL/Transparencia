@@ -22,6 +22,27 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
+def getDataFromRows(row1, row2):
+    newRow = []
+    for value in row2:
+        newRow.append(value)
+    # Append columns ANO e MES.
+    newRow.append(row1[0])
+    newRow.append(row1[1])
+    # Start i in 5 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have it from Cadastro.csv). We might not have data from them.
+    for i in range(5, len(row1)):
+        newRow.append(row1[i])
+    return newRow
+
+def getDataWithEmptyRow(columns, row):
+    newRow = []
+    for value in row:
+        newRow.append(value)
+    # Append since 3 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have this data from Cadastro.csv).
+    for i in range(3, columns):
+        newRow.append('')
+    return newRow
+
 if len(sys.argv) != 4:
     print("Usage: " + sys.argv[0] + " <config.json> <filter> <columnId>")
     sys.exit()
@@ -53,27 +74,6 @@ with open(file2, newline='', encoding='Windows-1252') as f:
 title2 = csv_2.pop(0)
 
 # Having data from both files, I have to merge them.
-
-def getDataFromRows(row1, row2):
-    newRow = []
-    for value in row2:
-        newRow.append(value)
-    # Append columns ANO e MES.
-    newRow.append(row1[0])
-    newRow.append(row1[1])
-    # Start i in 5 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have it from Cadastro.csv). We might not have data from them.
-    for i in range(5, len(row1)):
-        newRow.append(row1[i])
-    return newRow
-
-def getDataWithEmptyRow(columns, row):
-    newRow = []
-    for value in row:
-        newRow.append(value)
-    # Append since 3 because we want to ignore columns ID_SERVIDOR_PORTAL, CPF and NOME from Remuneracao.csv (we already have this data from Cadastro.csv).
-    for i in range(3, columns):
-        newRow.append('')
-    return newRow
 
 result = []
 hits = 0

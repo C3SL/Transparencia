@@ -22,6 +22,30 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
+def getDataFromRows(row1, row2):
+    newRow = []
+    for i in range(0, len(row2)):
+        if i in ignoreColumns2:
+            continue
+        newRow.append(row2[i])
+    for i in range(0, len(row1)):
+        if i in ignoreColumns1:
+            continue
+        newRow.append(row1[i])
+    return newRow
+
+def getDataWithEmptyRow(columns, row):
+    newRow = []
+    for i in range(0, len(row)):
+        if i in ignoreColumns2:
+            continue
+        newRow.append(row[i])
+    for i in range(0, columns):
+        if i in ignoreColumns1:
+            continue
+        newRow.append('')
+    return newRow
+
 if len(sys.argv) != 4:
     print("Usage: " + sys.argv[0] + " <config.json> <filter> <columnId>")
     sys.exit()
@@ -66,30 +90,6 @@ with open(file2, newline='', encoding=encoding2) as f:
 title2 = csv_2.pop(0)
 
 # Having data from both files, I have to merge them.
-
-def getDataFromRows(row1, row2):
-    newRow = []
-    for i in range(0, len(row2)):
-        if i in ignoreColumns2:
-            continue
-        newRow.append(row2[i])
-    for i in range(0, len(row1)):
-        if i in ignoreColumns1:
-            continue
-        newRow.append(row1[i])
-    return newRow
-
-def getDataWithEmptyRow(columns, row):
-    newRow = []
-    for i in range(0, len(row)):
-        if i in ignoreColumns2:
-            continue
-        newRow.append(row[i])
-    for i in range(0, columns):
-        if i in ignoreColumns1:
-            continue
-        newRow.append('')
-    return newRow
 
 result = []
 hits = 0

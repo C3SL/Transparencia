@@ -9,7 +9,7 @@ input {
 filter {
     csv {
         columns => ["Código Órgão Superior","Nome Órgão Superior","Código Órgão","Nome Órgao","Código Unidade Gestora","Nome Unidade Gestora","Código Função","Nome Função","Código Subfunção","Nome Subfunção","Código Programa","Nome Programa","Código Ação","Nome Ação","Linguagem Cidadã","CPF Favorecido","Nome Favorecido","Número Documento","Gestão Pagamento","Data Pagamento","Valor"]
-        separator => "    "
+        separator => "	"
         add_field => { "timestamp" => "%(timestamp)s" }
     }
     mutate {

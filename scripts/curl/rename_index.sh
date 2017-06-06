@@ -6,8 +6,10 @@ if [ "$#" -ne 3 ]; then
     exit
 fi
 
+node1c3sl='http://node1.c3sl.ufpr.br:9200/'
+
 # Copy old index to new index...
-curl -u $1 -XPOST 'http://node1.c3sl.ufpr.br:9200/_reindex?pretty' -H 'Content-Type: application/json' -d'
+curl -u $1 -XPOST "${node1c3sl}_reindex?pretty" -H 'Content-Type: application/json' -d'
   {
     "source": {
       "index": "'$2'"
@@ -19,4 +21,4 @@ curl -u $1 -XPOST 'http://node1.c3sl.ufpr.br:9200/_reindex?pretty' -H 'Content-T
 '
 
 # Delete old index...
-curl -u $1 -XDELETE "http://node1.c3sl.ufpr.br:9200/$2?pretty"
+curl -u $1 -XDELETE "${node1c3sl}$2?pretty"

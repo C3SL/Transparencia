@@ -55,8 +55,16 @@ path="./tmp_$ym"
 mkdir -p "$path"
 
 # Download files
+acceptedEncoding='Accept-Encoding: gzip, deflate, sdch'
+acceptedLanguage='Accept-Language: en-US,en;q=0.8'
+userAgent='User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+acceptedFormat='Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+referer='Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos'
+cookie='Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH'
+connection='Connection: keep-alive'
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
-curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path/${1}${2}_Diarias.zip
+
+curl $request -H "${acceptedEncoding}" -H "${acceptedLanguage}" -H 'Upgrade-Insecure-Requests: 1' -H "${userAgent}" -H "${acceptedFormat}" -H "${referer}" -H "${cookie}" -H "${connection}" --compressed > $path/${1}${2}_Diarias.zip
 
 # Unzip them
 unzip -o $path/${1}${2}_Diarias.zip -d $path/

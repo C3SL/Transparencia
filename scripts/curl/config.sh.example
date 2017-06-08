@@ -1,0 +1,6 @@
+# WARNING: This is only an example file. You should copy it and rename to 'config.sh' in the same directory as this file, and then apply your modifications.
+
+# This file only contains some config variables:
+
+# This variable sets the host in which the database is running
+dbHostname="localhost:9200/"

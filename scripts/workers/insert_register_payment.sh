@@ -28,23 +28,23 @@ if [ "$#" -ne 4 ]; then
 fi
 
 source ./config.sh
-setInFile='scripts/workers/config.sh'
+configFile='scripts/workers/config.sh'
 if [ -z "${index}" ]; then
-	inputError "index" $setInFile
+	inputError "index" $configFile
     exit;
 fi
 if [ -z "${host}" ]; then
-	inputError "host" $setInFile
+	inputError "host" $configFile
     exit;
 fi
 if [ -z "${columnName}" ]; then
-	inputError "columnName" $setInFile
+	inputError "columnName" $configFile
     exit;
 fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
-	inputError "filter" $setInFile
+	inputError "filter" $configFile
     exit;
 fi
 

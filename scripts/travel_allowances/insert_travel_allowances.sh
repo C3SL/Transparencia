@@ -11,6 +11,11 @@
 #   4- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_travel_allowance.sh.
 # Output: The commands/scripts outputs.
 
+function inputError(){
+	echo "Var ${1} is unset. Set in file '${2}'."
+	return 0
+}
+
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
     echo "Example: $0 2016 12 myuser mypass"
@@ -20,22 +25,23 @@ fi
 source ./config.sh
 
 # Check if all variables in config file are set:
+setInFile='scripts/travel_allowance/config.sh'
 if [ -z "${index}" ]; then
-    echo "Var 'index' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+	inputError "index" $setInFile
     exit;
 fi
 if [ -z "${host}" ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    inputError "host" $setInFile
     exit;
 fi
 if [ -z "${columnName}" ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    inputError "columnName" $setInFile
     exit;
 fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "filter" $setInFile
     exit;
 fi
 
@@ -55,16 +61,9 @@ path="./tmp_$ym"
 mkdir -p "$path"
 
 # Download files
-acceptedEncoding='Accept-Encoding: gzip, deflate, sdch'
-acceptedLanguage='Accept-Language: en-US,en;q=0.8'
-userAgent='User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
-acceptedFormat='Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-referer='Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos'
-cookie='Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH'
-connection='Connection: keep-alive'
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
 
-curl $request -H "${acceptedEncoding}" -H "${acceptedLanguage}" -H 'Upgrade-Insecure-Requests: 1' -H "${userAgent}" -H "${acceptedFormat}" -H "${referer}" -H "${cookie}" -H "${connection}" --compressed > $path/${1}${2}_Diarias.zip
+curl $request  --compressed > $path/${1}${2}_Diarias.zip
 
 # Unzip them
 unzip -o $path/${1}${2}_Diarias.zip -d $path/

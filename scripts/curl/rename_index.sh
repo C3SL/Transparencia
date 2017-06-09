@@ -9,7 +9,7 @@ fi
 source ./config.sh
 
 # Copy old index to new index...
-curl -XPOST "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
+curl -XPOST -u $1 "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
   {
     "source": {
       "index": "'$2'"

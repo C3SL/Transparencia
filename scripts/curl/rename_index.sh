@@ -21,4 +21,4 @@ curl -XPOST -u $1 "${dbHostname}_reindex?pretty" -H 'Content-Type: application/j
 '
 
 # Delete old index...
-curl -XDELETE "${dbHostname}$2?pretty"
+curl -XDELETE -u $1 "${dbHostname}$2?pretty"

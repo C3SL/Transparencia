@@ -12,6 +12,11 @@
 #   5- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_expenses.sh.
 # Output: The commands/scripts outputs.
 
+function inputError(){
+    echo "Var ${1} is unset. Set in file '${2}'."
+    return 0
+}
+
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
     echo "Example: $0 2016 12 myuser mypass"
@@ -21,22 +26,23 @@ fi
 source ./config.sh
 
 # Check if all variables in config file are set:
+configFile='scripts/expenses/config.sh'
 if [ -z "${index}" ]; then
-    echo "Var 'index' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "index" $configFile
     exit;
 fi
 if [ -z "${host}" ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "host" $configFile
     exit;
 fi
 if [ -z "${columnName}" ]; then
-    echo "Var 'columnName' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "columnName" $configFile
     exit;
 fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "filter" $configFile
     exit;
 fi
 
@@ -56,12 +62,15 @@ path="./tmp_$ym"
 mkdir -p "$path"
 
 # Download files
+downloadLink='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='
+
 # Download expenses file:
-request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=GastosDiretos'
-curl -o $path/${1}${2}_GastosDiretos.zip $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed
+request="${downloadLink}${1}&m=${2}&consulta=GastosDiretos"
+curl -o $path/${1}${2}_GastosDiretos.zip $request --compressed
+
 # Download file with information about company:
-request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=FavorecidosGastosDiretos'
-curl -o $path/${1}${2}_Favorecidos.zip $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8,pt;q=0.6' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/56.0.2924.76 Chrome/56.0.2924.76 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.portaltransparencia.gov.br/downloads/mensal.asp?c=FavorecidosGastosDiretos' -H 'Cookie: ASPSESSIONIDSCBRBBTT=KPBDKGCAENJIEFBMMPOACBHJ' -H 'Connection: keep-alive' --compressed
+request="${downloadLink}${1}&m=${2}&consulta=FavorecidosGastosDiretos"
+curl -o $path/${1}${2}_Favorecidos.zip $request --compressed
 
 # Unzip them
 unzip -o $path/${1}${2}_GastosDiretos.zip -d $path/

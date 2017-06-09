@@ -11,6 +11,11 @@
 #   4- Insert data in ElasticSearch via logstash, using the config file created and the CSV created by resume_travel_allowance.sh.
 # Output: The commands/scripts outputs.
 
+function inputError(){
+    echo "Var ${1} is unset. Set in file '${2}'."
+    return 0
+}
+
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
     echo "Example: $0 2016 12 myuser mypass"
@@ -20,22 +25,23 @@ fi
 source ./config.sh
 
 # Check if all variables in config file are set:
+configFile='scripts/travel_allowance/config.sh'
 if [ -z "${index}" ]; then
-    echo "Var 'index' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    inputError "index" $configFile
     exit;
 fi
 if [ -z "${host}" ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    inputError "host" $configFile
     exit;
 fi
 if [ -z "${columnName}" ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/travel_allowance/config.sh'.";
+    inputError "columnName" $configFile
     exit;
 fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "filter" $configFile
     exit;
 fi
 
@@ -56,7 +62,8 @@ mkdir -p "$path"
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
-curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://transparencia.gov.br/downloads/mensal.asp?c=GastosDiretos' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBCEEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path/${1}${2}_Diarias.zip
+
+curl $request  --compressed > $path/${1}${2}_Diarias.zip
 
 # Unzip them
 unzip -o $path/${1}${2}_Diarias.zip -d $path/

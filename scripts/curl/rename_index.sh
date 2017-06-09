@@ -6,8 +6,10 @@ if [ "$#" -ne 3 ]; then
     exit
 fi
 
+source ./config.sh
+
 # Copy old index to new index...
-curl -u $1 -XPOST 'http://node1.c3sl.ufpr.br:9200/_reindex?pretty' -H 'Content-Type: application/json' -d'
+curl -XPOST -u $1 "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
   {
     "source": {
       "index": "'$2'"
@@ -19,4 +21,4 @@ curl -u $1 -XPOST 'http://node1.c3sl.ufpr.br:9200/_reindex?pretty' -H 'Content-T
 '
 
 # Delete old index...
-curl -u $1 -XDELETE "http://node1.c3sl.ufpr.br:9200/$2?pretty"
+curl -XDELETE -u $1 "${dbHostname}$2?pretty"

@@ -15,6 +15,12 @@
 
 # WARNING: We get the day from the CSV file by using cut in characters 7 and 8. This means we assume they will write something like 01 as day 1. If they change it to 1, this script will not work!
 
+function inputError(){
+    echo "Var ${1} is unset. Set in file '${2}'."
+    return 0
+}
+
+
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
     echo "Example: $0 2016 12 myuser mypassword"
@@ -22,23 +28,23 @@ if [ "$#" -ne 4 ]; then
 fi
 
 source ./config.sh
-
+configFile='scripts/workers/config.sh'
 if [ -z "${index}" ]; then
-    echo "Var 'index' is unset. Set it in file 'scripts/workers/config.sh'.";
+    inputError "index" $configFile
     exit;
 fi
 if [ -z "${host}" ]; then
-    echo "Var 'host' is unset. Set it in file 'scripts/workers/config.sh'.";
+    inputError "host" $configFile
     exit;
 fi
 if [ -z "${columnName}" ]; then
-    echo "Var 'columnName' is unset. Set it in file 'scripts/workers/config.sh'.";
+    inputError "columnName" $configFile
     exit;
 fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
-    echo "Var 'filter' is unset. Set it in file 'scripts/expenses/config.sh'.";
+    inputError "filter" $configFile
     exit;
 fi
 
@@ -51,7 +57,8 @@ mkdir -p "$path"
 
 # Download files
 request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&d=C&consulta=Servidores'
-curl $request -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_    64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.portaldatranspar    encia.gov.br/downloads/servidores.asp' -H 'Cookie: ASPSESSIONIDAQRABSAD=OJDLNBCANLIDINCHJHELHHFB; ASPSESSIONIDAQSDCQAD=BOKBKPNCDKOBJKGAMMEKADFL; _ga=GA1.3.1927288562.1481545643; ASPSESSIONIDSCSBBTCD=IGJLJBBC    EEJBGLOOJKGNMHBH' -H 'Connection: keep-alive' --compressed > $path/${1}${2}_Servidores.zip
+
+curl $request --compressed > $path/${1}${2}_Servidores.zip
 
 # Unzip them
 unzip -o $path/${1}${2}_Servidores.zip -d $path/

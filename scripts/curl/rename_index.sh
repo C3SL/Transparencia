@@ -6,10 +6,10 @@ if [ "$#" -ne 3 ]; then
     exit
 fi
 
-dbHostname='scripts/curl/config.sh'
+source ./config.sh
 
 # Copy old index to new index...
-curl -u $1 -XPOST "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
+curl -XPOST "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
   {
     "source": {
       "index": "'$2'"
@@ -21,4 +21,4 @@ curl -u $1 -XPOST "${dbHostname}_reindex?pretty" -H 'Content-Type: application/j
 '
 
 # Delete old index...
-curl -u $1 -XDELETE "${dbHostname}$2?pretty"
+curl -XDELETE "${dbHostname}$2?pretty"

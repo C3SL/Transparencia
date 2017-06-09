@@ -6,7 +6,7 @@ if [ "$#" -ne 3 ]; then
     exit
 fi
 
-dbHostname='http://node1.c3sl.ufpr.br:9200/'
+dbHostname='scripts/curl/config.sh'
 
 # Copy old index to new index...
 curl -u $1 -XPOST "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'

@@ -13,8 +13,8 @@
 # Output: The commands/scripts outputs.
 
 function inputError(){
-	echo "Var ${1} is unset. Set in file '${2}'."
-	return 0
+    echo "Var ${1} is unset. Set in file '${2}'."
+    return 0
 }
 
 if [ "$#" -ne 4 ]; then
@@ -28,8 +28,8 @@ source ./config.sh
 # Check if all variables in config file are set:
 configFile='scripts/expenses/config.sh'
 if [ -z "${index}" ]; then
-	inputError "index" $configFile
-	exit;
+    inputError "index" $configFile
+    exit;
 fi
 if [ -z "${host}" ]; then
     inputError "host" $configFile

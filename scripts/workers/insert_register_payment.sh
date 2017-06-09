@@ -16,8 +16,8 @@
 # WARNING: We get the day from the CSV file by using cut in characters 7 and 8. This means we assume they will write something like 01 as day 1. If they change it to 1, this script will not work!
 
 function inputError(){
-	echo "Var ${1} is unset. Set in file '${2}'."
-	return 0
+    echo "Var ${1} is unset. Set in file '${2}'."
+    return 0
 }
 
 
@@ -30,21 +30,21 @@ fi
 source ./config.sh
 configFile='scripts/workers/config.sh'
 if [ -z "${index}" ]; then
-	inputError "index" $configFile
+    inputError "index" $configFile
     exit;
 fi
 if [ -z "${host}" ]; then
-	inputError "host" $configFile
+    inputError "host" $configFile
     exit;
 fi
 if [ -z "${columnName}" ]; then
-	inputError "columnName" $configFile
+    inputError "columnName" $configFile
     exit;
 fi
 
 size=${#filter[@]}
 if [ "$size" -lt 1 ]; then
-	inputError "filter" $configFile
+    inputError "filter" $configFile
     exit;
 fi
 

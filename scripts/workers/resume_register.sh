@@ -1,15 +1,15 @@
 #!/bin/bash
 
-path=$1
-date=$2
-filter=$3
-column=$4
-
 if [ "$#" -ne 4 ]; then
     echo "Usage $0 <path> <date> <filter> <column-name>"
     echo "Example: $0 ./tmp_201612 201612 MEC 2"
     exit
 fi
+
+path=$1
+date=$2
+filter=$3
+column=$4
 
 input="${path}/${date}_Cadastro.csv"
 output="${path}/${date}_Cadastro_Unique.csv"

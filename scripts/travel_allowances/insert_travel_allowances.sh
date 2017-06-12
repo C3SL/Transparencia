@@ -12,20 +12,22 @@
 # Output: The commands/scripts outputs.
 
 function inputError(){
-    echo "Var ${year} is unset. Set in file '${month}'."
+    varName=$1
+    file=$2
+    echo "Var ${varName} is unset. Set in file '${file}'."
     return 0
 }
-
-year=$1
-month=$2
-user=$3
-passwd=$4
 
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
     echo "Example: $0 2016 12 myuser mypass"
     exit
 fi
+
+year=$1
+month=$2
+user=$3
+passwd=$4
 
 source ./config.sh
 

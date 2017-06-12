@@ -10,6 +10,10 @@ import sys, csv, json, math, subprocess
 from pathlib import Path
 from subprocess import call
 
+if len(sys.argv) != 10:
+    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <entity> <username> <password> <path>")
+    sys.exit()
+
 year = sys.argv[1]
 month = sys.argv[2]
 day = sys.argv[3]
@@ -19,10 +23,6 @@ entity = sys.argv[6]
 username = sys.argv[7]
 passwd = sys.argv[8]
 path = sys.argv[9]
-
-if len(sys.argv) != 10:
-    print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <entity> <username> <password> <path>")
-    sys.exit()
 
 with open('logstash_config.example') as infile:
     example = infile.read()

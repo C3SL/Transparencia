@@ -13,20 +13,22 @@
     # Output: The commands/scripts outputs.
 
     function inputError(){
-        echo "Var ${1} is unset. Set in file '${2}'."
+        varName=$1
+        file=$2
+        echo "Var ${varName} is unset. Set in file '${file}'."
         return 0
     }
-
-    year=$1
-    month=$2
-    user=$3
-    passwd=$4
 
     if [ "$#" -ne 4 ]; then
         echo "Usage: $0 <year> <month> <user> <password>"
         echo "Example: $0 2016 12 myuser mypass"
         exit
     fi
+
+    year=$1
+    month=$2
+    user=$3
+    passwd=$4
 
     source ./config.sh
 
@@ -86,10 +88,10 @@
     rm $path/${year}${month}_Favorecidos.zip
 
     # Remove null bytes
-    cat $path/${year}${month}_CNPJ.csv | tr -d '\000' > $path/${year}{$month}_CNPJ_NotNull.csv
-    cat $path/${year}${month}_NaturezaJuridica.csv | tr -d '\000' > $path/${year}{$month}_NatJur_NotNull.csv
-    mv $path/${year}{$month}_CNPJ_NotNull.csv $path/${year}${month}_CNPJ.csv
-    mv $path/${year}{$month}_NatJur_NotNull.csv $path/${year}${month}_NaturezaJuridica.csv
+    cat $path/${year}${month}_CNPJ.csv | tr -d '\000' > $path/${year}${month}_CNPJ_NotNull.csv
+    cat $path/${year}${month}_NaturezaJuridica.csv | tr -d '\000' > $path/${year}${month}_NatJur_NotNull.csv
+    mv $path/${year}${month}_CNPJ_NotNull.csv $path/${year}${month}_CNPJ.csv
+    mv $path/${year}${month}_NatJur_NotNull.csv $path/${year}${month}_NaturezaJuridica.csv
 
     for key in "${!filter[@]}"
     do

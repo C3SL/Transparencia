@@ -43,13 +43,13 @@ def getDataWithEmptyRow(columns, row):
         newRow.append('')
     return newRow
 
-configFile = sys.argv[1]
-filterReport = sys.argv[2]
-columnId = sys.argv[3]
-
 if len(sys.argv) != 4:
     print("Usage: " + sys.argv[0] + " <config.json> <filter> <columnId>")
     sys.exit()
+
+configFile = sys.argv[1]
+filterReport = sys.argv[2]
+columnId = sys.argv[3]
 
 with open(configFile) as f:
     params = json.load(f)

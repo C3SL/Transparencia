@@ -16,20 +16,22 @@
 # WARNING: We get the day from the CSV file by using cut in characters 7 and 8. This means we assume they will write something like 01 as day 1. If they change it to 1, this script will not work!
 
 function inputError(){
-    echo "Var ${year} is unset. Set in file '${month}'."
+    varName=$1
+    file=$2
+    echo "Var ${varName} is unset. Set in file '${file}'."
     return 0
 }
-
-year=$1
-month=$2
-user=$3
-passwd=$4
 
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
     echo "Example: $0 2016 12 myuser mypassword"
     exit
 fi
+
+year=$1
+month=$2
+user=$3
+passwd=$4
 
 source ./config.sh
 configFile='scripts/workers/config.sh'

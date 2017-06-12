@@ -12,7 +12,9 @@
 # Output: The commands/scripts outputs.
 
 function inputError(){
-    echo "Var ${1} is unset. Set in file '${2}'."
+    varName=$1
+    file=$2
+    echo "Var ${varName} is unset. Set in file '${file}'."
     return 0
 }
 
@@ -21,6 +23,11 @@ if [ "$#" -ne 4 ]; then
     echo "Example: $0 2016 12 myuser mypass"
     exit
 fi
+
+year=$1
+month=$2
+user=$3
+passwd=$4
 
 source ./config.sh
 
@@ -47,13 +54,13 @@ fi
 
 # Getting the Last day of this month (Using date 2016-05-15 as example):
 # First, get next month (201606).
-nxtMonth=$(date +%Y%m -d "$(date +${1}${2}15) next month")
+nxtMonth=$(date +%Y%m -d "$(date +${year}${month}15) next month")
 # Append day 01 (20160601).
 tempDate=$(date -d "${nxtMonth}01")
 # Remove 1 day: 20160531, get only day: 31.
 day=$(date -d "$tempDate - 1 day" "+%d")
 
-ym=$1-$2
+ym=$year-$month
 path="./tmp_$ym"
 
 # Step 1:
@@ -61,28 +68,28 @@ path="./tmp_$ym"
 mkdir -p "$path"
 
 # Download files
-request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&consulta=Diarias'
+request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${year}'&m='${month}'&consulta=Diarias'
 
-curl $request  --compressed > $path/${1}${2}_Diarias.zip
+curl $request  --compressed > $path/${year}${month}_Diarias.zip
 
 # Unzip them
-unzip -o $path/${1}${2}_Diarias.zip -d $path/
+unzip -o $path/${year}${month}_Diarias.zip -d $path/
 
 # Remove zip file
-rm $path/${1}${2}_Diarias.zip
+rm $path/${year}${month}_Diarias.zip
 
 for key in "${!filter[@]}"
 do
     # Step 2:
-    ./create_travel_allowance_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4 "${path}"
+    ./create_travel_allowance_config.py $year $month "$day" "$index" "$host" "$key" $user $passwd "${path}"
     # Step 3:
-    ./resume_travel_allowance.sh "$path" ${1}-${2} "${filter[$key]}" "${columnName}"
+    ./resume_travel_allowance.sh "$path" ${year}-${month} "${filter[$key]}" "${columnName}"
     # Step 4:
-    logstash -f ${path}/config-${1}-${2} < ${path}/${1}${2}.csv
+    logstash -f ${path}/config-${year}-${month} < ${path}/${year}${month}.csv
     # Remove processed file
-    rm ${path}/${1}${2}.csv
-    rm ${path}/config-${1}-${2}
+    rm ${path}/${year}${month}.csv
+    rm ${path}/config-${year}-${month}
 done
 
-rm $path/${1}${2}_Diarias.csv
+rm $path/${year}${month}_Diarias.csv
 rmdir $path

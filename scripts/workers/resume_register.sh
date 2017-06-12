@@ -9,13 +9,14 @@ fi
 path=$1
 date=$2
 filter=$3
+column=$4
 
 input="${path}/${date}_Cadastro.csv"
 output="${path}/${date}_Cadastro_Unique.csv"
 
 head -n1 ${input} > $path/header.csv
 iconv -f WINDOWS-1252 -t UTF-8 -o $path/tmp.csv $path/header.csv
-columnId=$(sed s/${4}.*$/${4}/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
+columnId=$(sed s/${column}.*$/${column}/ $path/tmp.csv | sed -e 's/\t/\n/g' | wc -l)
 rm -f $path/tmp.csv $path/header.csv
 
 cmd="\$$columnId == \"${filter}\""

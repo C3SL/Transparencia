@@ -6,19 +6,23 @@ if [ "$#" -ne 3 ]; then
     exit
 fi
 
+userAndPasswd=$1
+sourceIndex=$2
+destIndex=$3
+
 source ./config.sh
 
 # Copy old index to new index...
-curl -XPOST -u $1 "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
+curl -XPOST -u $userAndPasswd "${dbHostname}_reindex?pretty" -H 'Content-Type: application/json' -d'
   {
     "source": {
-      "index": "'$2'"
+      "index": "'$sourceIndex'"
     },
     "dest": {
-       "index": "'$3'"
+       "index": "'$destIndex'"
     }
   }
 '
 
 # Delete old index...
-curl -XDELETE -u $1 "${dbHostname}$2?pretty"
+curl -XDELETE -u $userAndPasswd "${dbHostname}$sourceIndex?pretty"

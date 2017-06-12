@@ -16,9 +16,19 @@ if len(sys.argv) != 10:
     print("Usage: " + sys.argv[0] + " <year (2016)> <month (01)> <day (31)> <index> <host> <entity> <username> <password> <path>")
     sys.exit()
 
+year = sys.argv[1]
+month = sys.argv[2]
+day = sys.argv[3]
+index = sys.argv[4]
+host = sys.argv[5]
+entity = sys.argv[6]
+username = sys.argv[7]
+passwd = sys.argv[8]
+path = sys.argv[9]
+
 data = {
-    "path": sys.argv[9]
-    , "date": sys.argv[1] + sys.argv[2] + sys.argv[3]
+    "path": path
+    , "date": year + month + day
     , "file1": "_Remuneracao.csv"
     , "file2": "_Cadastro_Unique.csv"
     , "idColumn1": 2
@@ -26,25 +36,25 @@ data = {
     , "quotechar": "\""
     , "delimiter": "\t"
     , "lineterminator": "\n"
-    , "outputFile": sys.argv[9] + '/' + sys.argv[1] + sys.argv[2] + sys.argv[3] + ".csv"
+    , "outputFile": path + '/' + year + month + day + ".csv"
 }
 
-with open(sys.argv[9] + '/config-' + sys.argv[1] + '-' + sys.argv[2] + '.json', 'w') as outfile:
+with open(path + '/config-' + year + '-' + month + '.json', 'w') as outfile:
     json.dump(data, outfile, indent=4, sort_keys=True)
 
-if int(sys.argv[1]) <= 2014 or (int(sys.argv[1]) == 2015 and int(sys.argv[2]) <= 3):
+if int(year) <= 2014 or (int(year) == 2015 and int(month) <= 3):
     with open('previous_logstash_config.example') as infile:
         example = infile.read()
 else:
     with open('logstash_config.example') as infile:
         example = infile.read()
 
-output = example % { "timestamp": sys.argv[3] + '/' + sys.argv[2] + '/' + sys.argv[1] + ' 00:00:00'
-                     , "date": sys.argv[1] + '-' + sys.argv[2]
-                     , "index": sys.argv[4] + '-' + sys.argv[6]
-                     , "host": sys.argv[5]
-                     , "user": sys.argv[7]
-                     , "password": sys.argv[8] }
+output = example % { "timestamp": day + '/' + month + '/' + year + ' 00:00:00'
+                     , "date": year + '-' + month
+                     , "index": index + '-' + entity
+                     , "host": host
+                     , "user": username
+                     , "password": passwd }
 
-with open(sys.argv[9] + '/config-' + sys.argv[1] + '-' + sys.argv[2], 'w') as outfile:
+with open(path + '/config-' + year + '-' + month, 'w') as outfile:
     outfile.write(output)

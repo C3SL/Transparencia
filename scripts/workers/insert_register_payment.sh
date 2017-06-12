@@ -16,10 +16,14 @@
 # WARNING: We get the day from the CSV file by using cut in characters 7 and 8. This means we assume they will write something like 01 as day 1. If they change it to 1, this script will not work!
 
 function inputError(){
-    echo "Var ${1} is unset. Set in file '${2}'."
+    echo "Var ${year} is unset. Set in file '${month}'."
     return 0
 }
 
+year=$1
+month=$2
+user=$3
+passwd=$4
 
 if [ "$#" -ne 4 ]; then
     echo "Usage: $0 <year> <month> <user> <password>"
@@ -48,7 +52,7 @@ if [ "$size" -lt 1 ]; then
     exit;
 fi
 
-ym=$1-$2
+ym=$year-$month
 path="./tmp_$ym"
 
 # Step 1:
@@ -56,45 +60,45 @@ path="./tmp_$ym"
 mkdir -p "$path"
 
 # Download files
-request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${1}'&m='${2}'&d=C&consulta=Servidores'
+request='http://arquivos.portaldatransparencia.gov.br/downloads.asp?a='${year}'&m='${month}'&d=C&consulta=Servidores'
 
-curl $request --compressed > $path/${1}${2}_Servidores.zip
+curl $request --compressed > $path/${year}${month}_Servidores.zip
 
 # Unzip them
-unzip -o $path/${1}${2}_Servidores.zip -d $path/
+unzip -o $path/${year}${month}_Servidores.zip -d $path/
 
 # Remove zip file
-rm $path/${1}${2}_Servidores.zip
+rm $path/${year}${month}_Servidores.zip
 
 # Get day
-day=$(ls $path | grep -m 1 $1$2 | cut -c 7,8)
+day=$(ls $path | grep -m 1 $year$month | cut -c 7,8)
 
 for key in "${!filter[@]}"
 do
     # Step 2:
     # Create config files
-    ./create_config.py $1 $2 "$day" "$index" "$host" "$key" $3 $4 "${path}"
+    ./create_config.py $year $month "$day" "$index" "$host" "$key" $user $passwd "${path}"
 
     # Step 3:
     # Start processing
     strReplacement=$( echo "${filter[$key]}" | sed 's/ /\\ /g' )
-    ./merge_files_es.py $path/config-${1}-${2}.json "$strReplacement" "${columnName}"
-    rm $path/${1}${2}${day}_Cadastro_Unique.csv
+    ./merge_files_es.py $path/config-${year}-${month}.json "$strReplacement" "${columnName}"
+    rm $path/${year}${month}${day}_Cadastro_Unique.csv
 
     # Step 4:
     # Insert data in ElasticSearch
-    logstash -f $path/config-${1}-${2} < $path/${1}${2}${day}.csv
+    logstash -f $path/config-${year}-${month} < $path/${year}${month}${day}.csv
 
     # Remove data
-    rm -f $path/config-${1}-${2}
-    rm -f $path/config-${1}-${2}.json
-    rm -f $path/${1}${2}${day}.csv
+    rm -f $path/config-${year}-${month}
+    rm -f $path/config-${year}-${month}.json
+    rm -f $path/${year}${month}${day}.csv
 done
 
-rm -f $path/${1}${2}${day}_Afastamentos.csv
-rm -f $path/${1}${2}${day}_Cadastro.csv
-rm -f $path/${1}${2}${day}_Honorarios\(Jetons\).csv
-rm -f $path/${1}${2}${day}_Jetom.csv
-rm -f $path/${1}${2}${day}_Observacoes.csv
-rm -f $path/${1}${2}${day}_Remuneracao.csv
+rm -f $path/${year}${month}${day}_Afastamentos.csv
+rm -f $path/${year}${month}${day}_Cadastro.csv
+rm -f $path/${year}${month}${day}_Honorarios\(Jetons\).csv
+rm -f $path/${year}${month}${day}_Jetom.csv
+rm -f $path/${year}${month}${day}_Observacoes.csv
+rm -f $path/${year}${month}${day}_Remuneracao.csv
 rmdir $path

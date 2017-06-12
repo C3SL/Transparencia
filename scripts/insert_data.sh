@@ -7,27 +7,33 @@
 # - Filter: An array of n values, that will create n indexes in ElasticSearch, each one filtering data from Portal Transparencia using its corresponding string. Ex: "UNIVERSIDADE FEDERAL DO PARANA"
 # - University: An array of n values, with n being the same n as Filter's array. This array should contain the initials from Universities declared in Filter array, in the same order.
 
-if [[ "$#" -ne 5 || "$1" == "-help" || "$1" == "--help" ]]; then
+year=$1
+month=$2
+user=$3
+passwd=$4
+insertions=$5
+
+if [[ "$#" -ne 5 || "$year" == "-help" || "$year" == "--help" ]]; then
     echo "  Usage: $0 <year> <month> <user> <password> <insertions>"
     echo "    Insertions must be one between: expenses, travel_allowances, workers, ministry_of_health, all"
     echo "    Example: $0 2016 12 myuser mypass all"
     exit
 fi
 
-if [[ "$5" == "all" || "$5" == "expenses" ]]; then
+if [[ "$insertions" == "all" || "$insertions" == "expenses" ]]; then
     # First, insert Expenses data.
-    echo "Inserting Expenses from ${1}-${2}..."
-    (cd expenses && ./insert_expenses.sh $1 $2 $3 $4)
+    echo "Inserting Expenses from ${year}-${month}..."
+    (cd expenses && ./insert_expenses.sh $year $month $user $passwd)
 fi
 
-if [[ "$5" == "all" || "$5" == "travel_allowances" ]]; then
+if [[ "$insertions" == "all" || "$insertions" == "travel_allowances" ]]; then
     # We should now insert Travel allowance data.
-    echo "Inserting Travel Allowances from ${1}-${2}..."
-    (cd travel_allowances && ./insert_travel_allowances.sh $1 $2 $3 $4)
+    echo "Inserting Travel Allowances from ${year}-${month}..."
+    (cd travel_allowances && ./insert_travel_allowances.sh $year $month $user $passwd)
 fi
 
-if [[ "$5" == "all" || "$5" == "workers" ]]; then
+if [[ "$insertions" == "all" || "$insertions" == "workers" ]]; then
     # Now, insert Workers data.
-    echo "Inserting Workers from ${1}-${2}..."
-    (cd workers && ./insert_register_payment.sh $1 $2 $3 $4)
+    echo "Inserting Workers from ${year}-${month}..."
+    (cd workers && ./insert_register_payment.sh $year $month $user $passwd)
 fi

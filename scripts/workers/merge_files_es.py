@@ -43,11 +43,15 @@ def getDataWithEmptyRow(columns, row):
         newRow.append('')
     return newRow
 
+configFile = sys.argv[1]
+filterReport = sys.argv[2]
+columnId = sys.argv[3]
+
 if len(sys.argv) != 4:
     print("Usage: " + sys.argv[0] + " <config.json> <filter> <columnId>")
     sys.exit()
 
-with open(sys.argv[1]) as f:
+with open(configFile) as f:
     params = json.load(f)
 
 # Which files should be merged?
@@ -67,7 +71,7 @@ title1 = csv_1.pop(0)
 file_exists = Path(file2)
 if not file_exists.is_file():
     print("File2 does not exist. Calling script resume_register to create it...")
-    call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + sys.argv[2] + " " + sys.argv[3]], shell=True)
+    call(["./resume_register.sh " +  params['path'] + " " + params['date'] + " " + filterReport + " " + columnId], shell=True)
 
 with open(file2, newline='', encoding='Windows-1252') as f:
     csv_2 = [ i for i in csv.reader(f, 'dialect') ]

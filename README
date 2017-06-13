@@ -1,16 +1,20 @@
-Projeto utilizando ElasticSearch + Kibana na tentativa de auxiliar a transparência da Universidade Federal do Paraná (UFPR).
+## Transparencia (Transparency)
+A project that tries to ease the analysis of Brazilian Public Universities expenses data using Kibana and Elastic Search.
 
-O projeto contém dados referentes a:
-- Servidores;
-- Despesas (pagamentos);
-- Despesas (diárias de viagem);
+The project contains data about:
 
-Árvore de Diretórios:
+ - Employees;
+ - Expenses (Payments);
+ - Expenses (Travel Daily Expenses);
+
+Directory tree:
+```markdown
 .
-├── README - Descreve o repositório.
-└── scripts - Contém scripts que auxiliam no projeto.
-    ├── insert_data.sh - Script que gerencia todos os scripts de inserção de dados: insere servidores e despesas (pagamentos e diárias).
-    ├── workers - Contém scripts para gerenciar dados de Servidores.
-    ├── travel_allowance - Contém scripts para gerenciar dados de Diárias de Viagens.
-    ├── expenses - Contém scripts para gerenciar dados de Pagamentos.
-    └── curl - Contém scripts que auxiliam na utilização do curl.
+├── README - Describe the repository.  
+└── scripts - Contains the project's helper scripts.  
+	├── insert_data.sh - Script that manages all other scripts that insert data: Inserts employees and expenses (payments and daily expenses).  
+	├── workers - Contains scripts that manage data from the servers.  
+	├── travel_allowance - Contains scripts that manages data about travel daily expenses.  
+	├── expenses - Contains scripts to manage data about payments.  
+	└── curl - Contains scripts that help on Curl usage.  
+```
